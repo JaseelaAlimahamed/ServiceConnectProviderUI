@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import UserRoutes from './routes/UserRoutes';
+import ProviderRoutes from './routes/ProviderRoutes';
 // import'./App.css';
 function App() {
 
