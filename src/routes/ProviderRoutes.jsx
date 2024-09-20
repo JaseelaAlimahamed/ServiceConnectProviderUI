@@ -12,7 +12,7 @@ function ProviderRoutes() {
       <Route path="/" element={<Navigate to="/signin" />} />
         {/* <Route path="/" element={<Navigate to="/ServiceRequestPage" />} /> */}
         <Route path="/service-request" element={<ServiceRequestPage/>} /> 
-        <Route path="/booking-details" element={<BookingDetailsPage/>} />
+        {/* <Route path="/booking-details" element={<BookingDetailsPage/>} /> */}
       </Routes>
     </div>
   )
