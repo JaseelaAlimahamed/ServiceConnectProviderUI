@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import UserRoutes from './routes/UserRoutes';
+import ProviderRoutes from '../src/routes/ProviderRoutes'
+
 // import'./App.css';
 function App() {
 
