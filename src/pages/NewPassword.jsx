@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { CiCircleChevLeft } from "react-icons/ci";
@@ -47,10 +47,22 @@ const NewPassword = () => {
     }, 3000); // 3 seconds delay
   };
 
+  useEffect(() => {
+    // Redirect to a new page after a few seconds once the modal is loaded
+    if (!isLoading && isSubmitted) {
+      const redirectTimer = setTimeout(() => {
+        window.location.href = "http://localhost:5173/newpassword"; // Change URL to your actual redirect target
+      }, 3000); // 3 seconds delay for redirection
+
+      // Clean up timer if the component is unmounted before the timeout is reached
+      return () => clearTimeout(redirectTimer);
+    }
+  }, [isLoading, isSubmitted]);
+
   return (
     <div className="bg-light-gray min-h-screen flex flex-col">
       {/* Navigation Bar */}
-      <nav className="bg-gray-900 w-full h-[80px] flex items-center px-4">
+      <nav className="bg-[#1D1F2A] w-full h-[80px] flex items-center px-4">
         <Link to="/" className="text-white text-2xl">
           <CiCircleChevLeft className="h-[40px] w-[40px]" />
         </Link>
@@ -95,4 +107,3 @@ const NewPassword = () => {
 };
 
 export default NewPassword;
-

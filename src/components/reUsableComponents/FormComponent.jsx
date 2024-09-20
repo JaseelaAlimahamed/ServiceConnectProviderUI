@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 import InputFieldComponent from './InputFieldComponent';
 import ButtonComponent from './ButtonComponent';
 
+
 const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, heading, profile, forgotPassword }) => {
   const [formData, setFormData] = useState({});
 

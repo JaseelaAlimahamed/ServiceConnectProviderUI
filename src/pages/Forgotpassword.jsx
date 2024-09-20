@@ -1,53 +1,47 @@
 import React, { useState } from "react";
-import { CiCircleChevLeft } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import ButtonComponent from "../components/reUsableComponents/ButtonComponent";
 import { FaArrowRight } from "react-icons/fa";
-import ContactCard from "../components/reUsableComponents/ContactCard"; // Import reusable card
+import { CiCircleChevLeft } from "react-icons/ci";
+import FormComponent from "../components/reUsableComponents/FormComponent";
 
-const users = [
-  {
-    name: "Akhil",
-    email: "akhilgmail@gmail.com",
-    phone: "480-894-5529",
-    countryCode: "+1",
-    id: "012250554",
-  },
-  // Additional users can be added here
-];
+const Forgotpassword = () => {
+  const fieldConfigs = [
+    {
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      required: true,
+    },
+    {
+      name: "phoneNumber",
+      type: "text",
+      placeholder: "Phone Number",
+      required: true,
+    },
+  ];
 
-const buttonConfig = {
-  label: "Continue",
-  type: "submit",
-  btnWidth: "100%", // Full width button
-  btnHeight: "50px", // Adjusted height for consistency
-  icon: <FaArrowRight className="ml-2" />, // Arrow icon in the button
-};
+  const inputConfig = {
+    inputWidth: "100%",
+    inputHeight: "52px",
+  };
 
-const ForgotPassword = () => {
-  const [selectedContact, setSelectedContact] = useState(null); // State to track selected contact (phone or email)
+  const buttonConfig = {
+    label: "Continue",
+    type: "submit",
+    btnWidth: "100%",
+    btnHeight: "50px",
+    icon: <FaArrowRight className="ml-2" />,
+  };
 
-  // Handle button submit
-  const handleSubmit = () => {
-    if (selectedContact) {
-      if (selectedContact.type === "email") {
-        console.log(
-          `Email: ${selectedContact.email}, ID: ${selectedContact.id}`
-        );
-      } else if (selectedContact.type === "phone") {
-        console.log(
-          `Phone: ${selectedContact.countryCode} ${selectedContact.phone}, ID: ${selectedContact.id}`
-        );
-      }
-    } else {
-      console.log("No contact method selected");
-    }
+  const apiEndpoint = async (values) => {
+    console.log("Form submitted with values:", values);
+    // Perform your API call or form submission logic here
   };
 
   return (
-    <div className="bg-light-gray min-h-screen flex flex-col items-center">
+    <div className="bg-light-gray min-h-screen flex flex-col">
       {/* Navigation Bar */}
-      <nav className="bg-gray-900 w-full h-[80px] flex items-center px-4">
+      <nav className="bg-[#1D1F2A] w-full h-[80px] flex items-center px-4">
         <Link to="/" className="text-white text-2xl">
           <CiCircleChevLeft className="h-[40px] w-[40px]" />
         </Link>
@@ -56,71 +50,30 @@ const ForgotPassword = () => {
         </p>
       </nav>
 
-      {/* <div className="bg-sky-900 h-96 w-[450px]"> */}
-
-      <div className="w-auto h-auto flex flex-col items-center text-[#545454] font-input text-[14px] mt-[200px]">
-        <p>Select which contact details should we use to </p>
-        <p>Reset Your Password</p>
-      </div>
-
-      {/* Cards for each user */}
-      {users.map((user, index) => (
-        <div
-          key={index}
-          className=" bg-light-gray md:shadow-lg pb-4 flex flex-col items-center w-[450px] rounded-lg p-5 "
-        >
-          {/* Reusable Email Card */}
-
-          <ContactCard
-            type="email"
-            data={user}
-            selected={
-              selectedContact?.type === "email" &&
-              selectedContact.id === user.id
-            }
-            onClick={() =>
-              setSelectedContact({
-                type: "email",
-                email: user.email,
-                id: user.id,
-              })
-            }
-          />
-
-          <div className=" flex flex-col">
-            {/* Reusable Phone Card */}
-            <ContactCard
-              type="phone"
-              data={user}
-              selected={
-                selectedContact?.type === "phone" &&
-                selectedContact.id === user.id
-              }
-              onClick={() =>
-                setSelectedContact({
-                  type: "phone",
-                  phone: user.phone,
-                  countryCode: user.countryCode,
-                  id: user.id,
-                })
-              }
-            />
-
-            {/* Button Component */}
-            <ButtonComponent
-              label={buttonConfig.label}
-              type={buttonConfig.type}
-              btnWidth={buttonConfig.btnWidth}
-              btnHeight={buttonConfig.btnHeight}
-              handleSubmit={handleSubmit} // Log the selected contact on button click
-            />
+      {/* Form Container */}
+      <div className="flex flex-col items-center justify-center flex-grow font-input text-[14px]">
+        <div className="w-full max-w-md bg-light-gray rounded-lg md:shadow-lg mt-20 md:p-8">
+          {/* Heading */}
+          <div className="flex flex-col text-center font-bold leading-4">
+            <p style={{ color: "#545454" }}>
+              Enter your registered email or phone number to
+            </p>
+            <p style={{ color: "#545454" }}>
+              receive a OTP to reset your password
+            </p>
           </div>
+
+          {/* Form Component */}
+          <FormComponent
+            fieldConfigs={fieldConfigs}
+            buttonConfig={buttonConfig}
+            inputConfig={inputConfig}
+            apiEndpoint={apiEndpoint}
+          />
         </div>
-      ))}
-      {/* End of cards */}
+      </div>
     </div>
-    // </div>
   );
 };
 
-export default ForgotPassword;
+export default Forgotpassword;
