@@ -92,6 +92,7 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
                 onBlur={handleBlur}
                 inputWidth={inputConfig.inputWidth}
                 inputHeight={inputConfig.inputHeight}
+                icon={field.icon}
               />
             ))}
 
