@@ -106,9 +106,7 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
                 inputWidth={inputConfig.inputWidth}
                 inputHeight={inputConfig.inputHeight}
                 icon={field.icon}
-              
 
-              
               />
             ))}
 
