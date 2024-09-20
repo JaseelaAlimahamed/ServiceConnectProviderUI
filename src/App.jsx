@@ -1,19 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
-import RegisteredServices from './pages/RegisteredServices';
-import ButtonComponent from './components/reUsableComponents/ButtonComponent';
+import ProviderRoutes from './routes/ProviderRoutes';
 // import'./App.css';
 function App() {
 
 
   return (
-    
-      <Routes>
-        <Route path="/*" element={<RegisteredServices/>} />
-        <Route path="/addservice" element={<ButtonComponent />} />
-      </Routes>
-    
+    <Routes>
+      <Route path="/*" element={<ProviderRoutes/>} />
+    </Routes>
   );
 }
 
 export default App;
-

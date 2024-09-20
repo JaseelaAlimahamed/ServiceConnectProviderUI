@@ -9,8 +9,8 @@ const AddButton = () => {
 
   }
   return (
-    <div className="my-4 flex justify-center">
-      <button onClick={handleAddNewService} className="bg-dark-gray text-white py-6 px-8 rounded-xl border border-blue-drk w-2/3">
+    <div className="my-4 flex justify-center ">
+      <button onClick={handleAddNewService} className="bg-dark-gray text-white py-6 px-8 shadow-lg rounded-xl border border-blue-drk w-2/3">
         + ADD NEW SERVICE
       </button>
     </div>
