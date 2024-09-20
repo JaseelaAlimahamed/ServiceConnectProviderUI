@@ -9,13 +9,10 @@ function ProviderRoutes() {
   return (
     <div>
       <Routes>
-      <Route path="/" element={<Navigate to="/signin" />} />
-           <Route path="/signin" element={<ServiceProviderSignIn />} />
+        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/signin" element={<ServiceProviderSignIn />} />
         <Route path="/otpPage" element={<OTPPage />} />
-
-           
-
-      </Routes>
+     </Routes>
     </div>
   )
 }

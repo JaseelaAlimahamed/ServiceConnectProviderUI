@@ -67,7 +67,7 @@ const OTPComponent = () => {
             handleInputChange(String(number), emptyIndex);
             
         }
-        console.log(number)
+       
     };
 
     return (
