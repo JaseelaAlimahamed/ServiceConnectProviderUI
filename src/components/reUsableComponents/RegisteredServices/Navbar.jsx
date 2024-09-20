@@ -11,7 +11,7 @@ const Navbar = ({ title,search=false, bgColor = "bg-navbar", textColor = "text-w
         console.log('Back button clicked');
       };
     
-      const openFilter = () => {
+      const openSettings = () => {
         console.log('Settings clicked');
       };
     
@@ -34,9 +34,7 @@ const Navbar = ({ title,search=false, bgColor = "bg-navbar", textColor = "text-w
 
       {/* Right Actions (Icons or buttons) */}
       <div className="flex space-x-4">
-      <button className="text-white border rounded-full border-slate-600 p-2">
-      <VscSettings size={20} />
-      </button>
+      
       
         <button>
         {search &&   <CiSearch size={20}  onClick={openSearch}  />}

@@ -29,8 +29,17 @@ module.exports = {
         daytime:'#797C7B;',
         navbar:'#1D1F2A;',
         statuspending:'#135275;',
-        statusopened:'#137517;'
+        statusopened:'#137517;',
+        completebtn:'#137517',
+        declainbtn:'#670200'
       },
+      screens:{
+        'sm':'640px',
+        'md':'768px',
+        'lg':'1024px',
+        'xl':'1280px',
+        '2xl':'1536px',
+      }
 
     },
   },

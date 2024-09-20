@@ -10,6 +10,7 @@ export const RequestCard = ({ title, status, date, time, customer,daytime }) => 
       </div>
     <div className="bg-white shadow w-full rounded-lg p-4 flex items-center justify-between">
       <div className="flex flex-col">
+      <div>
        <div className='flex gap-3'>
        <h4 className="text-xl font-semibold font-heading text-blue-900">{title}</h4> <a href="./view " className='underline text-xs mt-2'>View</a> <h5 className='font-daytime mt-1 text-daytime font-medium'>{daytime}</h5><button className="text-xl font-bold ">&times;</button>
       
@@ -24,7 +25,9 @@ export const RequestCard = ({ title, status, date, time, customer,daytime }) => 
           {status}
         </span>
       </div>
-        <div className="flex items-center space-x-2 mt-2 text-gray-600">
+      </div>
+       <div  className="flex flex-col">
+       <div className="flex items-center space-x-2 mt-2 text-gray-600">
           <HiCalendar className='text-orange-500' />
           <span>{date}</span>
           <HiClock  className='text-yellow-500' />
@@ -38,6 +41,7 @@ export const RequestCard = ({ title, status, date, time, customer,daytime }) => 
           <span>{time}</span>
           
         </div>
+       </div>
       </div>
      
     </div>

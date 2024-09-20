@@ -2,7 +2,7 @@ import React from 'react';
 import { RequestCard } from '../components/reUsableComponents/RegisteredServices/RequestCard';
 import { requestsData } from '../assets/fake-data';
 import Navbar from '../components/reUsableComponents/RegisteredServices/Navbar';
-import { FaArrowLeft, FaCog, FaSearch } from 'react-icons/fa';
+
 
 const ServiceRequestPage = () => {
   

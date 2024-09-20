@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import ProviderRoutes from './routes/ProviderRoutes';
-import ServiceRequestPage from './pages/ServiceRequestPage';
+import ProviderRoutes from '../src/routes/ProviderRoutes'
+
 
 
 function App() {
@@ -10,9 +10,7 @@ function App() {
     <>
    
     <Routes>
-      {/* <Route path="/" element={<ProviderRoutes/>} /> */}
-       <Route path="/" element={<h1>HI INDEX PAGE</h1>} />
-      <Route path="/service-request" element={<ServiceRequestPage/>} /> 
+      <Route path="/*" element={<ProviderRoutes/>} />
     </Routes>
     </>
   );
