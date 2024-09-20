@@ -1,9 +1,10 @@
-
 import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import FormComponent from '../../components/reUsableComponents/FormComponent';
 import ImageIconsComponent from '../../components/reUsableComponents/ImageIconsComponents';
-import icon from '../../assets/ICON.png';
+import Icon from '../../assets/ICON.png';
+import envolope from '../../assets/envolope.svg';
+import passlock from '../../assets/password.svg';
 
 // Function to generate a random OTP
 const generateOTP = () => {
@@ -33,6 +34,7 @@ const ServiceProviderSignIn = () => {
       label: 'Email',
       required: true,
       onChange: handleEmail,  
+      icon: envolope
     },
     {
       name: 'password',
@@ -40,24 +42,29 @@ const ServiceProviderSignIn = () => {
       placeholder: 'Password',
       label: 'Password',
       required: true,
+      icon: passlock
     },
   ];
 
-  const inputConfig={};
+  const inputConfig = {
+    inputWidth: '100%',
+    inputHeight: '48px',
+  };
 
-  // Button configuration
+  
+
   const buttonConfig = {
     label: 'Sign In',
     type: 'submit',
-    btnWidth: 'width-full',  
+    btnWidth: 'w-full',  
     btnHeight: 'h-12',  
   };
+  
 
   // Function to call sign-in API endpoint
   const handleSignIn = async (values) => {
     try {
-      // Determine if email or mobile number
-      const { email, password } = values;
+      const { email } = values;
       let otp = '';
       if (isEmail(email)) {
         otp = generateOTP();
@@ -69,12 +76,8 @@ const ServiceProviderSignIn = () => {
         console.log('Invalid email or mobile number');
         return;
       }
-
-      // Placeholder URL
-      // const response = await axios.post('/api/signin', values);
       console.log('Sign in success:', values);
-    
-      navigate('/otpPage');  
+      navigate('/otpPage', {state: { otp }});
     } catch (error) {
       console.error('Error during sign-in:', error);
     }
@@ -82,28 +85,23 @@ const ServiceProviderSignIn = () => {
 
   const iconsConfig = [
     {
-      src: icon,
+      src: Icon,
       width: 50, 
       height: 50,
-    
     },
   ];
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
-      {/* Responsive Form Container */}
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl 2xl:max-w-2xl">
-        {/* Flex container for icon and heading */}
-        <div className="flex items-center justify-center mb-4">
-          {/* Icons Component */}
-          <div className="mr-2">
-            <ImageIconsComponent iconsConfig={iconsConfig} />
-          </div>
-          {/* Heading */}
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center">Service Connect</h2>
+      <div className="bg-light-gray p-6 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl 2xl:max-w-2xl border border-gray-300">
+
+        {/* Centering Image and Heading at the top */}
+        <div className="flex flex-col items-center justify-center mb-6">
+          <ImageIconsComponent iconsConfig={iconsConfig} />
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center mt-4">Service Connect</h2>
         </div>
 
-        {/* Form Component */}
+        {/* Form Component with Icons */}
         <FormComponent
           fieldConfigs={fieldConfigs}
           buttonConfig={buttonConfig}
@@ -120,3 +118,4 @@ const ServiceProviderSignIn = () => {
 };
 
 export default ServiceProviderSignIn;
+

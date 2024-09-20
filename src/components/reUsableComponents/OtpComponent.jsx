@@ -1,10 +1,13 @@
 import React, { useState, useRef } from "react";
-import ButtonComponent from "./ButtonComponent"; // Adjust the import path as needed
+import ButtonComponent from "./ButtonComponent"; 
 import ResendOtpComponent from "./ResendOtpComponent";
+import { useLocation } from "react-router-dom";
 
 const OTPComponent = () => {
     const [otp, setOtp] = useState(["", "", "", ""]);
     const inputRefs = useRef([]);
+    const location= useLocation();
+    const generatedOtp=location.state?.otp;
 
     const handleInputChange = (value, index) => {
         if (/^[0-9]$/.test(value) || value === "") {
@@ -42,8 +45,16 @@ const OTPComponent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+      
         if (otp.every(val => val !== "")) {
-            console.log("OTP submitted:", otp.join(""));
+            const enteredOtp = otp.join("");
+            console.log("OTP submitted:", enteredOtp);
+            if(enteredOtp === String(generatedOtp)){
+                console.log("Correct OTP");
+            }
+            else{
+                console.log("Incorrect OTP");
+            }
             // Submit to the server here
         } else {
             console.log("Please fill all OTP fields.");
@@ -54,7 +65,9 @@ const OTPComponent = () => {
         const emptyIndex = otp.indexOf("");
         if (emptyIndex !== -1) {
             handleInputChange(String(number), emptyIndex);
+            
         }
+        console.log(number)
     };
 
     return (
