@@ -10,9 +10,8 @@ function ProviderRoutes() {
       <Routes>
         
         <Route path="/" element={<Navigate to="/signin" />} />
-        
         <Route path="/Booking" element={ <CardComponent/>} />
-        <Route path="*" element={<Navigate to="/Booking" />} />
+       
       </Routes>
     </div>
   )
