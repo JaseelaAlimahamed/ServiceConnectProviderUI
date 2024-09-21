@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
+import CardComponent from '../components/reUsableComponents/CardComponent'
 
 
 
@@ -9,7 +10,9 @@ function ProviderRoutes() {
       <Routes>
         
         <Route path="/" element={<Navigate to="/signin" />} />
-
+        
+        <Route path="/Booking" element={ <CardComponent/>} />
+        <Route path="*" element={<Navigate to="/Booking" />} />
       </Routes>
     </div>
   )
