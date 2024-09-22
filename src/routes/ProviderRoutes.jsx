@@ -2,6 +2,8 @@ import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 
 import RegisteredServices from '../pages/RegisteredServices'
+import RequestDetails from '../pages/RequestDetails'
+import BookingDetails from '../pages/BookingsDetails'
 
 import CardComponent from '../components/reUsableComponents/CardComponent'
 
@@ -39,6 +41,14 @@ function ProviderRoutes() {
  
         <Route path="/Booking" element={ <CardComponent/>} />
           
+        
+        <Route path="/req-details" element={<RequestDetails />} />
+        <Route path="/book-details" element={<BookingDetails />} />
+        
+        
+        
+        <Route path="/req-details" element={<RequestDetails />} />
+        <Route path="/book-details" element={<BookingDetails />} />
       </Routes>
 
     </div>
