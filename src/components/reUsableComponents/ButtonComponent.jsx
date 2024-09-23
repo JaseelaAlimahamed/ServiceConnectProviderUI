@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ButtonComponent = ({ label, type, disabled, btnWidth , btnHeight , handleSubmit }) => {
   return (
     <button
@@ -12,8 +13,4 @@ const ButtonComponent = ({ label, type, disabled, btnWidth , btnHeight , handleS
     <span className="flex-grow  text-center">{label}</span>
     <img src="./buttonArrow.svg" className="ml-2 w-8 h-8" alt="arrow" />
   </button>
-  
-  );
-};
 
-export default ButtonComponent;

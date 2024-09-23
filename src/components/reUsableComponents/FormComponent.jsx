@@ -6,16 +6,18 @@ import InputFieldComponent from './InputFieldComponent';
 import ButtonComponent from './ButtonComponent';
 
 
-const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, heading, profile, forgotPassword }) => {
+const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, heading, profile, forgotPassword, title, paragraph,
+   rememberMe }) => {
+
   const [formData, setFormData] = useState({});
 
   // Set initial form values based on fieldConfigs
   useEffect(() => {
     const initialFormData = fieldConfigs.reduce((acc, field) => {
-      acc[field.name] = ''; 
+      acc[field.name] = '';
       return acc;
     }, {});
-    setFormData(initialFormData); 
+    setFormData(initialFormData);
   }, [fieldConfigs]);
 
   // Function to handle submission
@@ -54,11 +56,11 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
       return schema;
     }, {})
   );
-  
+
   return (
     <div className="bg-light-gray p-6 max-w-xl w-full md:max-w-lg lg:max-w-lg lg:p-4 xl:max-w-md xl:p-4">
       {heading && (
-        <div className="bg-dark-gray p-4 rounded-t-lg w-full mx-auto">
+         <div className="bg-dark-gray p-4 rounded-t-lg w-full mx-auto">
           <h2 className="text-white font-heading text-center text-lg font-bold">{heading}</h2>
         </div>
       )}
@@ -71,6 +73,18 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
           </div>
         </div>
       )}
+      {title && (
+        <div className="font-bold  text-lg mt-2">
+          {title}
+        </div>
+      )}
+      {paragraph && (
+        <p className=" text-gray-700 mt-2">
+          {paragraph}
+        </p>
+      )}
+      
+
 
       <Formik
         initialValues={formData} // Set initial values from state
@@ -93,6 +107,8 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
                 onBlur={handleBlur}
                 inputWidth={inputConfig.inputWidth}
                 inputHeight={inputConfig.inputHeight}
+                icon={field.icon}
+
               />
             ))}
 
@@ -101,6 +117,22 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
                 <Link to="/forgot-password" className="text-sm text-dark-gray hover:underline hover:text-black">
                   Forgot Password?
                 </Link>
+              </div>
+            )}
+
+            {rememberMe && (
+              <div className="flex items-center">
+                <input
+                  id="rememberMe"
+                  name="rememberMe"
+                  type="checkbox"
+                  onChange={handleChange}
+                  checked={values.rememberMe}
+                  className="mr-2"
+                />
+                <label htmlFor="rememberMe" className="text-gray-700">
+                  Remember Me
+                </label>
               </div>
             )}
 
@@ -121,3 +153,4 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
 };
 
 export default FormComponent;
+
