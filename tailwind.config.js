@@ -35,6 +35,8 @@ module.exports = {
         declainbtn:'#670200'
         "blue-drk": "#04228E",
 
+
+
       },
       screens:{
         'sm':'640px',

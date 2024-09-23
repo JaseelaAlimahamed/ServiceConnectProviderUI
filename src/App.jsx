@@ -1,24 +1,19 @@
 import { Routes, Route } from 'react-router-dom'
 
-import ProviderRoutes from '../src/routes/ProviderRoutes'
 
-
-
+import ProviderRoutes from './routes/ProviderRoutes';
 // import'./App.css';
 function App() {
 
-
-
-function App() {
-  
-
   return (
-    <>
-   
+   <>
+
     <Routes>
-      <Route path="/*" element={<ProviderRoutes/>} />
+      <Route path='/*' element={<ProviderRoutes/>}/>
     </Routes>
-    </>
+
+
+ 
   );
 }
 
