@@ -25,6 +25,7 @@ module.exports = {
         "dark-gray": "#1D1F2A",
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
+
         customPurple: '#C1BBEB',
         daytime:'#797C7B;',
         navbar:'#1D1F2A;',
@@ -34,7 +35,10 @@ module.exports = {
         completebtn:'#137517',
         declainbtn:'#670200',
         activetab:'#65558F',
-        pagebg:'#D9D9DB'
+        pagebg:'#D9D9DB',
+        declainbtn:'#670200',
+        bluedrk: '#04228E',
+
       },
       screens:{
         'xs':'320px', 
