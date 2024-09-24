@@ -32,7 +32,7 @@ module.exports = {
         statuspending:'#135275;',
         statusopened:'#137517;',
         completebtn:'#137517',
-        declainbtn:'#670200'
+        declainbtn:'#670200',
         "blue-drk": "#04228E",
 
 
