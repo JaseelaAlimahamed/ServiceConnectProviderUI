@@ -2,7 +2,7 @@ import React from 'react'
 
 const BookingDetails = ({bookingDetails}) => {
 
-    const {id,title, description,appoinemnt} = bookingDetails
+    const {id,title, description,appoinment} = bookingDetails
   return (
      <div className='bg-[#FFF] p-5 rounded-3xl mt-1 shadow-[0px_4px_4px_0px_#00000040]'>
      <p className='text-[#797C7B] text-lg font-semibold'>Booking Id : {id}</p>
@@ -15,8 +15,8 @@ const BookingDetails = ({bookingDetails}) => {
 
          <h3 className='font-semibold'>Appointment</h3>
          <div className="flex gap-2 ml-[50px] sm:ml-[90px] ">
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-[0px_4px_4px_0px_#00000040]'>{appoinemnt.date}</span>
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-[0px_4px_4px_0px_#00000040]'>{appoinemnt.time}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-[0px_4px_4px_0px_#00000040]'>{appoinment.date}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-[0px_4px_4px_0px_#00000040]'>{appoinment.time}</span>
          </div>
 
          <div className="overflow-x-auto text-[#303972] pt-2">
@@ -46,7 +46,8 @@ const BookingDetails = ({bookingDetails}) => {
              <span className='mr-10 font-bold'>Grand Total  300</span>
              </div>
          </div>
-         <div className='text-[#303972]'>
+         <div className='text-[#303972] lg:flex lg:mt-2'>
+            <div>
          <p>Terms and conditions</p>
          <p className='ml-6'>Valid up to 1 month</p>
          
@@ -54,8 +55,11 @@ const BookingDetails = ({bookingDetails}) => {
          <span className='text-sm font-semibold text-[#EC221F] mr-2'>Additional requirements</span>
          <img src="/complaintformAlert-icon.svg" alt="" />
          </div>
+            </div>
+            <div>
          <p className='ml-5'>Provide Ladder</p>
          <p className='ml-5'>Bulb should be provided</p>
+            </div>
 
          </div>
 
