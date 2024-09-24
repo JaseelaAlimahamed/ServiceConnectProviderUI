@@ -30,10 +30,14 @@ module.exports = {
         navbar:'#1D1F2A;',
         statuspending:'#135275;',
         statusopened:'#137517;',
+        statusrejected:'#FA1919F0;',
         completebtn:'#137517',
-        declainbtn:'#670200'
+        declainbtn:'#670200',
+        activetab:'#65558F',
+        pagebg:'#D9D9DB'
       },
       screens:{
+        'xs':'320px', 
         'sm':'640px',
         'md':'768px',
         'lg':'1024px',
