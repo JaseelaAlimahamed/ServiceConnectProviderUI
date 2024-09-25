@@ -7,7 +7,6 @@ import DeclinePage from './pages/Services/DeclinePage';
 function App() {
 
   return (
-   <>
 
   <DeclinePage/>
 

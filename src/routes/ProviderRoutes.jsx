@@ -14,9 +14,10 @@ import AllowLocationComponent from '../components/reUsableComponents/AllowLocati
 import ServiceProviderSignIn from '../SignInOTPComponents/Pages/ServiceProviderSignIn'
 import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
 
-import ServiceRequestPage from '../pages/ServiceRequestPage'
-import BookingDetailsPage from '../pages/BookingDetailsPage';
-import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+// import ServiceRequestPage from '../pages/ServiceRequestPage'
+// import BookingDetailsPage from '../pages/BookingDetailsPage';
+// import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+import ComplaintPage from '../pages/Services/ComplaintPage';
 
 
 
@@ -27,7 +28,7 @@ function ProviderRoutes() {
     <div>
       <Routes>
       <Route path="/" element={<Navigate to="/signin" />} />
-        {/* <Route path="/" element={<Navigate to="/ServiceRequestPage" />} /> */}
+        <Route path="/" element={<Navigate to="/ServiceRequestPage" />} />
         <Route path="/service-request" element={<ServiceRequestPage/>} /> 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
            <Route path='/addprofile' element={<AddProfilePage/>}/>
@@ -35,6 +36,7 @@ function ProviderRoutes() {
         <Route path="/location" element={<AllowLocationComponent/>} />
         <Route path="/signin" element={<ServiceProviderSignIn />} />
         <Route path="/otpPage" element={<OTPPage />} />
+        <Route path="/complaint" element={<ComplaintPage />} />
  
     
    
