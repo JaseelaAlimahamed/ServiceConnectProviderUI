@@ -3,9 +3,9 @@ import UserCard from '../../complaintForm/UserCard'
 import BookingDetails from '../../complaintForm/BookingDetails'
 import ButtonComponent from '../../reUsableComponents/ButtonComponent'
 import Navbar from '../../reUsableComponents/RegisteredServices/Navbar'
-import ComplaintInput from '../../complaintForm/ComplaintInput'
+import DeclineInput from '../../complaintForm/DeclineInput'
 
-const DeclineFormForm = () => {
+const DeclineForm = () => {
     const [isOpen, setIsOpen] = useState(false)
 
   const onClose = () =>{
@@ -31,7 +31,7 @@ const DeclineFormForm = () => {
   return (
     <section>
       <Navbar
-        title="COMPLAINT FORM"
+        title="DECLINE FORM"
         search={false}
         bgColor="bg-navbar"
         textColor="text-white"
@@ -67,7 +67,7 @@ const DeclineFormForm = () => {
           </div>
 
           <div className="w-full md:w-1/2">
-          <ComplaintInput isOpen={isOpen} onClose={onClose} getApiCall={getApiCall}/>
+          <DeclineInput isOpen={isOpen} onClose={onClose} getApiCall={getApiCall}/>
         </div>
 
           </div>
@@ -78,4 +78,4 @@ const DeclineFormForm = () => {
   );
 }
 
-export default DeclneForm
+export default DeclineForm

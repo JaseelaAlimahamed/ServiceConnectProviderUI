@@ -2,7 +2,7 @@ import React from 'react'
 import ButtonComponent from '../reUsableComponents/ButtonComponent'
 import ModalComponent from '../../components/reUsableComponents/ModalComponent'
 
-const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
+const DeclineInput = ({isOpen, onClose, getApiCall}) => {
   return (
     <div>
       <div className="flex flex-col space-y-2 mt-4">
@@ -36,7 +36,7 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
             <ButtonComponent
               type=""
               btnAction=""
-              label="Conform Complaint"
+              label="Decline"
               bgColor="#670200"
               width="100%"
               height="52px"
@@ -50,14 +50,14 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
               children={
                 <div className="flex items-center justify-center h-full">
                   <div>
-                    <p className='text-center mb-4'>Are you sure you want to submit complaint?</p>
+                    <p className='text-center mb-4'>Are you sure you want to decline?</p>
                     <ButtonComponent
                       type="submit"
-                      label="Conform Complaint"
+                      label="Decline"
                       bgColor="#1D1F2A"
                       width="100%"
                       height="46px"
-                      onClick={()=>getApiCall("Conform Complaint")}
+                      onClick={()=>getApiCall("Conform Decline")}
                     />
                   </div>
                 </div>
@@ -68,4 +68,4 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
   )
 }
 
-export default ComplaintInput;
+export default DeclineInput;

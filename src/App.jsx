@@ -8,14 +8,14 @@ function App() {
 
   return (
 
-  <DeclinePage/>
+  
+ <Routes>
+<Route path='/*' element={<DeclinePage/>}/>
+</Routes> 
 
- </>
+
   );
 }
 
 export default App;
 
-{/* <Routes>
-<Route path='/*' element={<DeclinePage/>}/>
-</Routes> */}
