@@ -17,7 +17,7 @@ function RequestButton() {
   };
 
   return (
-    <div className='mx-4 my-4'>
+    <div className='mx-4 my-4 '>
       <div className="flex justify-center mt-4">
         <button 
           onClick={() => setAcceptModalOpen(true)} 
@@ -28,7 +28,7 @@ function RequestButton() {
         </button>
       </div>
 
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center ">
         <button 
           onClick={() => setDeclineModalOpen(true)} 
           className="bg-declainbtn font-semibold text-white p-2 mb-4 h-16 rounded-full w-full"

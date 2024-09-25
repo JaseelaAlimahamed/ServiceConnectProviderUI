@@ -38,9 +38,11 @@ module.exports = {
         pagebg:'#D9D9DB',
         declainbtn:'#670200',
         bluedrk: '#04228E',
+        cardfont:'#303972;',
 
       },
       screens:{
+        
         'xs':'320px', 
         'sm':'640px',
         'md':'768px',

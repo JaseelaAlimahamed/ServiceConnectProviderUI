@@ -15,7 +15,7 @@ function HeaderWithprofile() {
   }
 
   return (
-    <div className="flex justify-center md:max-w-screen-sm mx-auto bg-light-gray">
+    <div className="flex justify-center md:max-w-screen-sm mx-auto bg-light-gray lg:mt-4">
       <div className="bg-light-gray w-full">
         <div className="flex items-center mb-2 space-x-4 my-6 mx-6">
           <img 
@@ -32,7 +32,7 @@ function HeaderWithprofile() {
           </div>
         </div>
         <div className="flex flex-col mt-1 mx-6 font-semibold">
-          <p className="text-sm text-id-gray">Booking ID: {request.id}</p>
+          <p className="text-sm text-id-gray text-daytime">Booking ID: {request.id}</p>
         </div>
       </div>
     </div>

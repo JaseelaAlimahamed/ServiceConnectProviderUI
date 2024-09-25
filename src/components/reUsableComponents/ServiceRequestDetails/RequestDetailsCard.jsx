@@ -14,7 +14,7 @@ function RequestDetailsCard() {
   }
 
   return (
-    <div className="mx-4 my-4 max-w-md mx-auto lg:max-w-2xl">
+    <div className=" my-4 max-w-md mx-auto lg:max-w-2xl">
   
       <div className="bg-white shadow-md rounded-2xl ml-4 mr-4">
       
@@ -45,12 +45,12 @@ function RequestDetailsCard() {
           <div>
             <div className="ml-8 mt-8">
               <h3 className="text-lg font-semibold">Title</h3>
-              <p className="text-gray-700">{request?.title || 'N/A'}</p>
+              <p className="text-cardfont font-semibold">{request?.title || 'N/A'}</p>
             </div>
 
             <div className="ml-8 mt-2">
               <h3 className="text-lg font-semibold">Description</h3>
-              <p className="text-gray-700">{request?.description || 'N/A'}</p>
+              <p className="text-cardfont font-semibold">{request?.description || 'N/A'}</p>
             </div>
 
            
@@ -77,12 +77,12 @@ function RequestDetailsCard() {
               <h3 className="font-semibold mb-2">Availability</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col">
-                  <label className="text-sm ml-4 font-normal">From</label>
+                  <label className="text-sm ml-4 text-cardfont font-semibold">From</label>
                   <input
                     type="text"
                     value={request?.availabilityFromDate || ''}
                     readOnly
-                    className="border shadow-xl ml-16 rounded-lg p-2 bg-gray-200 w-2/3 text-center"
+                    className="border shadow-xl ml-16 rounded-lg p-2 bg-gray-200 w-3/4 text-center xs:ml-10 xs:w-5/6"
                   />
                 </div>
                 <div className="flex flex-col mt-5">
@@ -90,16 +90,16 @@ function RequestDetailsCard() {
                     type="text"
                     value={request?.availabilityFromTime || ''}
                     readOnly
-                    className="border shadow-xl rounded-lg p-2 bg-gray-200 w-24 text-center"
+                    className="border shadow-xl rounded-lg p-2 bg-gray-200 w-3/4 text-center xs:ml-3"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="text-sm ml-4 font-normal">To</label>
+                  <label className="text-sm ml-4 text-cardfont font-semibold">To</label>
                   <input
                     type="text"
                     value={request?.availabilityToDate || ''}
                     readOnly
-                    className="border shadow-xl ml-16 rounded-lg p-2 mb-4 bg-gray-200 w-2/3 text-center"
+                    className="border shadow-xl ml-16 rounded-lg p-2 mb-4 bg-gray-200 w-3/4 text-center xs:ml-10 xs:w-5/6 "
                   />
                 </div>
                 <div className="flex flex-col mt-5">
@@ -107,7 +107,7 @@ function RequestDetailsCard() {
                     type="text"
                     value={request?.availabilityToTime || ''}
                     readOnly
-                    className="border shadow-xl rounded-lg p-2 mb-4 bg-gray-200 w-24 text-center"
+                    className="border shadow-xl rounded-lg p-2 mb-4 bg-gray-200 w-3/4 text-center xs:ml-3 "
                   />
                 </div>
               </div>
@@ -116,7 +116,7 @@ function RequestDetailsCard() {
         ) : (
           <div className="ml-8 mt-8 p-4">
             <h3 className="text-lg font-semibold">Address</h3>
-            <p className="text-black">{request?.location || 'No address available'}</p>
+            <p className="text-black font-semibold text-cardfont">{request?.location || 'No address available'}</p>
           </div>
         )}
       </div>

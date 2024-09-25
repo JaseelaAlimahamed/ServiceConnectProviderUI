@@ -7,13 +7,16 @@ export const RequestCard = ({ title, status, date, time, customer, daytime, id})
   console.log(id);
   
   return (
-    <div className='flex border rounded-3xl overflow-hidden shadow-sm' >
+    <div className="grid-cols-1 md:grid-cols-2">
+    <div className='flex border rounded-3xl overflow-hidden shadow-sm ' >
    <div className={`${status === 'Pending' ? 'bg-statuspending' : status === 'Opened' ? 'bg-statusopened' : 'bg-statusrejected'} w-3`} />
 
       <div className="bg-white shadow w-full rounded-lg p-4 flex items-center justify-between">
         <div className="flex flex-col w-full">
           <div>
-          <div className='xs:grid  grid-cols-8 w-full xs:gap-0 gap-2'>
+          <div className="grid grid-cols-8 w-full gap-2 xs:gap-0  ">
+
+          {/* <div className='xs:grid  grid-cols-8 w-full xs:gap-0 gap-2 '> */}
               <h4 className="col-span-3 text-xl font-semibold font-heading text-blue-900 truncate">{title}</h4>
              
               <Link to={`/request-details/${id}`}className=' underline text-xs mt-2'>View </Link> 
@@ -60,6 +63,7 @@ export const RequestCard = ({ title, status, date, time, customer, daytime, id})
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

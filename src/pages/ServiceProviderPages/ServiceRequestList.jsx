@@ -1,18 +1,17 @@
 import React from 'react';
-import { RequestCard } from '../components/reUsableComponents/RegisteredServices/RequestCard';
-import { requestsData } from '../assets/fake-data';
+import { RequestCard } from '../../components/reUsableComponents/ServiceRequestList/RequestCard';
+import { requestsData } from '../../assets/fake-data';
 
 
 
-const ServiceRequestPage = () => {
+const ServiceRequestList = () => {
   
   
 
   return (
     <>
-    
-    <div className="p-4 bg-gray-100 h-screen">
-      <div className="space-y-4">
+     <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-8 px-4 mx-auto mt-4">
+     
         {requestsData.map((request) => (
           <RequestCard
             key={request.id}
@@ -25,10 +24,10 @@ const ServiceRequestPage = () => {
             customer={request.customer}
           />
         ))}
-      </div>
+     
     </div>
     </>
   );
 };
 
-export default ServiceRequestPage;
+export default ServiceRequestList;
