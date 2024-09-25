@@ -65,31 +65,41 @@ const CardComponent = () => {
       state: {appointment:appointment}
     });
   };
-  
   return (
     <div className="min-h-screen mx-auto bg-light-gray shadow-lg overflow-hidden">
       <div className="p-6 max-w-full bg-light-gray">
-        {dummyAppointments.map((appointment) => (
-          <div key={appointment.id} className="mb-4" onClick={() => handleViewDetails(appointment)}>
-            <BookingAppointment
-              title={appointment.title}
-              viewLink={appointment.viewLink}
-              dateFrom={appointment.dateFrom}
-              dateTo={appointment.dateTo}
-              bookingTimeFrom={appointment.bookingTimeFrom}
-              bookingTimeTo={appointment.bookingTimeTo}
-              time={appointment.time}
-              userName={appointment.userName}
-              image={appointment.image}
-              status={appointment.status}
-              bookingTime={appointment.bookingTime}
-            />
-          </div>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6"> 
+          {/* Responsive Grid: 1 column on mobile, 2 columns on desktop */}
+          {dummyAppointments.map((appointment) => (
+            <div
+              key={appointment.id}
+              className="mb-8 mx-auto w-full h-auto"
+              onClick={() => handleViewDetails(appointment)}
+            >
+              <BookingAppointment
+                title={appointment.title}
+                viewLink={appointment.viewLink}
+                dateFrom={appointment.dateFrom}
+                dateTo={appointment.dateTo}
+                bookingTimeFrom={appointment.bookingTimeFrom}
+                bookingTimeTo={appointment.bookingTimeTo}
+                time={appointment.time}
+                userName={appointment.userName}
+                image={appointment.image}
+                status={appointment.status}
+                bookingTime={appointment.bookingTime}
+                description={appointment.description}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
   
+  
 };
 
 export default CardComponent;
+
+

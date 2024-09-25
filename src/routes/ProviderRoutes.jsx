@@ -17,6 +17,7 @@ import ServiceProviderSignIn from '../SignInOTPComponents/Pages/ServiceProviderS
 import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
 import BookingsPage from '../pages/bookings/BookingsPage';
 import CardComponent from '../components/Bookings/CardComponent';
+import AcceptAndInvoice from '../pages/AcceptAndInvoice/AcceptAndInvoice'
 
 
 
@@ -51,6 +52,7 @@ function ProviderRoutes() {
 
 
         <Route path="/booking-page" element={<BookingsPage />} />
+        <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
       </Routes>
 
     </div>

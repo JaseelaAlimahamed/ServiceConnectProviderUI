@@ -5,6 +5,18 @@ import { useLocation } from 'react-router-dom';
 function AppointmentCard() {
   const location = useLocation();
   const {appointment } = location.state || {};
+  const dummyAppointment = {
+    description: "bulb change",
+    quantity: 0,
+    price: 300,
+    total: 300,
+    appointDate: "Sep 22, 2024",
+    appointTime: "09:30 AM",
+    additionalRequirements: [
+      'Provide machines',
+      'scissor,comb should be provided',
+  ],
+};
   return (
     <div className="p-4 bg-white rounded-2xl shadow-md max-w-md mx-auto lg:max-w-2xl ml-4 mr-4">
       <h2 className="text-lg text-base font-bold ml-6 mb-4">Appointment</h2>
@@ -14,7 +26,7 @@ function AppointmentCard() {
           <div className="flex flex-col">
             <input
               type="text"
-              value={appointment.appointDate}
+              value={dummyAppointment.appointDate}
               readOnly
               className="border shadow-xl ml-12 rounded-lg p-2 bg-gray-200 w-3/4 text-center"
             />
@@ -22,7 +34,7 @@ function AppointmentCard() {
           <div className="flex flex-col">
             <input
               type="text"
-              value={appointment.appointTime}
+              value={dummyAppointment.appointTime}
               readOnly
               className="border shadow-xl rounded-lg p-2 bg-gray-200 w-24 text-center"
             />
@@ -47,16 +59,16 @@ function AppointmentCard() {
           <tbody>
             <tr >
               <td>1</td>
-              <td>{appointment.title}</td>
-              <td className="text-right">{appointment.quantity}</td>
-              <td className="text-right">{appointment.price}</td>
-              <td className="text-right">{appointment.total}</td>
+              <td>{dummyAppointment.description}</td>
+              <td className="text-right">{dummyAppointment.quantity}</td>
+              <td className="text-right">{dummyAppointment.price}</td>
+              <td className="text-right">{dummyAppointment.total}</td>
             </tr>
 
           </tbody>
         </table>
         <div className="pt-2 text-right text-sm font-semibold">
-          Grand Total: {appointment.total}
+          Grand Total: {dummyAppointment.total}
         </div>
       </div>
 
@@ -73,7 +85,7 @@ function AppointmentCard() {
           <IoAlertCircle className="mr-2 text-3xl" />
         </h4>
         <ul className="text-sm text-gray-600 list-disc list-inside">
-          {appointment.additionalRequirements.map((requirement, index) => (
+          {dummyAppointment.additionalRequirements.map((requirement, index) => (
             <li key={index}>{requirement}</li>
           ))}
         </ul>

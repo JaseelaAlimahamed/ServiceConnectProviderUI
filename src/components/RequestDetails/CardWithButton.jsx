@@ -8,6 +8,7 @@ function CardWithButton() {
   const {appointment } = location.state || {};
 
   const requestData = {
+    title: "Plumbing",
     availabilityFromTime: '01:30 AM',
     availabilityToTime: '02:30 PM',
   };
