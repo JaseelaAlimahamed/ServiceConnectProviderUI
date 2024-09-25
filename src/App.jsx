@@ -1,13 +1,24 @@
 import { Routes, Route } from 'react-router-dom'
-import UserRoutes from './routes/UserRoutes';
-// import'./App.css';
-function App() {
 
+import ProviderRoutes from '../src/routes/ProviderRoutes'
+
+
+
+// import'./App.css';
+// function App() {
+
+
+
+function App() {
+  
 
   return (
+    <>
+   
     <Routes>
       <Route path="/*" element={<ProviderRoutes/>} />
     </Routes>
+    </>
   );
 }
 
