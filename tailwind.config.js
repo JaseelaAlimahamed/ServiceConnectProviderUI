@@ -22,6 +22,20 @@ module.exports = {
         "dark-gray": "#1D1F2A",
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
+
+
+        customPurple: '#C1BBEB',
+        daytime:'#797C7B;',
+        navbar:'#1D1F2A;',
+        statuspending:'#135275;',
+        statusopened:'#137517;',
+        completebtn:'#137517',
+        declainbtn:'#670200'
+        "blue-drk": "#04228E",
+
+
+
+
       },
 
     },
