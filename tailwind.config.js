@@ -40,6 +40,8 @@ module.exports = {
         bluedrk: '#04228E',
         cardfont:'#303972;',
 
+
+
       },
       screens:{
         
