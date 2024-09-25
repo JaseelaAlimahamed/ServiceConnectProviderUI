@@ -1,10 +1,6 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 
-import ServiceRequestPage from '../pages/ServiceRequestPage'
-import BookingDetailsPage from '../pages/BookingDetailsPage';
-import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
-
 import RegisteredServices from '../pages/RegisteredServices'
 
 
@@ -17,6 +13,7 @@ import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
 import ServiceRequestPage from '../pages/ServiceRequestPage'
 import BookingDetailsPage from '../pages/BookingDetailsPage';
 import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+import ComplaintList from '../components/complaints/Complaint'
 
 
 
@@ -35,6 +32,7 @@ function ProviderRoutes() {
         <Route path="/location" element={<AllowLocationComponent/>} />
         <Route path="/signin" element={<ServiceProviderSignIn />} />
         <Route path="/otpPage" element={<OTPPage />} />
+        <Route path="/complaint" element={<ComplaintList />} />
  
     
    
