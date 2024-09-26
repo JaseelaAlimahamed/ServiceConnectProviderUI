@@ -34,7 +34,9 @@ const Navbar = ({ title,search=false, bgColor = "bg-navbar", textColor = "text-w
 
       {/* Right Actions (Icons or buttons) */}
       <div className="flex space-x-4">
-      
+      <button className="text-white border rounded-full border-white p-1">
+        <VscSettings size={20} onClick={goBack} />
+      </button>
       
         <button>
         {search &&   <CiSearch size={20}  onClick={openSearch}  />}
