@@ -12,7 +12,9 @@ function App() {
       <Route path='/*' element={<ProviderRoutes/>}/>
     </Routes>
 
+
 </>
+
  
   );
 }
