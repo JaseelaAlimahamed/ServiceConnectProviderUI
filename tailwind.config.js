@@ -25,7 +25,7 @@ module.exports = {
         "dark-gray": "#1D1F2A",
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
-
+         call_Green: '#167f71',
         customPurple: '#C1BBEB',
         daytime:'#797C7B;',
         navbar:'#1D1F2A;',
@@ -39,6 +39,7 @@ module.exports = {
         declainbtn:'#670200',
         bluedrk: '#04228E',
         cardfont:'#303972;',
+        
 
 
 

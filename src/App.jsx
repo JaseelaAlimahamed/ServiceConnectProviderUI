@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import ProviderRoutes from './routes/ProviderRoutes';
 // import'./App.css';
-// function App() {
+function App() {
 
   return (
    <>
@@ -12,7 +12,7 @@ import ProviderRoutes from './routes/ProviderRoutes';
       <Route path='/*' element={<ProviderRoutes/>}/>
     </Routes>
 
-
+</>
  
   );
 }
