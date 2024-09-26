@@ -1,7 +1,7 @@
 import React from 'react';
-import Banner from '../components/RegisteredServices/Banner/Banner';
-import AddButton from '../components/RegisteredServices/Button/AddButton';
-import ServiceCard from '../components/RegisteredServices/Card/ServiceCard';
+import Banner from '../../components/RegisteredServices/Banner/Banner';
+import AddButton from '../../components/RegisteredServices/Button/AddButton';
+import ServiceCard from '../../components/RegisteredServices/Card/ServiceCard';
 
 
 
