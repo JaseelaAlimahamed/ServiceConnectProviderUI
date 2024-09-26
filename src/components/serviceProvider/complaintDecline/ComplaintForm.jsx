@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import UserCard from '../../complaintForm/UserCard'
 import BookingDetails from '../../complaintForm/BookingDetails'
 import ButtonComponent from '../../reUsableComponents/ButtonComponent'
-import Navbar from '../../reUsableComponents/RegisteredServices/Navbar'
+import Navbar from '../../reUsableComponents/ServiceRequestList/Navbar'
 import ComplaintInput from '../../complaintForm/ComplaintInput'
 
 const ComplaintForm = () => {
