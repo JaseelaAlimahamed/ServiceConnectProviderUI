@@ -4,19 +4,10 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import ServiceRequestPage from '../pages/ServiceRequestPage'
 import BookingDetailsPage from '../pages/BookingDetailsPage';
 import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
-
 import RegisteredServices from '../pages/RegisteredServices'
-
-
 import AllowLocationComponent from '../components/reUsableComponents/AllowLocationComponent'
-
-
 import ServiceProviderSignIn from '../SignInOTPComponents/Pages/ServiceProviderSignIn'
 import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
-
-// import ServiceRequestPage from '../pages/ServiceRequestPage'
-// import BookingDetailsPage from '../pages/BookingDetailsPage';
-// import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
 import ComplaintPage from '../pages/Services/ComplaintPage';
 
 
