@@ -31,7 +31,7 @@ const LeadDetails = () => {
     }
     const navigate=useNavigate()
 const handleDecline=()=>{
-    navigate('/booking-details')
+    navigate('/')
 
 }
 const handleCall=()=>{
@@ -66,7 +66,7 @@ const handleCall=()=>{
                 <div className="">
 
                
-                <div className="p-4 font-daytime max-md:min-h-[450px] ">
+                <div className="p-4 font-daytime max-md:min-h-[450px] object-cover">
                     <div className={`${tab?'block':'hidden'}`}>
                         <div className="">
                             <h3 className='font-medium text-lg'>Title</h3>
@@ -130,7 +130,7 @@ const handleCall=()=>{
             </div>
             </div>
             <Button label={tab?'Decline':'Call'} color={tab?'declainbtn':'statusopened'} width='300px' onClick={tab?handleDecline:handleCall} />
-            <CallModal isOpen={open} onClose={()=>setOpen(false)}/>
+            <CallModal isOpen={open} onClose={()=>setOpen(false)} number={user.phone}/>
         </div>
 
     

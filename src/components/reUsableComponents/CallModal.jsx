@@ -2,9 +2,12 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import Button from './ServiceRequestList/Button';
 
-const CallModal = ({ isOpen, onClose }) => {
+const CallModal = ({ isOpen, onClose,number}) => {
   if (!isOpen) return null;
-
+  const handleCall = () => {
+    
+    window.location.href = `tel:${number}`;
+  };
   return (
     <ReactModal
       isOpen={isOpen}
@@ -38,7 +41,12 @@ const CallModal = ({ isOpen, onClose }) => {
       </h2>
       
       {/* Button to close the modal */}
-      <Button label={'Okay'} color={'dark-gray'} onClick={onClose} width={'296px'}/>
+      <div className="flex gap-2 justify-center">
+
+      <Button label={'Okay'} color={'dark-gray'} onClick={handleCall} width={'126px'}/>
+      <Button label={'Cancel'} color={'dark-gray'} onClick={onClose} width={'126px'}/>
+      </div>
+
     </ReactModal>
   );
 };
