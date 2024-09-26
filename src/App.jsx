@@ -6,6 +6,7 @@ import ProviderRoutes from './routes/ProviderRoutes';
 function App() {
 
   return (
+   <>
 
     <Routes>
       <Route path='/*' element={<ProviderRoutes/>}/>
