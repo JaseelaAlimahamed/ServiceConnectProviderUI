@@ -27,5 +27,3 @@ const ButtonComponent = ({label,type = 'button',disabled = false,btnWidth = 'w-a
   );
   
 };
-
-export default ButtonComponent;
