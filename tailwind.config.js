@@ -39,6 +39,10 @@ module.exports = {
         declainbtn:'#670200',
         bluedrk: '#04228E',
         cardfont:'#303972;',
+        profilefont:'#535353;',
+        incomepurple1:'#9B9CF8',
+        incomepurple2:'8082ED',
+        expenditurepink:'#FEB4C5'
 
       },
       screens:{
