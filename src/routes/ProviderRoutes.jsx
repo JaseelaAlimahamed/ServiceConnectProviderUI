@@ -1,5 +1,8 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
+import NewPassword from '../pages/NewPassword'
+import ForgotPassword from '../pages/ForgotPassword'
+import OTPPage from '../pages/ForgotOtp'
 
 
 import AllowLocationComponent from '../components/reUsableComponents/AllowLocationComponent'
@@ -21,22 +24,20 @@ function ProviderRoutes() {
     <div>
       <Routes>
 
-        
-//         <Route path="/" element={<Navigate to="/signin" />} />
 
 
-//       <Route path="/" element={<Navigate to="/signin" />} />
-        {/* <Route path="/" element={<Navigate to="/ServiceRequestPage" />} /> */}
+
+        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/signin" element={<ServiceProviderSignIn />} />
+        <Route path="/newpassword" element={ <NewPassword/>} />
+        <Route path="/forgotpassword" element={ <ForgotPassword/>} />
+        <Route path="/otp" element={ <OTPPage/>} />
         <Route path="/service-request" element={<ServiceRequestPage/>} /> 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
-           <Route path='/addprofile' element={<AddProfilePage/>}/>
+        <Route path='/addprofile' element={<AddProfilePage/>}/>
         <Route path="/Registered-Services" element={<RegisteredServices />} />
-        <Route path="/location" element={<AllowLocationComponent/>} />
-        <Route path="/signin" element={<ServiceProviderSignIn />} />
-        <Route path="/otpPage" element={<OTPPage />} />
  
-    
-   
+        <Route path="/Booking" element={ <CardComponent/>} />
 
       </Routes>
 

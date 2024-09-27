@@ -1,3 +1,4 @@
+
 import { Routes, Route } from 'react-router-dom'
 import ProviderRoutes from './routes/ProviderRoutes';
 // import UserRoutes from './routes/UserRoutes';
@@ -6,19 +7,11 @@ function App() {
 
 
   return (
-
-
-
-import ProviderRoutes from './routes/ProviderRoutes';
-// import'./App.css';
-function App() {
-
-  return (
-   <>
+ 
 
 
     <Routes>
-      <Route path='/*' element={<ProviderRoutes/>}/>
+      <Route path="/*" element={<ProviderRoutes />} />
     </Routes>
 
   );
