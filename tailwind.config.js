@@ -11,29 +11,26 @@ module.exports = {
     extend: {
 
       fontFamily: {
-        default: ["Jost", "sans-serif"],
-        heading: ["Aldrich", "sans-serif"],
-        input: ["Mulish", "sans-serif"],
+      
         heading:['poppins', 'sans-serif'],
         navbarHead:['Jost', 'sans-serif'],
         daytime:['Label Large/Font', 'sans-serif'],
-      },
+
 
       colors: {
         primary: "#FFFFFF",
         secondary: "#000000",
-        "dark-gray": "#1D1F2A",
-        "light-gray": "#D9D9DB",
-        "medium-gray": "#736A68",
+ 
+
 
         customPurple: '#C1BBEB',
         daytime:'#797C7B;',
         navbar:'#1D1F2A;',
         statuspending:'#135275;',
         statusopened:'#137517;',
-        statusrejected:'#FA1919F0;',
         completebtn:'#137517',
         declainbtn:'#670200',
+
         activetab:'#65558F',
         pagebg:'#D9D9DB',
         declainbtn:'#670200',
@@ -44,16 +41,24 @@ module.exports = {
         incomepurple2:'8082ED',
         expenditurepink:'#FEB4C5'
 
+
+        "blue-drk": "#04228E",
+        "id-gray": "#797C7B;",
+        "divider-clr": "#E6E0E9",
+        "divider-pri": "#65558F",
+        "accept-btn": "#1D1F2A",
+        "decline-btn": "#670200",
+        "complete-btn": "#137517",
+        "nonactive-btn": "#49454F",
+        "neutral-clr": "#FA1919",
+        "warning-clr": "#FF6B00",
+
+
+
+
+
+
       },
-      screens:{
-        
-        'xs':'320px', 
-        'sm':'640px',
-        'md':'768px',
-        'lg':'1024px',
-        'xl':'1280px',
-        '2xl':'1536px',
-      }
 
     },
   },
