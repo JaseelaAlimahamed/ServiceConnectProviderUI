@@ -8,9 +8,11 @@ import AllowLocationComponent from '../components/reUsableComponents/AllowLocati
 import ServiceProviderSignIn from '../SignInOTPComponents/Pages/ServiceProviderSignIn'
 import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
 
-import ServiceRequestPage from '../pages/ServiceRequestPage'
-import BookingDetailsPage from '../pages/BookingDetailsPage';
-import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+// import ServiceRequestPage from '../pages/ServiceRequestPage'
+// import BookingDetailsPage from '../pages/BookingDetailsPage';
+// import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+
+import PaymentMethods from '../components/PaymentMethod/PaymentMethods';
 
 
 
@@ -27,14 +29,14 @@ function ProviderRoutes() {
 
 //       <Route path="/" element={<Navigate to="/signin" />} />
         {/* <Route path="/" element={<Navigate to="/ServiceRequestPage" />} /> */}
-        <Route path="/service-request" element={<ServiceRequestPage/>} /> 
-        <Route path="/booking-details" element={<BookingDetailsPage/>} />
-           <Route path='/addprofile' element={<AddProfilePage/>}/>
-        <Route path="/Registered-Services" element={<RegisteredServices />} />
+        {/* <Route path="/service-request" element={<ServiceRequestPage/>} />  */}
+        {/* <Route path="/booking-details" element={<BookingDetailsPage/>} /> */}
+           {/* <Route path='/addprofile' element={<AddProfilePage/>}/> */}
+        {/* <Route path="/Registered-Services" element={<RegisteredServices />} /> */}
         <Route path="/location" element={<AllowLocationComponent/>} />
         <Route path="/signin" element={<ServiceProviderSignIn />} />
         <Route path="/otpPage" element={<OTPPage />} />
- 
+      
     
    
 
