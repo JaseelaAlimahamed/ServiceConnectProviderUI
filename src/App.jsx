@@ -7,12 +7,14 @@ function App() {
 
 
   return (
- 
 
-
+<div>
     <Routes>
       <Route path="/*" element={<ProviderRoutes />} />
     </Routes>
+
+
+    </div>
 
   );
 }
