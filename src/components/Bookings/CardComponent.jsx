@@ -24,7 +24,7 @@ const CardComponent = () => {
       images: ['https://imgs.search.brave.com/fvThpd-ponhh6lltr58quXobUqfEZZnDLFUnxpMglug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nbGFtb3VyLmNv/bS9waG90b3MvNjAw/MDY4Y2QyMTAxNjg2/ZjY3YTM1MDVhL21h/c3Rlci93XzMyMCxj/X2xpbWl0LzEzNTc4/ODY3M18xNjExOTMy/MzIwNzkyMDNfMjc1/MDAzMjgzMDEzMzE0/MzI0Ml9uLmpwZw', 'https://imgs.search.brave.com/y5F6ULWeyHnJ4iV-psjZrtodCAhARhROb7ATGxmz9GQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vdGhlcmln/aHRoYWlyc3R5bGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wNi8xOS1z/aG9ydC1oYWlyY3V0/LXdpdGgtYW5nbGVk/LWxheWVycy5qcGc_/dz01MDAmc3NsPTE', 'https://imgs.search.brave.com/y5F6ULWeyHnJ4iV-psjZrtodCAhARhROb7ATGxmz9GQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vdGhlcmln/aHRoYWlyc3R5bGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wNi8xOS1z/aG9ydC1oYWlyY3V0/LXdpdGgtYW5nbGVk/LWxheWVycy5qcGc_/dz01MDAmc3NsPTE'],
       quantity: 0,
       price: 300,
-      total: 300,
+      total: 300, 
       appointDate: "Sep 22, 2024",
       appointTime: "09:30 AM",
       additionalRequirements: [

@@ -7,10 +7,14 @@ function CardWithButton() {
   const location = useLocation();
   const {appointment } = location.state || {};
 
-  const requestData = {
+  const requestDummyData = {
     title: "Plumbing",
-    availabilityFromTime: '01:30 AM',
-    availabilityToTime: '02:30 PM',
+    description:"Washroom plumbing pipe need to change",
+    images:  ['https://imgs.search.brave.com/fvThpd-ponhh6lltr58quXobUqfEZZnDLFUnxpMglug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nbGFtb3VyLmNv/bS9waG90b3MvNjAw/MDY4Y2QyMTAxNjg2/ZjY3YTM1MDVhL21h/c3Rlci93XzMyMCxj/X2xpbWl0LzEzNTc4/ODY3M18xNjExOTMy/MzIwNzkyMDNfMjc1/MDAzMjgzMDEzMzE0/MzI0Ml9uLmpwZw', 'https://imgs.search.brave.com/y5F6ULWeyHnJ4iV-psjZrtodCAhARhROb7ATGxmz9GQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vdGhlcmln/aHRoYWlyc3R5bGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wNi8xOS1z/aG9ydC1oYWlyY3V0/LXdpdGgtYW5nbGVk/LWxheWVycy5qcGc_/dz01MDAmc3NsPTE', 'https://imgs.search.brave.com/y5F6ULWeyHnJ4iV-psjZrtodCAhARhROb7ATGxmz9GQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vdGhlcmln/aHRoYWlyc3R5bGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wNi8xOS1z/aG9ydC1oYWlyY3V0/LXdpdGgtYW5nbGVk/LWxheWVycy5qcGc_/dz01MDAmc3NsPTE'],
+    bookingTimeFrom: '09:30 AM',
+    bookingTimeTo:'10:30PM',
+    dateFrom: 'Aug 12 2024',
+    dateTo:'Aug 13 2024',
   };
 
   return (
@@ -34,18 +38,18 @@ function CardWithButton() {
           <div>
             <div className="ml-8 mt-8">
               <h3 className="text-lg font-semibold">Title</h3>
-              <p className="text-gray-700">{appointment.title || 'no title'}</p>
+              <p className="text-gray-700">{requestDummyData.title || 'no title'}</p>
             </div>
 
             <div className="ml-8 mt-2">
               <h3 className="text-lg font-semibold">Description</h3>
-              <p className="text-gray-700">{appointment.description}</p>
+              <p className="text-gray-700">{requestDummyData.description || 'no description'}</p>
             </div>
 
             <div className="ml-8 mt-2">
               <h3 className="text-lg font-semibold">Images & Videos</h3>
               <div className="flex space-x-2">
-                {appointment.images.map((img, index) => (
+                {requestDummyData.images.map((img, index) => (
                   <img
                     key={index}
                     src={img}
@@ -63,7 +67,7 @@ function CardWithButton() {
                   <label className="text-sm ml-4 font-normal">From</label>
                   <input
                     type="text "
-                    value={appointment.dateFrom}
+                    value={requestDummyData.dateFrom}
                     readOnly
                     className="border shadow-xl ml-16 rounded-lg p-2 bg-gray-200 w-2/3 text-center"
                   />
@@ -71,7 +75,7 @@ function CardWithButton() {
                 <div className="flex flex-col mt-5">
                   <input
                     type="text"
-                    value={appointment.bookingTimeFrom}
+                    value={requestDummyData.bookingTimeFrom}
                     readOnly
                     className="border shadow-xl rounded-lg p-2 bg-gray-200 w-24 text-center"
                   />
@@ -80,7 +84,7 @@ function CardWithButton() {
                   <label className="text-sm ml-4 font-normal">To</label>
                   <input
                     type="text"
-                    value={appointment.dateTo}
+                    value={requestDummyData.dateTo}
                     readOnly
                     className="border shadow-xl ml-16 rounded-lg p-2 mb-4 bg-gray-200 w-2/3 text-center"
                   />
@@ -88,7 +92,7 @@ function CardWithButton() {
                 <div className="flex flex-col mt-5">
                   <input
                     type="text"
-                    value={appointment.bookingTimeTo}
+                    value={requestDummyData.bookingTimeTo}
                     readOnly
                     className="border shadow-xl rounded-lg p-2 mb-4 bg-gray-200 w-24 text-center"
                   />
@@ -96,7 +100,7 @@ function CardWithButton() {
               </div>
             </div>
           </div>
-        ) : (
+        ) : ( 
           <div className="ml-8 mt-8 p-4 ">
             <h3 className="text-lg font-semibold">Address</h3>
             <p className="text-black">This is my address page</p>

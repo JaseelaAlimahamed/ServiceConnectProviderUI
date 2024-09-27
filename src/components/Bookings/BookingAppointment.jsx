@@ -2,7 +2,7 @@ import React from "react";
 import { CiCalendar } from "react-icons/ci";
 import { CiClock2 } from "react-icons/ci";
 
-const BookingAppointment = ({ title, viewLink, time, userName,image, status, dateFrom, timeRange, bookingTimeFrom="07:00 AM",bookingTimeTo="11:30 PM" }) => {
+const BookingAppointment = ({ title, viewLink, time, userName,image, status, dateFrom, bookingTimeFrom="07:00 AM",bookingTimeTo="11:30 PM" }) => {
     return (
         <div className="flex max-w-sm mx-auto bg-white shadow-lg rounded-xl overflow-hidden h-44 relative">
           <div className={`w-3 ${status === 'Rescheduled' ? 'bg-neutral-clr' : 'bg-warning-clr'}`}></div>
