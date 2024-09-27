@@ -37,6 +37,7 @@ const InputFieldComponent = ({
         <input
 
           className={`px-4 py-2 mt-1 rounded-md border border-light-gray placeholder-white bg-medium-gray font-input text-dark-gray  focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
+
           style={{
             width: inputWidth,
             height: inputHeight,
