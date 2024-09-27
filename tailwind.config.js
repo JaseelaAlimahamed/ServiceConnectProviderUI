@@ -30,6 +30,7 @@ module.exports = {
         statusopened:'#137517;',
         completebtn:'#137517',
         declainbtn:'#670200',
+
         "blue-drk": "#04228E",
         "id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
@@ -40,7 +41,6 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
-
 
 
 
