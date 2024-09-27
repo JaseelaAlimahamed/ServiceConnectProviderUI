@@ -31,6 +31,17 @@ module.exports = {
         completebtn:'#137517',
         declainbtn:'#670200',
 
+        activetab:'#65558F',
+        pagebg:'#D9D9DB',
+        declainbtn:'#670200',
+        bluedrk: '#04228E',
+        cardfont:'#303972;',
+        profilefont:'#535353;',
+        incomepurple1:'#9B9CF8',
+        incomepurple2:'8082ED',
+        expenditurepink:'#FEB4C5'
+
+
         "blue-drk": "#04228E",
         "id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
@@ -41,6 +52,7 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
+
 
 
 
