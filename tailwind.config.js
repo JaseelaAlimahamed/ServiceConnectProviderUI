@@ -22,9 +22,9 @@ module.exports = {
       colors: {
         primary: "#FFFFFF",
         secondary: "#000000",
-        "dark-gray": "#1D1F2A",
-        "light-gray": "#D9D9DB",
-        "medium-gray": "#736A68",
+        dark_gray: "#1D1F2A",
+        light_gray: "#D9D9DB",
+        medium_gray: "#736A68",
 
         customPurple: '#C1BBEB',
         daytime:'#797C7B;',
@@ -33,8 +33,8 @@ module.exports = {
         statusopened:'#137517;',
         completebtn:'#137517',
         declainbtn:'#670200',
-        "blue-drk": "#04228E",
-
+        blue_drk: "#04228E",
+        green:"#167F71",
 
 
       },

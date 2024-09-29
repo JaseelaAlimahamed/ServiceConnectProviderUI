@@ -9,7 +9,7 @@ const UserCard = ({userDetails}) => {
       <img src="/complaintformPropic.png" alt="complaint form profile" className='w-20 h-20'/>
       <div className='ml-2'>
           <h2 className='font-bold'>{name}</h2>
-          <p className='text-[#797C7B] font-semibold mt-1'>{subject} </p>
+          <p className='text-[#797C7B] font-bold mt-1'>{subject} </p>
       </div>
   </div>
   )
