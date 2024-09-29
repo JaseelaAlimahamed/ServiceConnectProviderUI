@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
-import UserCard from '../../complaintForm/UserCard'
-import BookingDetails from '../../complaintForm/BookingDetails'
-import ButtonComponent from '../../reUsableComponents/ButtonComponent'
-import Navbar from '../../reUsableComponents/ServiceRequestList/Navbar'
-import ComplaintInput from '../../complaintForm/ComplaintInput'
+import UserCard from './UserCard'
+import BookingDetails from './BookingDetails'
+import ButtonComponent from '../reUsableComponents/ButtonComponent'
+import Navbar from '../reUsableComponents/Navbar'
+import ComplaintInput from './ComplaintInput'
 
 const ComplaintForm = () => {
   
@@ -14,13 +14,12 @@ const ComplaintForm = () => {
   }
 
   const getApiCall = (type) => {
-
     console.log(type, "triggered")
   }
 
   const buttonConfig = [
-    {type:"submit", label:"Service Status",  width:"100%", height:"49px", hasIcon:false},
-    {type:"submit", label:"Payment Status",width:"100%", height:"49px", hasIcon:false},
+    {type:"submit", label:"Service Status", btnWidth:"w-full", btnHeight:"h-[49px]", variant:"complaint"},
+    {type:"submit", label:"Payment Status", btnWidth:"w-full", btnHeight:"h-[49px]", variant:"complaint"},
 
   ]
 
@@ -57,9 +56,9 @@ const ComplaintForm = () => {
                 key={index}
                 type={btn.type}
                 label={btn.label}
-                width={btn.width}
-                height={btn.height}
-                hasIcon={btn.hasIcon}
+                btnWidth={btn.btnWidth}
+                btnHeight={btn.btnHeight}
+                variant={btn.variant}
                 onClick={()=>getApiCall(btn.label)}
               />
             ))}

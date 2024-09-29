@@ -1,5 +1,5 @@
 import React from 'react'
-import ComplaintForm from '../../components/serviceProvider/complaintDecline/ComplaintForm'
+import ComplaintForm from '../../components/complaintForm/ComplaintForm'
 
 const ComplaintPage = () => {
   return (

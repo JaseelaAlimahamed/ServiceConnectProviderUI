@@ -34,18 +34,18 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
 
           <div className="mt-4" onClick={onClose}>
             <ButtonComponent
-              type=""
-              btnAction=""
               label="Conform Complaint"
-              bgColor="#670200"
-              width="100%"
-              height="52px"
+              btnColor="bg-[#670200]"
+              btnWidth="w-full"
+              btnHeight="h-[52px]"
+              variant='complaint'
             />
+
 
             <ModalComponent
               isOpen={isOpen}
               onClose={onClose}
-              width="300px"
+              width="400px"
               height="170px"
               children={
                 <div className="flex items-center justify-center h-full">
@@ -54,9 +54,9 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
                     <ButtonComponent
                       type="submit"
                       label="Conform Complaint"
-                      bgColor="#1D1F2A"
-                      width="100%"
-                      height="46px"
+                      btnWidth="w-full"
+                      btnHeight="min-h-[46px]"
+                      variant="complaint"
                       onClick={()=>getApiCall("Conform Complaint")}
                     />
                   </div>
