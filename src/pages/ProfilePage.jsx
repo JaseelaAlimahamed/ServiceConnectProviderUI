@@ -30,14 +30,14 @@ const ProfilePage = () => {
       };
 
     return (
-        <div className="bg-primary min-h-screen w-full ">
+        <div className="bg-light_gray min-h-screen w-full ">
         <Navbar 
         title="Profile" 
         search={true}
         /> 
         
 
-      <div className="max-w-md bg-primary p-6 rounded-3xl shadow-md mt-10 mx-8 relative">
+      <div className="max-w-md bg-primary p-6 rounded-3xl shadow-md mt-10 mx-8 mb-3 relative">
         {/* UserCard with profile info */}
         <div className="relative flex flex-col items-center">
           <ProfileUserCard userDetails={userDetails} className="absolute -top-14 w-28 h-28 rounded-full border-4 border-white overflow-hidden"/>
@@ -59,8 +59,8 @@ const ProfilePage = () => {
          
       </div>
       {/* Bottom Navigation */}
-      <div className="  bg-medium_gray p-4 max-w-md rounded-2xl mx-8">
-        <div className="flex justify-around">
+      <div className="  bg-medium_gray p-4 max-w-md rounded-2xl mx-8 mb-4">
+        <div className="flex justify-around relative items-center">
           {BottomSheet.map((item,index)=>(
             <div key={index} className="flex flex-col items-center">
         <div className="text-2xl">{item.icon}</div> 

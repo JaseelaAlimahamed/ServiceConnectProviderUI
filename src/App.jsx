@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 
-import DeclinePage from './pages/Services/DeclinePage';
+import ProfilePage from './pages/ProfilePage';
 
 // import ProviderRoutes from './routes/ProviderRoutes';
 // import'./App.css';
@@ -10,7 +10,7 @@ function App() {
 
   
  <Routes>
-<Route path='/*' element={<DeclinePage/>}/>
+<Route path='/*' element={<ProfilePage/>}/>
 </Routes> 
 
 
