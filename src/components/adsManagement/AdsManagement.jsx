@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-import BottomNavBar from '../reUsableComponents/BottomNavbar'
-import Navbar from '../reUsableComponents/Navbar'
 import AdsCard from './adsCard';
 import ButtonComponent from '../reUsableComponents/ButtonComponent';
 import TabComponent from '../reUsableComponents/TabComponent';
@@ -48,7 +46,6 @@ const AdsManagement = () => {
     }
   return (
     <div className="w-full min-h-screen bg-[#D9D9DB] font-input">
-      <Navbar title="ADS MANAGEMENT" search={true} />
 
       <div className="py-6 px-2 lg:px-10 lg:w-4/5 m-auto pb-16">
 
@@ -77,7 +74,6 @@ const AdsManagement = () => {
         </div>
       </div>
 
-      <BottomNavBar />
     </div>
   );
   

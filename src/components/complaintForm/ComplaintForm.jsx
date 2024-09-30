@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import UserCard from './UserCard'
 import BookingDetails from './BookingDetails'
 import ButtonComponent from '../reUsableComponents/ButtonComponent'
-import Navbar from '../reUsableComponents/Navbar'
 import ComplaintInput from './ComplaintInput'
 
 const ComplaintForm = () => {
@@ -30,14 +29,6 @@ const ComplaintForm = () => {
 
   return (
     <section>
-      <Navbar
-        title="COMPLAINT FORM"
-        search={false}
-        bgColor="bg-navbar"
-        textColor="text-white"
-      />
-      
-
       <div className="bg-pagebg min-h-screen w-full py-4 md:px-6 px-4">
           <div className='w-full lg:flex'>
 
