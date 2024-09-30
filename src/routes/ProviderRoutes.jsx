@@ -18,7 +18,7 @@ import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
 // import BookingDetailsPage from '../pages/BookingDetailsPage';
 // import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
 import ComplaintPage from '../pages/Services/ComplaintPage';
-
+import ProfilePage from '../pages/ProfilePage';
 
 
 
@@ -31,13 +31,13 @@ function ProviderRoutes() {
         <Route path="/" element={<Navigate to="/ServiceRequestPage" />} />
         <Route path="/service-request" element={<ServiceRequestPage/>} /> 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
-           <Route path='/addprofile' element={<AddProfilePage/>}/>
+        <Route path='/addprofile' element={<AddProfilePage/>}/>
         <Route path="/Registered-Services" element={<RegisteredServices />} />
         <Route path="/location" element={<AllowLocationComponent/>} />
         <Route path="/signin" element={<ServiceProviderSignIn />} />
         <Route path="/otpPage" element={<OTPPage />} />
         <Route path="/complaint" element={<ComplaintPage />} />
- 
+        <Route path="/profile" element={<ProfilePage />} />
     
    
       </Routes>

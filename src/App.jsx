@@ -1,21 +1,22 @@
 import { Routes, Route } from 'react-router-dom'
 
-import ProfilePage from './pages/ProfilePage';
 
-// import ProviderRoutes from './routes/ProviderRoutes';
+import ProviderRoutes from './routes/ProviderRoutes';
 // import'./App.css';
 function App() {
 
   return (
+   <>
 
-  
- <Routes>
-<Route path='/*' element={<ProfilePage/>}/>
-</Routes> 
+    <Routes>
+      <Route path='/*' element={<ProviderRoutes/>}/>
+    </Routes>
 
 
+</>
+
+ 
   );
 }
 
 export default App;
-
