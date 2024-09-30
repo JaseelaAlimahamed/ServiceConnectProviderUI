@@ -11,14 +11,12 @@ module.exports = {
     extend: {
 
       fontFamily: {
-        default: ["Jost", "sans-serif"],
-        heading: ["Aldrich", "sans-serif"],
-        input: ["Mulish", "sans-serif"],
+      
         heading:['poppins', 'sans-serif'],
         navbarHead:['Jost', 'sans-serif'],
         daytime:['Label Large/Font', 'sans-serif'],
-      },
 
+      },
       colors: {
         primary: "#FFFFFF",
         secondary: "#000000",
@@ -54,20 +52,18 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
-        darkbluetxt:'#202244;',
+        darkbluetxt:'#202244',
         tabbgcolor:"#736A68",
-        
+
 
 
 
 
 
       },
-      
         boxShadow: {
           "boxshadow-1": "0px 4px 4px 0px #00000040",
         } ,
-      
 
     },
   },
