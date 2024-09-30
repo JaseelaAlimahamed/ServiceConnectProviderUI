@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import UserCard from '../../complaintForm/UserCard'
 import BookingDetails from '../../complaintForm/BookingDetails'
 import ButtonComponent from '../../reUsableComponents/ButtonComponent'
-import Navbar from '../../reUsableComponents/RegisteredServices/Navbar'
 import DeclineInput from '../../complaintForm/DeclineInput'
 
 const DeclineForm = () => {
@@ -30,14 +29,6 @@ const DeclineForm = () => {
 
   return (
     <section>
-      <Navbar
-        title="DECLINE FORM"
-        search={false}
-        bgColor="bg-navbar"
-        textColor="text-white"
-      />
-      
-
       <div className="bg-[#D9D9DB] min-h-screen w-full py-4 md:px-6 px-4">
           <div className='w-full lg:flex'>
 

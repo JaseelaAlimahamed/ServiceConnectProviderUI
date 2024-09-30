@@ -1,16 +1,10 @@
 import React from 'react'
-import Navbar from '../components/reUsableComponents/RegisteredServices/Navbar'
 import Button from '../components/reUsableComponents/RegisteredServices/Button'
 import { RiH1 } from 'react-icons/ri'
 const BookingDetailsPage = () => {
   return (
     <>
-     <Navbar 
-        title="Bookings Details" 
-        search={false}
-       
-
-      />
+    
       <div>BookingDetailsPage</div>
       <Button
       label={<h1>Complete</h1>}

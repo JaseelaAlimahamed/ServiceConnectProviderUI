@@ -19,9 +19,8 @@ import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
 // import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
 import ComplaintPage from '../pages/Services/ComplaintPage';
 import ProfilePage from '../pages/ProfilePage';
-
-
-
+import DeclineForm from '../components/serviceProvider/complaintDecline/DeclineForm';
+import ComplaintForm from '../components/serviceProvider/complaintDecline/ComplaintForm';
 
 function ProviderRoutes() {
   return (
@@ -38,8 +37,8 @@ function ProviderRoutes() {
         <Route path="/otpPage" element={<OTPPage />} />
         <Route path="/complaint" element={<ComplaintPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-    
-   
+        <Route path="/declineform" element={<DeclineForm />} />
+        <Route path="/complaintform" element={<ComplaintForm />} />
       </Routes>
 
     </div>
