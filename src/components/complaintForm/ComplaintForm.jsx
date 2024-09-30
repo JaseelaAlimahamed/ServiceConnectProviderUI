@@ -38,7 +38,7 @@ const ComplaintForm = () => {
       />
       
 
-      <div className="bg-[#D9D9DB] min-h-screen w-full py-4 md:px-6 px-4">
+      <div className="bg-pagebg min-h-screen w-full py-4 md:px-6 px-4">
           <div className='w-full lg:flex'>
 
           <div className='lg:w-1/5 w-full'>

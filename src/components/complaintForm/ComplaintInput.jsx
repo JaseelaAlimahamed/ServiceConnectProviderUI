@@ -10,15 +10,15 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
             <input
               type="text"
               placeholder="Title"
-              className="h-14 px-4 py-2 shadow-[0px_4px_4px_0px_#00000040] rounded-xl border border-[#5E6366] outline-none"
+              className="h-14 px-4 py-2 shadow-boxshadow-1 rounded-xl border border-gray-600 outline-none"
             />
 
             <textarea
               placeholder="Description"
-              className="min-h-40 px-4 py-2 shadow-[0px_4px_4px_0px_#00000040] rounded-xl border border-[#5E6366] outline-none"
+              className="min-h-40 px-4 py-2 shadow-boxshadow-1 rounded-xl border border-gray-600 outline-none"
             />
 
-            <div className="relative bg-primary h-14 px-4 py-2 shadow-[0px_4px_4px_0px_#00000040] rounded-xl">
+            <div className="relative bg-primary h-14 px-4 py-2 shadow-boxshadow-1 rounded-xl">
               <input
                 type="file"
                 className="opacity-0 absolute right-4 w-6 h-6 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer"
@@ -57,7 +57,7 @@ const ComplaintInput = ({isOpen, onClose, getApiCall}) => {
                       btnWidth="w-full"
                       btnHeight="min-h-[46px]"
                       variant="complaint"
-                      onClick={()=>getApiCall("Conform Complaint")}
+                      onClick={()=>{getApiCall("Conform Complaint"), onClose()}}
                     />
                   </div>
                 </div>

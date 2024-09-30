@@ -3,6 +3,7 @@ import BottomNavBar from '../reUsableComponents/BottomNavbar'
 import Navbar from '../reUsableComponents/Navbar'
 import AdsCard from './adsCard';
 import ButtonComponent from '../reUsableComponents/ButtonComponent';
+import TabComponent from '../reUsableComponents/TabComponent';
 
 const AdsManagement = () => {
 
@@ -46,36 +47,12 @@ const AdsManagement = () => {
         console.log(adID,"editAd triggered")
     }
   return (
-    <div className="w-full min-h-screen bg-[#D9D9DB]">
-      <Navbar title="ADS MANAGEMNET" search={true} />
+    <div className="w-full min-h-screen bg-[#D9D9DB] font-input">
+      <Navbar title="ADS MANAGEMENT" search={true} />
 
       <div className="py-6 px-2 lg:px-10 lg:w-4/5 m-auto pb-16">
-        {/* Tab  */}
-        <div className="flex mb-7 bg-tabbgcolor p-1 w-full rounded-xl font-bold overflow-hidden">
-          <button
-            className={`w-full z-10 px-14 sm:px-20 lg:px-32 py-2 rounded-2xl transition-colors duration-400 
-                                ${
-                                  activeTab
-                                    ? "bg-primary text-black font-semibold"
-                                    : "bg-transparent text-primary"
-                                }`}
-            onClick={() => setActiveTab(true)}
-          >
-            Active
-          </button>
-          <button
-            className={`w-full z-10 px-14 sm:px-20 lg:px-32 py-2 rounded-2xl transition-colors duration-400 
-                                ${
-                                  activeTab
-                                    ? "bg-transparent text-primary"
-                                    : "bg-primary text-black font-semibold"
-                                }`}
-            onClick={() => setActiveTab(false)}
-          >
-            Saved
-          </button>
-        </div>
-        {/* Tab  */}
+
+        <TabComponent col1label="Active" col2label="Saved" activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {activeTab &&
@@ -96,7 +73,6 @@ const AdsManagement = () => {
             variant="complaint"
             onClick={handleCreateAd}
           />
-          
 
         </div>
       </div>

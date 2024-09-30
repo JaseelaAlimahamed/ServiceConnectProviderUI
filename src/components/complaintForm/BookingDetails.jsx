@@ -4,8 +4,8 @@ const BookingDetails = ({bookingDetails}) => {
 
     const {id,title, description,appoinment} = bookingDetails
   return (
-     <div className='bg-[#FFF] p-5 rounded-3xl mt-1 shadow-[0px_4px_4px_0px_#00000040]'>
-     <p className='text-[#797C7B] text-lg font-semibold'>Booking Id : {id}</p>
+     <div className='bg-primary p-5 rounded-3xl mt-1 shadow-boxshadow-1'>
+     <p className='text-id-gray text-lg font-semibold'>Booking Id : {id}</p>
      <div className='pt-2'>
          <h3 className='font-semibold'>Title</h3>
          <h4 className='ml-5  font-semibold'>{title}</h4>
@@ -15,8 +15,8 @@ const BookingDetails = ({bookingDetails}) => {
 
          <h3 className='font-semibold'>Appointment</h3>
          <div className="flex flex-wrap gap-2 ml-[50px] sm:ml-[90px]">
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-[0px_4px_4px_0px_#00000040]'>{appoinment.date}</span>
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-[0px_4px_4px_0px_#00000040]'>{appoinment.time}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-boxshadow-1'>{appoinment.date}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-boxshadow-1'>{appoinment.time}</span>
          </div>
 
          <div className="overflow-x-auto text-[#303972] pt-2">

@@ -1,37 +1,34 @@
-import { FaThLarge, FaFileAlt, FaRedo, FaPlus, FaQuestionCircle, FaLayerGroup } from 'react-icons/fa';
 
-/**
- * Bottom navigation bar for mobile view.
- * Includes six buttons with icons, each for different actions.
- * The navigation bar is fixed at the bottom of the screen on mobile devices.
- */
 const BottomNavBar = () => {
     return (
-        <div className="fixed inset-x-0  flex items-center justify-around px-5 py-3 mx-10 mb-2 bg-[#736a68] shadow-lg bottom-2 rounded-xl sm:hidden">
-            {/* Home/Overview Button */}
-            <button className="p-0 m-0 text-white bg-transparent focus:outline-none">
-                <FaThLarge size={24} />
+        <div className="fixed inset-x-0 bottom-4 flex justify-center px-3 lg:px-10">
+
+        <div className="flex items-center justify-between w-full lg:w-4/5 px-6 md:px-16 py-3 bg-tabbgcolor shadow-boxshadow-1 rounded-2xl">
+            {/* Dashborad Button */}
+            <button>
+                <img src="/dashboard-icon.svg" alt="dashboard" />
             </button>
-            {/* File/Document Button */}
-            <button className="p-0 m-0 text-white bg-transparent focus:outline-none">
-                <FaFileAlt size={24} />
+            {/* Saved Button */}
+            <button>
+                <img src="/saved-icon.svg" alt="saved" />
             </button>
             {/* Reload/Redo Button */}
-            <button className="p-0 m-0 text-white bg-transparent focus:outline-none">
-                <FaRedo size={24} />
+            <button>
+            <img src="/reload-icon.svg" alt="reload" />
             </button>
-            {/* Layer Group Button */}
-            <button className="p-0 m-0 text-white bg-transparent focus:outline-none">
-                <FaLayerGroup size={24} />
+            {/* Profile Button */}
+            <button>
+            <img src="/profile-icon.svg" alt="profile" />
             </button>
             {/* Add/New Button */}
-            <button className="p-0 m-0 text-white bg-transparent focus:outline-none">
-                <FaPlus size={24} />
+            <button>
+            <img src="/plus-icon.svg" alt="add new" />
             </button>
             {/* Help/Info Button */}
-            <button className="p-0 m-0 text-white bg-transparent focus:outline-none">
-                <FaQuestionCircle size={24} />
+            <button>
+            <img src="/help-icon.svg" alt="help" />
             </button>
+        </div>
         </div>
     );
 };

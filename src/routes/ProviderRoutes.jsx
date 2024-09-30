@@ -3,7 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 
 
 
-import ComplaintPage from '../pages/ServiceProviderPages/ComplaintPage';
+import ComplaintPage from '../pages/ServiceProviderPages/ComplaintFormPage';
 import AdsManagementPage from '../pages/managementPages/AdsManagementPage';
 
 
