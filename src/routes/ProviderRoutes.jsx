@@ -16,8 +16,8 @@ import ServiceRequestPage from '../pages/ServiceRequestPage'
 import BookingDetailsPage from '../pages/BookingDetailsPage';
 // import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
 
-import RegisterService from '../pages/RegisterServices';
-import EditService from '../pages/EditService';
+import RegisterService from '../pages/RegisterService/RegisterServices';
+import EditService from '../pages/EditServices/EditService';
 
 
 
