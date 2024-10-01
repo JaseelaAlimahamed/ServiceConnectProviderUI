@@ -42,7 +42,11 @@ module.exports = {
         profilefont:'#535353;',
         incomepurple1:'#9B9CF8',
         incomepurple2:'8082ED',
-        expenditurepink:'#FEB4C5'
+        expenditurepink:'#FEB4C5',
+        rating_border:'#4D81E5',
+        rating_bg:'#E8F1FF',
+        rating_star:'#FF9C07',
+
 
       },
       screens:{
