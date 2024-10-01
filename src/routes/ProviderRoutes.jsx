@@ -5,12 +5,16 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import ServiceRequestList from '../pages/ServiceProviderPages/ServiceRequestList';
 import BookingDetailsPage from '../pages/ServiceProviderPages/BookingDetailsPage';
 import RequestDetailsPage from '../pages/ServiceProviderPages/RequestDetailsPage';
+
 import FinancialPage from '../pages/ServiceProviderPages/FinancialPage';
+
+
 
 
 import ServiceRequestPage from '../pages/ServiceRequestPage'
 
 import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+import LeadDetails from '../pages/ServiceProviderPages/LeadDetails';
 
 import RegisteredServices from '../pages/RegisteredServices'
 import RequestDetails from '../pages/RequestDetails'
@@ -40,7 +44,7 @@ function ProviderRoutes() {
         <Route path="/" element={<Navigate to="/signin" />} />
          <Route path="/service-request" element={<ServiceRequestPage/>} />  
         <Route path="/booking-details" element={<BookingDetailsPage/>} /> 
-          <Route path='/addprofile' element={<AddProfilePage/>}/> */}
+          <Route path='/addprofile' element={<AddProfilePage/>}/> 
        <Route path="/Registered-Services" element={<RegisteredServices />} /> 
         <Route path="/signin" element={<ServiceProviderSignIn />} />
        <Route path="/otpPage" element={<OTPPage />} />
@@ -59,14 +63,25 @@ function ProviderRoutes() {
         <Route path="/" element={<Navigate to="/ServiceRequestPage" />} />
         <Route path="/service-request" element={<ServiceRequestList/>} /> 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
+
+        <Route path="/request-details/:id" element={<RequestDetailsPage/>} />
+        <Route path='/leaddetails' element={<LeadDetails/>}/>
+
         <Route path="/request-details/:id" element={<RequestDetailsPage/>} /> */}
         <Route path="/service-financial" element={<FinancialPage/>}></Route>
-           {/* <Route path='/addprofile' element={<AddProfilePage/>}/> */}
-{/* 
-        <Route path="/Registered-Services" element={<RegisteredServices />} /> */}
 
-        {/* <Route path="/" element={<Navigate to="/signin" />} />
-  */}
+           {/* <Route path='/addprofile' element={<AddProfilePage/>}/> */}
+
+        <Route path="/Registered-Services" element={<RegisteredServices />} /> 
+       <Route path="/" element={<Navigate to="/signin" />} />
+  
+           <Route path='/addprofile' element={<AddProfilePage/>}/>
+         
+        <Route path="/location" element={<AllowLocationComponent/>} />
+        <Route path="/otpPage" element={<OTPPage />} />
+ 
+    
+
    
 
       </Routes>
