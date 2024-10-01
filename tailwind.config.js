@@ -39,6 +39,12 @@ module.exports = {
         incomepurple2:'8082ED',
         expenditurepink:'#FEB4C5',
 
+        rating_border:'#4D81E5',
+        rating_bg:'#E8F1FF',
+        rating_star:'#FF9C07',
+
+
+
         "customPurple": '#C1BBEB',
         "daytime":'#797C7B;',
         
@@ -72,6 +78,9 @@ module.exports = {
         "warning-clr": "#FF6B00",
         darkbluetxt:'#202244',
         tabbgcolor:"#736A68",
+         rating_border:'#4D81E5',
+        rating_bg:'#E8F1FF',
+        rating_star:'#FF9C07',
 
       },
         boxShadow: {
