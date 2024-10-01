@@ -21,6 +21,7 @@ module.exports = {
         primary: "#FFFFFF",
         secondary: "#000000",
 
+
         "dark-gray": "#1D1F2A",
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
@@ -38,7 +39,7 @@ module.exports = {
         "pagebg":'#D9D9DB',
         "declainbtn":'#670200',
         "bluedrk": '#04228E',
-        "cardfont":'#303972;',
+        "cardfont":'#303972',
 
         "profilefont":'#535353',
         "incomepurple1":'#9B9CF8',
@@ -55,6 +56,7 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
+
       },
 
     },
