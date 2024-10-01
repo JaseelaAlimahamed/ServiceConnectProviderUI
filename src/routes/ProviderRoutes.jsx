@@ -27,8 +27,8 @@ import ComplaintList from '../components/complaints/Complaint'
 import BookingsPage from '../pages/bookings/BookingsPage';
 import CardComponent from '../components/Bookings/CardComponent';
 import AcceptAndInvoice from '../pages/AcceptAndInvoice/AcceptAndInvoice'
-import RegisterService from "../pages/RegisterService/RegisterServices"
-import EditService from "../pages/EditServices/EditService"
+
+
 
 
 
@@ -40,7 +40,7 @@ function ProviderRoutes() {
         <Route path="/" element={<Navigate to="/signin" />} />
          <Route path="/service-request" element={<ServiceRequestPage/>} />  
         <Route path="/booking-details" element={<BookingDetailsPage/>} /> 
-          <Route path='/addprofile' element={<AddProfilePage/>}/> */}
+          <Route path='/addprofile' element={<AddProfilePage/>}/>
        <Route path="/Registered-Services" element={<RegisteredServices />} /> 
         <Route path="/signin" element={<ServiceProviderSignIn />} />
        <Route path="/otpPage" element={<OTPPage />} />
@@ -55,7 +55,7 @@ function ProviderRoutes() {
         <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
         <Route path='/RegisterService' element={<RegisterService />} />
         <Route path='/EditService' element={<EditService />} />
-      {/* <Route path="/" element={<Navigate to="/signin" />} />
+       {/* <Route path="/" element={<Navigate to="/signin" />} />
         <Route path="/" element={<Navigate to="/ServiceRequestPage" />} />
         <Route path="/service-request" element={<ServiceRequestList/>} /> 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
