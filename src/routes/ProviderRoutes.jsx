@@ -1,34 +1,41 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 
+
+import FinancialPage from '../pages/ServiceProviderPages/FinancialPage'
 import ServiceRequestPage from '../pages/ServiceRequestPage'
-import BookingDetailsPage from '../pages/BookingDetailsPage';
-import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+
 
 import RegisteredServices from '../pages/RegisteredServices'
-
-
+import RequestDetails from '../pages/RequestDetails'
+import BookingDetails from '../pages/BookingsDetails'
+import NewPassword from '../pages/NewPassword'
+import ForgotPassword from '../pages/ForgotPassword'
 import AllowLocationComponent from '../components/reUsableComponents/AllowLocationComponent'
-
-
 import ServiceProviderSignIn from '../SignInOTPComponents/Pages/ServiceProviderSignIn'
 import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
-
-// import ServiceRequestPage from '../pages/ServiceRequestPage'
-// import BookingDetailsPage from '../pages/BookingDetailsPage';
-// import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+import BookingDetailsPage from '../pages/BookingDetailsPage';
 import ComplaintPage from '../pages/Services/ComplaintPage';
 import ProfilePage from '../pages/ProfilePage';
 import DeclineForm from '../components/serviceProvider/complaintDecline/DeclineForm';
 import ComplaintForm from '../components/serviceProvider/complaintDecline/ComplaintForm';
+import ServiceRequestPage from '../pages/ServiceRequestPage'
+import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+import BookingsPage from '../pages/bookings/BookingsPage';
+import AcceptAndInvoice from '../pages/AcceptAndInvoice/AcceptAndInvoice'
+
 
 function ProviderRoutes() {
   return (
-    <div>
+      <div>
       <Routes>
+
       <Route path="/" element={<Navigate to="/signin" />} />
-        <Route path="/" element={<Navigate to="/ServiceRequestPage" />} />
-        <Route path="/service-request" element={<ServiceRequestPage/>} /> 
+
+        <Route path="/newpassword" element={<NewPassword />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/service-request" element={<ServiceRequestPage/>} />
+
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
         <Route path='/addprofile' element={<AddProfilePage/>}/>
         <Route path="/Registered-Services" element={<RegisteredServices />} />
@@ -39,6 +46,18 @@ function ProviderRoutes() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/declineform" element={<DeclineForm />} />
         <Route path="/complaintform" element={<ComplaintForm />} />
+
+       <Route path="/req-details" element={<RequestDetails />} />
+        <Route path="/bookingdetail/:id" element={<BookingDetails />} />
+        <Route path="/booking-page" element={<BookingsPage />} />
+        <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
+        <Route path="/service-financial" element={<FinancialPage/>}></Route>
+
+
+   
+   
+
+
       </Routes>
 
     </div>
