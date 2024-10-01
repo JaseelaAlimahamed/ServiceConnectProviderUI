@@ -2,8 +2,14 @@ import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 
 
-import FinancialPage from '../pages/ServiceProviderPages/FinancialPage'
+
+
+import ServiceRequestList from '../pages/ServiceProviderPages/ServiceRequestList';
+import BookingDetailsPage from '../pages/ServiceProviderPages/BookingDetailsPage';
+import RequestDetailsPage from '../pages/ServiceProviderPages/RequestDetailsPage';
 import ServiceRequestPage from '../pages/ServiceRequestPage'
+import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
+import LeadDetails from '../pages/ServiceProviderPages/LeadDetails';
 
 
 import RegisteredServices from '../pages/RegisteredServices'
@@ -30,6 +36,7 @@ function ProviderRoutes() {
       <div>
       <Routes>
 
+
       <Route path="/" element={<Navigate to="/signin" />} />
 
         <Route path="/newpassword" element={<NewPassword />} />
@@ -38,6 +45,7 @@ function ProviderRoutes() {
 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
         <Route path='/addprofile' element={<AddProfilePage/>}/>
+
         <Route path="/Registered-Services" element={<RegisteredServices />} />
         <Route path="/location" element={<AllowLocationComponent/>} />
         <Route path="/signin" element={<ServiceProviderSignIn />} />
@@ -51,7 +59,11 @@ function ProviderRoutes() {
         <Route path="/bookingdetail/:id" element={<BookingDetails />} />
         <Route path="/booking-page" element={<BookingsPage />} />
         <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
+
         <Route path="/service-financial" element={<FinancialPage/>}></Route>
+
+
+
 
 
    
