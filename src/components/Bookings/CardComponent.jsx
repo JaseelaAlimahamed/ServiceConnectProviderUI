@@ -61,7 +61,7 @@ const CardComponent = () => {
 
   const handleViewDetails = (appointment) => {
     console.log(appointment.id)
-    navigate(`/bookingdetail/${appointment.id}`, { 
+    navigate(`/book-details`, { 
       state: {appointment:appointment}
     });
   };

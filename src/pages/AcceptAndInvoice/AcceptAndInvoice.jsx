@@ -25,7 +25,7 @@ function AcceptAndInvoice() {
           <AppointmentCard />
         </div>
         <div className='mt-6 sm:mt-8 mr-4 ml-4 mb-4'>
-          <div className='bg-accept-btn rounded-full p-4 text-center text-xl font-semibold text-white'>
+          <div className='bg-dark-gray rounded-full p-4 text-center text-xl font-semibold text-white'>
             <button className="w-full" onClick={handleConfirmClick}>
               Confirm
             </button>

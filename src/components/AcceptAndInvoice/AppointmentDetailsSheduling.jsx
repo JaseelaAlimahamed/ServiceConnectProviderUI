@@ -12,23 +12,21 @@ function AppointmentDetailsSheduling() {
     additional: ''
   };
 
-  // State to store form data
   const [formData, setFormData] = useState(initialFormData);
 
-  // Handle input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle Done button click
+ 
   const handleDone = () => {
     console.log(formData);
   };
 
-  // Handle Add Another button click
+  
   const handleAddAnother = () => {
-    setFormData(initialFormData);  // Clear the form by resetting to initial state
+    setFormData(initialFormData); 
   };
 
   return (
@@ -122,7 +120,7 @@ function AppointmentDetailsSheduling() {
             <div className='bg-gray-600 rounded-full p-4 text-white text-xl font-semibold text-center'>
               <button className="w-full" onClick={handleAddAnother}>+ Add Another</button>
             </div>
-            <div className='bg-complete-btn rounded-full p-4 text-center text-xl font-semibold text-white'>
+            <div className='bg-completebtn rounded-full p-4 text-center text-xl font-semibold text-white'>
               <button className="w-full" onClick={handleDone}>Done</button>
             </div>
           </div>

@@ -49,11 +49,12 @@ function ProviderRoutes() {
         <Route path="/Booking" element={<CardComponent />} />
 
         <Route path="/req-details" element={<RequestDetails />} />
-        <Route path="/bookingdetail/:id" element={<BookingDetails />} />
+        <Route path="/book-details" element={<BookingDetails />} />
 
         <Route path="/booking-page" element={<BookingsPage />} />
         <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
         <Route path='/side-bar' element={<RightSideBarPage/>} />
+
       </Routes>
 
     </div>

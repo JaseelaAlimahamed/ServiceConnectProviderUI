@@ -14,7 +14,7 @@ const handleDecline = () => {
   return (
     <div className='mx-4 my-4'>
        <div className="flex justify-center mt-4">
-  <button onClick={handleAcceptShedule} className="bg-navbar font-semibold text-white p-2 h-16 rounded-full w-full flex items-center justify-between px-4">
+  <button onClick={handleAcceptShedule} className="bg-dark-gray font-semibold text-white p-2 h-16 rounded-full w-full flex items-center justify-between px-4">
     <span className='flex-grow text-center'>Accept & Schedule</span>
     <IoArrowForwardCircleOutline className="text-black bg-white rounded-full text-5xl" />
   </button>
