@@ -3,6 +3,9 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 
 
 
+import ComplaintPage from '../pages/ServiceProviderPages/ComplaintFormPage';
+import AdsManagementPage from '../pages/managementPages/AdsManagementPage';
+
 
 import ServiceRequestList from '../pages/ServiceProviderPages/ServiceRequestList';
 import BookingDetailsPage from '../pages/ServiceProviderPages/BookingDetailsPage';
@@ -44,11 +47,20 @@ import RightSideBarPage from '../pages/rightSideBar/rightSideBarPage'
 
 function ProviderRoutes() {
   return (
-      <div>
+    <div>
       <Routes>
 
+ 
+   
+
+        <Route path="/complaint" element={<ComplaintPage />} />
+        <Route path="/adsmanagement" element={<AdsManagementPage />} />
+ 
+    
+
+
+
         <Route path="/" element={<Navigate to="/signin" />} />
-        {/* <Route path="/" element={<Navigate to="/ServiceRequestPage" />} /> */}
         <Route path="/service-request" element={<ServiceRequestPage />} />
         <Route path='/addprofile' element={<AddProfilePage />} />
         <Route path="/Registered-Services" element={<RegisteredServices />} />

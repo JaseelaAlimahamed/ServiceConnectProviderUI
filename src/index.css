@@ -5,9 +5,6 @@
 
 body {
   margin: 0;
+
 }
-@layer components{
-  .container{
-    @apply max-lg:px-3
-  }
-}
+
