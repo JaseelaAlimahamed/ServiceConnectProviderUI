@@ -34,12 +34,8 @@ module.exports = {
         completebtn:'#137517',
         declainbtn:'#670200',
         "blue-drk": "#04228E",
-        "id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
         "divider-pri": "#65558F",
-        "accept-btn": "#1D1F2A",
-        "decline-btn": "#670200",
-        "complete-btn": "#137517",
         "nonactive-btn": "#49454F",
       },
       screens:{

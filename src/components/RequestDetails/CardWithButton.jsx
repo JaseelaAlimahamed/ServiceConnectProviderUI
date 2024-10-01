@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function CardWithButton() {
-  // State to track which tab is active: "request" or "address"
   const [activeTab, setActiveTab] = useState('request');
 
   const requestData = {
@@ -16,9 +15,7 @@ function CardWithButton() {
 
   return (
     <div className="mx-4 my-4 max-w-md mx-auto lg:max-w-2xl">
-      {/* Card with Title, Description, and Image */}
       <div className="bg-white shadow-md rounded-2xl ml-4 mr-4">
-        {/* Request and Address Buttons */}
         <div className="flex justify-between mb-0">
           <button
             onClick={() => setActiveTab('request')}
@@ -34,7 +31,6 @@ function CardWithButton() {
           </button>
         </div>
 
-        {/* Conditionally render content based on active tab */}
         {activeTab === 'request' ? (
           <div>
             <div className="ml-8 mt-8">
@@ -47,7 +43,6 @@ function CardWithButton() {
               <p className="text-gray-700">{requestData.description}</p>
             </div>
 
-            {/* Images */}
             <div className="ml-8 mt-2">
               <h3 className="text-lg font-semibold">Images & Videos</h3>
               <div className="flex space-x-2">
@@ -62,7 +57,6 @@ function CardWithButton() {
               </div>
             </div>
 
-            {/* Availability Date and Time */}
             <div className="flex flex-col ml-8 mt-2 ">
               <h3 className="font-semibold mb-2">Availability</h3>
               <div className="grid grid-cols-2 gap-4">

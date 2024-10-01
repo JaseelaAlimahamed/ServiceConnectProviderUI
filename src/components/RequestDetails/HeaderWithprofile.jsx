@@ -2,10 +2,11 @@
 import React from 'react';
 import { MdLocationPin } from "react-icons/md";
 
+
 function HeaderWithprofile() {
   return (
     <div className="flex justify-center md:max-w-screen-sm mx-auto bg-light-gray">
-      <div className="bg-light-gray w-full"> {/* Removed shadow here */}
+      <div className="bg-light-gray w-full">
         <div className="bg-dark-gray text-white p-6">
           <h1 className="text-2xl font-bold text-center">Request Details</h1>
         </div>
@@ -21,7 +22,7 @@ function HeaderWithprofile() {
           </div>
         </div>
         <div className="flex flex-col mt-1 mx-6 font-semibold">
-          <p className="text-sm text-id-gray">Booking ID: 1wdWak2</p>
+          <p className="text-sm text-daytime">Booking ID: 1wdWak2</p>
         </div>
       </div>
     </div>

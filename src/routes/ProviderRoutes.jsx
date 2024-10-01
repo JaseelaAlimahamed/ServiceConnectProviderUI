@@ -47,8 +47,7 @@ function ProviderRoutes() {
         
         
         
-        <Route path="/req-details" element={<RequestDetails />} />
-        <Route path="/book-details" element={<BookingDetails />} />
+
       </Routes>
 
     </div>

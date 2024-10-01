@@ -18,7 +18,6 @@ function AppointmentCard() {
   return (
     <div className="p-4 bg-white rounded-2xl shadow-md max-w-md mx-auto lg:max-w-2xl ml-4 mr-4">
       <h2 className="text-lg text-base font-bold ml-6 mb-4">Appointment</h2>
-
       <div className="flex flex-col ml-8 mt-2">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col">
@@ -42,22 +41,6 @@ function AppointmentCard() {
 
       <div className="bg-white rounded-lg p-4">
         <h3 className="text-md font-bold mb-4">Invoice</h3>
-        {/* <div className="grid grid-cols-3 text-sm font-semibold border-b border-gray-300 pb-2 mb-2">
-          
-          <div>Sl. No</div>
-          <div>Description</div>
-          <div className="text-right">Qty</div>
-          <div className="text-right">Price</div>
-          <div className="text-right">Total</div>
-        </div>
-        <div className="grid grid-cols-3 text-sm mb-2">
-          <div>1</div>
-          <div>{requestData.description}</div>
-          <div className="text-right">{requestData.quantity}</div>
-          <div className="text-right">{requestData.price}</div>
-          <div className="text-right">{requestData.total}</div>
-        </div> */}
-
         <table className="w-full text-sm font-semibold mb-2">
           <thead>
             <tr>
