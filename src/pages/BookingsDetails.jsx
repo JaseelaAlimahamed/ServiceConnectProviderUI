@@ -8,7 +8,6 @@ import AppointmentCard from '../components/BookingsDetails/AppointmentCard';
 function BookingDetails() {
   const { id} = useParams();
   
-
   return (
     <div className="bg-white min-h-screen">
       <div className="md:max-w-screen-sm mx-auto bg-light-gray ">

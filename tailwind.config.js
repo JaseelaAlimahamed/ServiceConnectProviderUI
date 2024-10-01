@@ -39,16 +39,16 @@ module.exports = {
         profilefont:'#535353;',
         incomepurple1:'#9B9CF8',
         incomepurple2:'8082ED',
-        expenditurepink:'#FEB4C5'
+        expenditurepink:'#FEB4C5',
 
 
-        "blue-drk": "#04228E",
-        "id-gray": "#797C7B;",
+        //"blue-drk": "#04228E",
+        //"id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
-        "divider-pri": "#65558F",
-        "accept-btn": "#1D1F2A",
-        "decline-btn": "#670200",
-        "complete-btn": "#137517",
+        //"divider-pri": "#65558F",
+        
+        //"decline-btn": "#670200",
+       // "complete-btn": "#137517",
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",

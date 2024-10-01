@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdLocationPin } from 'react-icons/md';
 
+
 function HeaderWithProfile({ bookingId }) {
   const dummyProfile = {
     image: 'https://imgs.search.brave.com/6k6HtqCtTh7p-diGuCA-DNpe3lk1DC1bpoymrVSUcus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzQ0LzEwLzQ2/LzM2MF9GXzQ0NDEw/NDY3OV84TFBieDQ3/enZaNEhCWnE3eHht/RkZieEU4azdxUTcx/aS5qcGc',
@@ -24,7 +25,7 @@ function HeaderWithProfile({ bookingId }) {
           </div>
         </div>
         <div className="flex flex-col mt-1 mx-6 font-semibold">
-          <p className="text-sm text-id-gray">Booking ID: {bookingId}</p> 
+          <p className="text-sm text-daytime">Booking ID: {bookingId}</p> 
         </div>
       </div>
     </div>

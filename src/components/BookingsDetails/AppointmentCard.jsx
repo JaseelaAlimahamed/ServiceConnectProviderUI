@@ -71,14 +71,10 @@ function AppointmentCard() {
           Grand Total: {dummyAppointment.total}
         </div>
       </div>
-
-
       <div className="mt-4 text-sm text-gray-600">
         <p>Terms and conditions</p>
         <p>Valid up to 1 month</p>
       </div>
-
-
       <div className="mt-4">
         <h4 className="text-red-600 font-bold flex items-center mb-2">
           Additional Requirements

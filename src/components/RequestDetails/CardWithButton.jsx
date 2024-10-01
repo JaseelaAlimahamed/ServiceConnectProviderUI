@@ -6,7 +6,6 @@ function CardWithButton() {
   const [activeTab, setActiveTab] = useState('request');
   const location = useLocation();
   const {appointment } = location.state || {};
-
   const requestDummyData = {
     title: "Plumbing",
     description:"Washroom plumbing pipe need to change",
@@ -23,13 +22,13 @@ function CardWithButton() {
         <div className="flex justify-between mb-0">
           <button
             onClick={() => setActiveTab('request')}
-            className={`w-1/2 text-center py-3 border-b-4 font-semibold rounded-t-lg ${activeTab === 'request' ? 'border-divider-pri text-secondary' : 'border-divider-clr text-nonactive-btn'}`}
+            className={`w-1/2 text-center py-3 border-b-4 font-semibold rounded-t-lg ${activeTab === 'request' ? 'border-activetab text-secondary' : 'border-divider-clr text-nonactive-btn'}`}
           >
             Request
           </button>
           <button
             onClick={() => setActiveTab('address')}
-            className={`w-1/2 text-center py-3 border-b-4 font-semibold rounded-t-lg ${activeTab === 'address' ? 'border-divider-pri text-secondary' : 'border-divider-clr text-nonactive-btn'}`}
+            className={`w-1/2 text-center py-3 border-b-4 font-semibold rounded-t-lg ${activeTab === 'address' ? 'border-activetab text-secondary' : 'border-divider-clr text-nonactive-btn'}`}
           >
             Address
           </button>
