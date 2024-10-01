@@ -27,6 +27,8 @@ module.exports = {
         "medium-gray": "#736A68",
          "call_Green": '#167f71',
 
+
+
         activetab:'#65558F',
         pagebg:'#D9D9DB',
         declainbtn:'#670200',
@@ -56,6 +58,7 @@ module.exports = {
         "incomepurple1":'#9B9CF8',
         "incomepurple2":'8082ED',
         "expenditurepink":'#FEB4C5',
+
 
         "blue-drk": "#04228E",
         "id-gray": "#797C7B;",

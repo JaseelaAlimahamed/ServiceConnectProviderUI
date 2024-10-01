@@ -54,19 +54,11 @@ function ProviderRoutes() {
    
 
         <Route path="/complaint" element={<ComplaintPage />} />
-        <Route path="/adsmanagement" element={<AdsManagementPage />} />
- 
-    
-
-
-
-        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/adsmanagement" element={<AdsManagementPage />}
         <Route path="/service-request" element={<ServiceRequestPage />} />
         <Route path='/addprofile' element={<AddProfilePage />} />
         <Route path="/Registered-Services" element={<RegisteredServices />} />
         <Route path="/location" element={<AllowLocationComponent />} />
-        <Route path="/signin" element={<ServiceProviderSignIn />} />
-        <Route path="/otpPage" element={<OTPPage />} />
 
         <Route path="/Registered-Services" element={<RegisteredServices />} />
 
@@ -80,12 +72,19 @@ function ProviderRoutes() {
         <Route path='/side-bar' element={<RightSideBarPage/>} />
 
 
+        <Route path='/RegisterService' element={<RegisterService />} />
+        <Route path='/EditService' element={<EditService />} />
+     
+
+
+
 
       <Route path="/" element={<Navigate to="/signin" />} />
 
         <Route path="/newpassword" element={<NewPassword />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/service-request" element={<ServiceRequestPage/>} />
+
 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
         <Route path='/addprofile' element={<AddProfilePage/>}/>
