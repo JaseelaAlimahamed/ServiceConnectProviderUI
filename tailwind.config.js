@@ -35,7 +35,7 @@ module.exports = {
 
         activetab:'#65558F',
         pagebg:'#D9D9DB',
-        declainbtn:'#670200',
+        //declainbtn:'#670200',
         bluedrk: '#04228E',
         cardfont:'#303972;',
         profilefont:'#535353;',
