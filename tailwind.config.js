@@ -20,29 +20,33 @@ module.exports = {
       colors: {
         primary: "#FFFFFF",
         secondary: "#000000",
-        "dark-gray": "#1D1F2A",
+       "dark-gray": "#1D1F2A",
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
 
+        "dark-gray": "#1D1F2A",
+        "light-gray": "#D9D9DB",
+        "medium-gray": "#736A68",
+         "call_Green": '#167f71',
 
-        customPurple: '#C1BBEB',
-        daytime:'#797C7B;',
-        navbar:'#1D1F2A;',
-        statuspending:'#135275;',
-        statusopened:'#137517;',
-        completebtn:'#137517', 
-        declainbtn:'#670200',
+        "customPurple": '#C1BBEB',
+        "daytime":'#797C7B;',
+        
+        "statuspending":'#135275',
+        "statusopened":'#137517',
+        "completebtn":'#137517', 
+        "declainbtn":'#670200',
 
-        activetab:'#65558F',
-        pagebg:'#D9D9DB',
-        //declainbtn:'#670200',
-        bluedrk: '#04228E',
-        cardfont:'#303972;',
-        profilefont:'#535353;',
-        incomepurple1:'#9B9CF8',
-        incomepurple2:'8082ED',
-        expenditurepink:'#FEB4C5',
+        "activetab":'#65558F',
+        "pagebg":'#D9D9DB',
+        //"declainbtn":'#670200',
+        "bluedrk": '#04228E',
+        "cardfont":'#303972',
 
+        "profilefont":'#535353',
+        "incomepurple1":'#9B9CF8',
+        "incomepurple2":'8082ED',
+        "expenditurepink":'#FEB4C5',,
 
         //"blue-drk": "#04228E",
         //"id-gray": "#797C7B;",
@@ -55,15 +59,9 @@ module.exports = {
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
 
-
-
-
-
-
       },
 
     },
   },
   plugins: [],
-}
 };
