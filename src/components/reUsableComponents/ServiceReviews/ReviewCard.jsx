@@ -21,7 +21,7 @@ const ReviewCard = ({ name, rating, review, likes, timeAgo }) => {
         </div>
       </div>
       <div className="text-right">
-        <div className="flex items-center justify-end border-2 border-rating_border  bg-rating_bgg  rounded-3xl px-2">
+        <div className="flex items-center justify-end border-2 border-rating_border  bg-rating_bg  rounded-3xl px-2">
         <div className="text-rating_star ml-1">★</div>
           <p className="text-md font-semibold ml-1">{rating}</p>
           

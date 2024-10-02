@@ -78,7 +78,7 @@ const reviewsData = [
 
 const ReviewSection = () => {
   return (
-    <div className="bg-pagebg p-6 rounded-xl w-full">
+    <div className="bg-light-gray p-6 rounded-xl w-full">
    
       
 
