@@ -24,9 +24,6 @@ module.exports = {
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
 
-        "dark-gray": "#1D1F2A",
-        "light-gray": "#D9D9DB",
-        "medium-gray": "#736A68",
          "call_Green": '#167f71',
 
         "customPurple": '#C1BBEB',
@@ -38,7 +35,7 @@ module.exports = {
         "declainbtn":'#670200',
 
         "activetab":'#65558F',
-        "pagebg":'#D9D9DB',
+        //"pagebg":'#D9D9DB',
         //"declainbtn":'#670200',
         "bluedrk": '#04228E',
         "cardfont":'#303972',
@@ -46,7 +43,7 @@ module.exports = {
         "profilefont":'#535353',
         "incomepurple1":'#9B9CF8',
         "incomepurple2":'8082ED',
-        "expenditurepink":'#FEB4C5',,
+        "expenditurepink":'#FEB4C5',
 
         //"blue-drk": "#04228E",
         //"id-gray": "#797C7B;",
@@ -64,4 +61,5 @@ module.exports = {
     },
   },
   plugins: [],
+}
 };
