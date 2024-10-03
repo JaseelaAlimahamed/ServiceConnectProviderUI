@@ -4,7 +4,7 @@ import ReviewsSection from '../../components/reUsableComponents/ServiceReviews/R
 
 const ServiceReviewsPage = () => {
   return (
-    <div className=" bg-pagebg flex flex-col ">
+    <div className=" bg-light-gray flex flex-col ">
      
       <ReviewsSection />
      

@@ -10,7 +10,7 @@ const FinancialPage = () => {
     console.log(`Card clicked: ${name} on ${date} with amount: ${amount}`);
  }
   return (
-    <div className=" bg-pagebg flex flex-col justify-between px-4 md:w-full mx-auto h-auto md:flex-row md:justify-between gap-8   ">
+    <div className=" bg-light-gray flex flex-col justify-between px-4 md:w-full mx-auto h-auto md:flex-row md:justify-between gap-8   ">
         <div className='md:w-1/3 md:ml-3 md:mt-10'>
     <div className="flex items-center mt-7 ">
         <img

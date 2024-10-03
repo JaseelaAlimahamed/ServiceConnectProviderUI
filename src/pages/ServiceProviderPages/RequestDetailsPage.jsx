@@ -5,7 +5,7 @@ import RequestButton from '../../components/reUsableComponents/ServiceRequestDet
 
 const RequestDetailsPage = () => {
   return (
-    <div className='bg-pagebg md:max-w-screen-lg mx-auto p-4'>
+    <div className='bg-light-gray md:max-w-screen-lg mx-auto p-4'>
     <div className="flex flex-col md:flex-row md:justify-between gap-8">
   
       <div className="md:w-1/3">
