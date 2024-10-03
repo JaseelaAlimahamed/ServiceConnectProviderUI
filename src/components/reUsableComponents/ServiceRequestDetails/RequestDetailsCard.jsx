@@ -16,7 +16,7 @@ function RequestDetailsCard() {
   return (
     <div className=" my-4 max-w-md mx-auto lg:max-w-2xl">
   
-      <div className="bg-white shadow-md rounded-2xl ml-4 mr-4">
+      <div className="bg-primary shadow-md rounded-2xl ml-4 mr-4">
       
         <div className="flex justify-between mb-0">
           <button
@@ -116,7 +116,7 @@ function RequestDetailsCard() {
         ) : (
           <div className="ml-8 mt-8 p-4">
             <h3 className="text-lg font-semibold">Address</h3>
-            <p className="text-black font-semibold text-cardfont">{request?.location || 'No address available'}</p>
+            <p className="text-secondary font-semibold text-cardfont">{request?.location || 'No address available'}</p>
           </div>
         )}
       </div>

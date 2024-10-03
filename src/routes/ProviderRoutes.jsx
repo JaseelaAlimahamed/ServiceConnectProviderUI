@@ -18,7 +18,7 @@ function ProviderRoutes() {
         <Route path="/service-request" element={<ServiceRequestList/>} /> 
         <Route path="/booking-details" element={<BookingDetailsPage/>} />
         <Route path="/request-details/:id" element={<RequestDetailsPage/>} /> */}
-        {/* <Route path="/service-financial" element={<FinancialPage/>}></Route> */}
+        <Route path="/service-financial" element={<FinancialPage/>}></Route>
         <Route path="/Service-reviews" element={<ServiceReviewsPage />} />
            {/* <Route path='/addprofile' element={<AddProfilePage/>}/> */}
 {/* 

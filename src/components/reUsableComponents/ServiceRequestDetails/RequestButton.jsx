@@ -21,17 +21,17 @@ function RequestButton() {
       <div className="flex justify-center mt-4">
         <button 
           onClick={() => setAcceptModalOpen(true)} 
-          className="bg-black font-semibold text-white p-2 h-16 mb-4 rounded-full w-full flex items-center justify-between text-center px-1"
+          className="bg-secondary font-semibold text-primary p-2 h-16 mb-4 rounded-full w-full flex items-center justify-between text-center px-1"
         >
           <span className='flex-grow text-center margin-left-2'>Accept & Schedule</span>
-          <IoArrowForward className=" bg-white rounded-full text-5xl text-black" />
+          <IoArrowForward className=" bg-primary rounded-full text-5xl text-secondary" />
         </button>
       </div>
 
       <div className="flex justify-center ">
         <button 
           onClick={() => setDeclineModalOpen(true)} 
-          className="bg-declainbtn font-semibold text-white p-2 mb-4 h-16 rounded-full w-full"
+          className="bg-declainbtn font-semibold text-primary p-2 mb-4 h-16 rounded-full w-full"
         >
           Decline
         </button>

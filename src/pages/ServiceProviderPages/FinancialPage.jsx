@@ -27,26 +27,26 @@ const FinancialPage = () => {
       <div className='md:w-2/3 mr-12 md:mt-10'>
        <div className="grid grid-cols-2 gap-4 mt-6 ">
        <div className="bg-incomepurple1   shadow-xl p-4 rounded-xl flex justify-between items-center">
-       <FaArrowUp className="text-incomepurple1 text-xl bg-white rectangle-rounded-lg w-10 h-10 p-2" />
+       <FaArrowUp className="text-incomepurple1 text-xl bg-primary rectangle-rounded-lg w-10 h-10 p-2" />
          <div>
-           <p className="text-sm text-white font-semibold">Income</p>
-           <p className="text-lg font-bold text-white">$21,000</p>
+           <p className="text-sm text-primary font-semibold">Income</p>
+           <p className="text-lg font-bold text-primary">$21,000</p>
          </div>
         
        </div>
        <div className="bg-expenditurepink shadow-xl p-4 rounded-xl flex justify-between items-center">
-       <FaArrowDown className="text-expenditurepink text-xl bg-white rectangle-rounded-lg w-10 h-10 p-2" />
+       <FaArrowDown className="text-expenditurepink text-xl bg-primary rectangle-rounded-lg w-10 h-10 p-2" />
          <div >
-          <p className="text-sm text-white font-semibold">Expenditure</p>
-           <p className="text-lg font-bold text-white">$11,000</p>
+          <p className="text-sm text-primary font-semibold">Expenditure</p>
+           <p className="text-lg font-bold text-primary">$11,000</p>
          </div>
         
        </div>
      </div>
      <div className="bg-gray-500 p-6 mt-6 rounded-xl shadow-xl">
-        <p className="text-lg font-semibold text-white">Lasso Kayne</p>
+        <p className="text-lg font-semibold text-primary">Lasso Kayne</p>
         <p className="text-sm tracking-wider font-bold mt-6 text-white">4551 5667 8886 7775</p>
-        <p className="mt-6 font-semibold text-white">Account Balance</p>
+        <p className="mt-6 font-semibold text-primary">Account Balance</p>
         <p className="text-2xl font-semibold  text-yellow-50">$121,000</p>
       </div>
       </div>
@@ -69,36 +69,36 @@ const FinancialPage = () => {
             amount= "$22"
             
             /> */}
-          <div onClick={() => handleCardClick("Sri Rajan", "22 September 2021", "$22")} className="flex justify-between items-center bg-white p-4 rounded-xl shadow-lg">
+          <div onClick={() => handleCardClick("Sri Rajan", "22 September 2021", "$22")} className="flex justify-between items-center bg-primary p-4 rounded-xl shadow-lg">
             <div  className="flex items-center">
-              <FaShoppingBag className="text-blue-800 text-xl" />
+              <FaShoppingBag className="text-vector_blue text-xl" />
               <div  className="ml-4">
                 <p className="text-sm text-profilefont font-semibold">Sri Rajan</p>
                 <p className="text-xs text-profilefont font-semibold">22 September 2021</p>
               </div>
             </div>
-            <p className="text-red-500">$22</p>
+            <p className="text-amount_red">$22</p>
           </div>
 
-          <div onClick={() => handleCardClick("Sri Rajan", "22 September 2021", "$22")} className="flex justify-between items-center bg-white p-4 rounded-xl shadow-lg">
+          <div onClick={() => handleCardClick("Sri Rajan", "22 September 2021", "$22")} className="flex justify-between items-center bg-primary p-4 rounded-xl shadow-lg">
             <div className="flex items-center">
-              <FaWifi className="text-blue-800 text-xl" />
+              <FaWifi className="text-vector_blue text-xl" />
               <div className="ml-4">
                 <p className="text-sm text-profilefont font-semibold">Sofiya</p>
                 <p className="text-xs text-profilefont font-semibold">14 September 2021</p>
               </div>
             </div>
-            <p className="text-red-500">$120</p>
+            <p className="text-amount_red">$120</p>
           </div>
-          <div onClick={() => handleCardClick("Sri Rajan", "22 September 2021", "$22")} className="flex justify-between items-center bg-white p-4 rounded-xl shadow-lg ">
+          <div onClick={() => handleCardClick("Sri Rajan", "22 September 2021", "$22")} className="flex justify-between items-center bg-primary p-4 rounded-xl shadow-lg ">
             <div className="flex items-center">
-              <FaShoppingBag className="text-blue-800 text-xl" />
+              <FaShoppingBag className="text-vector_blue text-xl" />
               <div className="ml-4">
                 <p className="text-sm  text-profilefont font-semibold">Sofiya</p>
                 <p className="text-xs text-profilefont font-semibold ">14 September 2021</p>
               </div>
             </div>
-            <p className="text-red-500">$120</p>
+            <p className="text-amount_red">$120</p>
           </div>
         </div>
         </div> 

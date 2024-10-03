@@ -46,6 +46,9 @@ module.exports = {
         rating_border:'#4D81E5',
         rating_bg:'#E8F1FF',
         rating_star:'#FF9C07',
+        vector_blue:'#223F78',
+        amount_red:'#FF6666',
+        heart_red:'#DD2E44',
 
 
       },

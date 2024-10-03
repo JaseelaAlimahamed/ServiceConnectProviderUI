@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewCard from '../../reUsableComponents/ServiceReviews/ReviewCard';  
 import RatingComponent from './RatingComponent';
+import CustomButton from '../../reUsableComponents/ServiceReviews/CustomButton';
 
 
 const reviewsData = [
@@ -90,11 +91,43 @@ const ReviewSection = () => {
 
     
       <div className="flex justify-evenly mt-4 space-x-4">
-        <button className="bg-white text-black hover:bg-black hover:text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg">Excellent</button>
-        <button className="bg-white text-black hover:bg-black hover:text-white px-2 py-1 rounded-full text-sm font-semibold shadow-lg">Good</button>
-        <button className="bg-white text-black hover:bg-black hover:text-white px-2 py-1 rounded-full text-sm font-semibold shadow-lg">Average</button>
-        <button className="bg-white text-black hover:bg-black hover:text-white px-2 py-1 rounded-full text-sm font-semibold shadow-lg">Below Average</button>
-      </div>
+      <CustomButton 
+        textSize="text-sm"
+        label="Excellent" 
+        bgColor="bg-primary" 
+        textColor="text-secondary" 
+        hoverBgColor="bg-secondary" 
+        hoverTextColor="text-primary"
+        customClasses=""
+      />   
+      <CustomButton 
+        textSize="text-sm"
+        label="Good" 
+        bgColor="bg-primary" 
+        textColor="text-secondary" 
+        hoverBgColor="bg-secondary" 
+        hoverTextColor="text-primary"
+        customClasses=""
+      /> 
+      <CustomButton 
+        textSize="text-sm"
+        label="Average" 
+        bgColor="bg-primary" 
+        textColor="text-secondary" 
+        hoverBgColor="bg-secondary" 
+        hoverTextColor="text-primary"
+        customClasses=""
+      /> 
+      <CustomButton 
+        textSize="text-sm"
+        label="Below Average" 
+        bgColor="bg-primary" 
+        textColor="text-secondary" 
+        hoverBgColor="bg-secondary"
+        hoverTextColor="text-primary"
+        customClasses="hover:bg-secondary hover:text-primary"
+      /> 
+        </div>
 
    
       <div className="mt-4  grid xs:grid-cols-1 md:grid-cols-2 gap-8 px-4 mx-auto ">
@@ -110,11 +143,16 @@ const ReviewSection = () => {
         ))}
       </div>
       <div className="w-full sticky bottom-36 md:text-center ">
-        <button  className="w-full max-w-xl text-xl  py-4  bg-black text-white rounded-full shadow-lg font-semibold" >
+      <CustomButton 
+        textSize="text-sm"
+        label="Write a Review" 
+        bgColor="bg-secondary"
+        textColor="text-primary" 
+        hoverBgColor="bg-secondary" 
+        hoverTextColor="text-primary"
+        customClasses="  w-full max-w-xl text-xl  py-4  rounded-full shadow-lg font-semibold"
+      />
         
-          <h1 >Write a Review</h1>
-         
-          </button>
       </div>
     </div>
   );

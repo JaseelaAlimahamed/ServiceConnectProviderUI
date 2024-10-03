@@ -11,7 +11,7 @@ export const RequestCard = ({ title, status, date, time, customer, daytime, id})
     <div className='flex border rounded-3xl overflow-hidden shadow-sm ' >
    <div className={`${status === 'Pending' ? 'bg-statuspending' : status === 'Opened' ? 'bg-statusopened' : 'bg-statusrejected'} w-3`} />
 
-      <div className="bg-white shadow w-full rounded-lg p-4 flex items-center justify-between">
+      <div className="bg-primary shadow w-full rounded-lg p-4 flex items-center justify-between">
         <div className="flex flex-col w-full">
           <div>
           <div className="grid grid-cols-8 w-full gap-2 xs:gap-0  ">

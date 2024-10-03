@@ -24,7 +24,7 @@ const Navbar = ({ title,search=false, bgColor = "bg-navbar", textColor = "text-w
       
       {/* Left Action (Back button or any action) */}
       <div className='flex space-x-4'>
-      <button className="text-white border rounded-full border-white p-1">
+      <button className="text-primary border rounded-full border-primary p-1">
         <FaArrowLeft size={20} onClick={goBack} />
       </button>
       <h1 className="text-lg font-semibold font-navbarHead">{title}</h1>
@@ -34,7 +34,7 @@ const Navbar = ({ title,search=false, bgColor = "bg-navbar", textColor = "text-w
 
       {/* Right Actions (Icons or buttons) */}
       <div className="flex space-x-4">
-      <button className="text-white border rounded-full border-white p-1">
+      <button className="text-primary border rounded-full border-primary p-1">
         <VscSettings size={20} onClick={goBack} />
       </button>
       
