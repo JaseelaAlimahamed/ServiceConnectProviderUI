@@ -20,31 +20,47 @@ module.exports = {
       colors: {
         primary: "#FFFFFF",
         secondary: "#000000",
-        dark_gray: "#1D1F2A",
-        light_gray: "#D9D9DB",
-        medium_gray: "#736A68",
-
-        customPurple: '#C1BBEB',
-        daytime:'#797C7B;',
-        navbar:'#1D1F2A;',
-        statuspending:'#135275;',
-        statusopened:'#137517;',
-        completebtn:'#137517',
-        declainbtn:'#670200',
-        blue_drk: "#04228E",
 
 
+        "dark-gray": "#1D1F2A",
+        "light-gray": "#D9D9DB",
+        "medium-gray": "#736A68",
+         "call_Green": '#167f71',
+
+        "customPurple": '#C1BBEB',
+        "daytime":'#797C7B;',
+        
+        "statuspending":'#135275',
+        "statusopened":'#137517',
+        "completebtn":'#137517',
+        "declainbtn":'#670200',
+
+        "activetab":'#65558F',
+        "pagebg":'#D9D9DB',
+        "declainbtn":'#670200',
+        "bluedrk": '#04228E',
+        "cardfont":'#303972',
+
+        "profilefont":'#535353',
+        "incomepurple1":'#9B9CF8',
+        "incomepurple2":'8082ED',
+        "expenditurepink":'#FEB4C5',
+
+        "blue-drk": "#04228E",
+        "id-gray": "#797C7B;",
+        "divider-clr": "#E6E0E9",
+        "divider-pri": "#65558F",
+        "accept-btn": "#1D1F2A",
+        "decline-btn": "#670200",
+        "complete-btn": "#137517",
+        "nonactive-btn": "#49454F",
+        "neutral-clr": "#FA1919",
+        "warning-clr": "#FF6B00",
 
       },
-      screens:{
-        'sm':'640px',
-        'md':'768px',
-        'lg':'1024px',
-        'xl':'1280px',
-        '2xl':'1536px',
-      }
 
     },
   },
   plugins: [],
-};
+}
+}
