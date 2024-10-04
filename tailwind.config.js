@@ -11,13 +11,11 @@ module.exports = {
     extend: {
 
       fontFamily: {
-        default: ["Jost", "sans-serif"],
-        heading: ["Aldrich", "sans-serif"],
-        input: ["Mulish", "sans-serif"],
+      
         heading:['poppins', 'sans-serif'],
         navbarHead:['Jost', 'sans-serif'],
         daytime:['Label Large/Font', 'sans-serif'],
-      },
+
 
       colors: {
         primary: "#FFFFFF",
@@ -34,7 +32,7 @@ module.exports = {
         completebtn:'#137517',
         declainbtn:'#670200',
         blue_drk: "#04228E",
-        green:"#167F71",
+
 
 
       },

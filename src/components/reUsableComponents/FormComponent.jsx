@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 import InputFieldComponent from './InputFieldComponent';
 import ButtonComponent from './ButtonComponent';
 
+
 const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, heading, profile, forgotPassword, title, paragraph,
    rememberMe }) => {
+
   const [formData, setFormData] = useState({});
 
   // Set initial form values based on fieldConfigs
@@ -105,7 +107,6 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
                 onBlur={handleBlur}
                 inputWidth={inputConfig.inputWidth}
                 inputHeight={inputConfig.inputHeight}
-                icon={field.icon}
               />
             ))}
 
