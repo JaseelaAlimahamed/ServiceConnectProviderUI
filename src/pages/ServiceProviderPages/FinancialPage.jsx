@@ -24,7 +24,7 @@ const FinancialPage = () => {
         </div>
       </div>
       </div>
-      <div className='md:w-2/3 mr-12 md:mt-10'>
+      <div className='md:w-2/3 w-full mr-12 md:mt-10'>
        <div className="grid grid-cols-2 gap-4 mt-6 ">
        <div className="bg-incomepurple1   shadow-xl p-4 rounded-xl flex justify-between items-center">
        <FaArrowUp className="text-incomepurple1 text-xl bg-primary rectangle-rounded-lg w-10 h-10 p-2" />

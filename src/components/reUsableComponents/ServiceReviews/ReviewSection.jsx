@@ -142,7 +142,7 @@ const ReviewSection = () => {
           />
         ))}
       </div>
-      <div className="w-full sticky bottom-36 md:text-center ">
+      <div className="w-full sticky bottom-16 md:text-center ">
       <CustomButton 
         textSize="text-sm"
         label="Write a Review" 
