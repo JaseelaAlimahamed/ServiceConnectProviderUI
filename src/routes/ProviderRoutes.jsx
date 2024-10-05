@@ -31,6 +31,8 @@ import ComplaintList from '../components/complaints/Complaint'
 import BookingsPage from '../pages/bookings/BookingsPage';
 import CardComponent from '../components/Bookings/CardComponent';
 import AcceptAndInvoice from '../pages/AcceptAndInvoice/AcceptAndInvoice'
+import ActiveServiceJob from '../components/ServiceProviderJobs/ActiveServiceJobs'
+import TransactionComponent from '../components/serviceProviderTransactions/TransactionComponent'
 
 
 
@@ -57,6 +59,8 @@ function ProviderRoutes() {
         <Route path="/bookingdetail/:id" element={<BookingDetails />} />
         <Route path="/booking-page" element={<BookingsPage />} />
         <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
+        <Route path="/ActiveServices" element={<ActiveServiceJob/>} />
+        <Route path="/Transactions" element={<TransactionComponent/>} />
 
 
       {/* <Route path="/" element={<Navigate to="/signin" />} />
