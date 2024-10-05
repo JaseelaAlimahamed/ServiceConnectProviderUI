@@ -23,11 +23,11 @@ const ButtonComponent = ({
       className={`${variantClasses[variant]} ${btnWidth} ${btnHeight}`}
     >
       <span className="flex-grow text-center">{label}</span>
-      {variant === 'default' && (
-        <img 
-          src="./buttonArrow.svg" 
-          className="ml-2 w-8 h-8" 
-          alt="arrow pointing right" 
+      {variant === "default" && (
+        <img
+          src="./buttonArrow.svg"
+          className="ml-2 w-8 h-8"
+          alt="arrow pointing right"
         />
       )}
     </button>

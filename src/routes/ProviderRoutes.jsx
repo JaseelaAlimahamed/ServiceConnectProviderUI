@@ -3,28 +3,26 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 
 
 
-import ComplaintPage from '../pages/ServiceProviderPages/ComplaintFormPage';
-import AdsManagementPage from '../pages/managementPages/AdsManagementPage';
-import BoostServicePage from '../pages/BoostServicePage';
 
-
-
+import BoostServicePage from '../pages/BoostServicePage'
+import Complaint from '../pages/Services/ComplaintPage'
+import Decline from '../pages/Services/DeclinePage'
+import AdsMana from '../pages/managementPages/AdsManagementPage'
 
 
 function ProviderRoutes() {
   return (
     <div>
       <Routes>
+
  
    
 
-        <Route path="/complaint" element={<ComplaintPage />} />
-        <Route path="/adsmanagement" element={<AdsManagementPage />} />
         <Route path="/boostservice" element={<BoostServicePage />} />
- 
-    
+        <Route path="/complaint" element={<Complaint />} />
+        <Route path="/decline" element={<Decline />} />
+        <Route path="/adsmanagement" element={<AdsMana />} />
 
-   
       </Routes>
 
     </div>
