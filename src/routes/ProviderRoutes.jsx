@@ -40,6 +40,7 @@ import AddProfilePage from '../pages/signUpSignInPages/AddProfilePage'
 import BookingsPage from '../pages/bookings/BookingsPage';
 import AcceptAndInvoice from '../pages/AcceptAndInvoice/AcceptAndInvoice'
 import RightSideBarPage from '../pages/rightSideBar/rightSideBarPage'
+import NotificationsPage from '../pages/notificationsPage/notificationsPage';
 
 
 function ProviderRoutes() {
@@ -94,6 +95,7 @@ function ProviderRoutes() {
         <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
 
         <Route path="/service-financial" element={<FinancialPage/>}></Route>
+        <Route path='/notification' element={<NotificationsPage />} />
 
 
 
