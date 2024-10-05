@@ -46,7 +46,7 @@ module.exports = {
 
 
         "customPurple": '#C1BBEB',
-        "daytime":'#797C7B;',
+        "daytime":'#797C7B',
         
         "statuspending":'#135275',
         "statusopened":'#137517',
@@ -92,5 +92,5 @@ module.exports = {
   plugins: [],
 
 }
-}
+
 
