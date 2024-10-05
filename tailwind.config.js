@@ -49,6 +49,8 @@ module.exports = {
         vector_blue:'#223F78',
         amount_red:'#FF6666',
         heart_red:'#DD2E44',
+        heading_blck:'#202244',
+        para_grey:'#545454',
 
 
       },
