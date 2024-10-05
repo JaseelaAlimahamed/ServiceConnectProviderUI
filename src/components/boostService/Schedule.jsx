@@ -15,6 +15,7 @@ const Schedule = ({schedule,onScheduleChange}) => {
               <input
                 type="date"
                 name="date"
+                required
                 className="w-full px-4 py-3 pt-5 rounded-lg shadow-boxshadow-1 outline-none"
                 value={schedule.date}
                 onChange={handleInputChange}
@@ -25,6 +26,7 @@ const Schedule = ({schedule,onScheduleChange}) => {
               <input
                 type="time"
                 name="time"
+                required
                 value={schedule.time}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 pt-5 rounded-lg shadow-boxshadow-1 outline-none"

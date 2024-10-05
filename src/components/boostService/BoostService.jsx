@@ -31,7 +31,8 @@ const BoostService = () => {
     setTargetArea(value);
   };
   
-  const getApiCall = () =>{
+  const getApiCall = (e) =>{
+    e.preventDefault()
     const FormData= {
       fromDate:fromSchedule.date,
       fromTime:fromSchedule.time,
@@ -45,15 +46,16 @@ const BoostService = () => {
 
   return (
     <div className="bg-pagebg min-h-screen">
-      <div className="p-6 pt-20 max-w-screen-lg mx-auto">
+      <div className="p-5 pt-20 max-w-screen-lg mx-auto">
         <HeadCard title="House Electrical" imgSrc="boostservice-img.png" />
+      <form onSubmit={getApiCall}>
 
         <h3 className='text-secondary font-medium mt-6 ml-2'>Schedule</h3>
         <div className="md:flex">
           
         <div className="w-full">
           <h3 className='text-secondary font-medium '>From</h3>
-          <div className='ml-2'>
+          <div className='ml-2 '>
           <Schedule
             schedule={fromSchedule}
             onScheduleChange={handleFromSchedule}
@@ -62,9 +64,8 @@ const BoostService = () => {
           </div>
         </div>
         <div className=" w-full">
-          <h3 className='text-secondary font-medium'>To</h3>
+          <h3 className='text-secondary font-medium '>To</h3>
           <div className='ml-2'>
-
           <Schedule schedule={toSchedule} onScheduleChange={handleToSchedule} />
           </div>
         </div>
@@ -89,9 +90,9 @@ const BoostService = () => {
             btnHeight="h-[56px]"
             btnColor="bg-accept-btn"
             variant="complaint"
-            onClick={getApiCall}
           />
         </div>
+      </form>
       </div>
     </div>
   );
