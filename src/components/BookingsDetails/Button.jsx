@@ -13,7 +13,7 @@ function BookingsDetailsButtons({ id }) {
   };
 
   const handleRegisterComplaint = () => {
-    navigate('/register-complaint');
+    navigate(`/register-complaint/${id}`);
   };
 
   const handleDecline = () => {
@@ -23,11 +23,13 @@ function BookingsDetailsButtons({ id }) {
 
   const handleConfirm = () => {
     console.log(`API called for ${action} action on Booking ID: ${id}`);
-    navigate('/booking-page');
+    if(action === 'decline'){
+    navigate(`/${action}-form/${id}`);}
+    else{navigate('/bookings');}
   };
 
   return (
-    <div className='mx-12 my-4'>
+    <div className='mx-6 my-4'>
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-6 shadow-lg">
@@ -43,22 +45,27 @@ function BookingsDetailsButtons({ id }) {
           </div>
         </div>
       )}
-      
-      <div className="flex justify-center mt-4">
-        <button onClick={handleComplete} className="bg-complete-btn font-semibold text-white p-2 h-12 rounded-full w-full">
+      <div className="flex flex-col md:flex-row justify-center gap-4 mt-4">
+        <button
+          onClick={handleComplete}
+          className="bg-complete-btn font-semibold text-white p-2 h-12 rounded-full w-full md:w-auto md:px-6"
+        >
           Complete
         </button>
-      </div>
-      <div className="flex justify-center mt-4">
-        <button onClick={handleRegisterComplaint} className="bg-decline-btn font-semibold text-white p-2 h-12 rounded-full w-full">
+        <button
+          onClick={handleRegisterComplaint}
+          className="bg-decline-btn font-semibold text-white p-2 h-12 rounded-full w-full md:w-auto md:px-6"
+        >
           Register Complaint
         </button>
-      </div>
-      <div className="flex justify-center mt-4">
-        <button onClick={handleDecline} className="bg-decline-btn font-semibold text-white p-2 mb-4 h-12 rounded-full w-full">
+        <button
+          onClick={handleDecline}
+          className="bg-decline-btn font-semibold text-white p-2 h-12 rounded-full w-full md:w-auto md:px-6"
+        >
           Decline
         </button>
       </div>
+
     </div>
   );
 }

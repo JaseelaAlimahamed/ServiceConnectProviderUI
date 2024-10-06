@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { CiCircleChevLeft } from "react-icons/ci";
 import FormComponent from "../../../components/reUsableComponents/FormComponent";
+import NavbarHead from '../../../components/serviceProvider/layout/NavbarHead';
 
 const Forgotpassword = () => {
   const fieldConfigs = [
@@ -28,8 +29,8 @@ const Forgotpassword = () => {
   const buttonConfig = {
     label: "Continue",
     type: "submit",
-    btnWidth: "100%",
-    btnHeight: "50px",
+    btnWidth: "w-full",
+    btnHeight: "30px",
     icon: <FaArrowRight className="ml-2" />,
   };
 
@@ -40,15 +41,7 @@ const Forgotpassword = () => {
 
   return (
     <div className="bg-light-gray min-h-screen flex flex-col">
-      {/* Navigation Bar */}
-      <nav className="bg-[#1D1F2A] w-full h-[80px] flex items-center px-4">
-        <Link to="/" className="text-white text-2xl">
-          <CiCircleChevLeft className="h-[40px] w-[40px]" />
-        </Link>
-        <p className="text-[21px] text-white font-default font-semibold ml-2">
-          FORGOT PASSWORD
-        </p>
-      </nav>
+     
 
       {/* Form Container */}
       <div className="flex flex-col items-center justify-center flex-grow font-input text-[14px]">

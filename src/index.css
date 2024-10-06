@@ -5,5 +5,18 @@
 
 body {
   margin: 0;
+
+}
+
+input:-webkit-autofill {
+  background-color: inherit !important; /* Inherit the original background */
+  color: inherit !important; /* Inherit the original text color */
+  box-shadow: 0 0 0px 1000px#736A68 inset !important; /* Fix autofill background */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
 }
 

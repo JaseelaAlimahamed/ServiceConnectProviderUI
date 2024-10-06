@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import { FaArrowRight } from "react-icons/fa";
-import { CiCircleChevLeft } from "react-icons/ci";
+import NavbarHead from "../../../components/serviceProvider/layout/NavbarHead";
 import FormComponent from "../../../components/reUsableComponents/FormComponent";
 import ReusableModal from "../../../components/reUsableComponents/ReModal";
-import image from "../../../assets/Group.png"; // Use appropriate path for the image
+import image from "../assets/Group.png"; // Use appropriate path for the image
 
 const NewPassword = () => {
   const [isSubmitted, setIsSubmitted] = useState(false); // Manage form submission state
@@ -62,14 +62,7 @@ const NewPassword = () => {
   return (
     <div className="bg-light-gray min-h-screen flex flex-col">
       {/* Navigation Bar */}
-      <nav className="bg-[#1D1F2A] w-full h-[80px] flex items-center px-4">
-        <Link to="/" className="text-white text-2xl">
-          <CiCircleChevLeft className="h-[40px] w-[40px]" />
-        </Link>
-        <p className="text-[21px] text-white font-default font-semibold ml-2">
-          NEW PASSWORD
-        </p>
-      </nav>
+      
 
       {/* Check if form is submitted */}
       {isSubmitted ? (
