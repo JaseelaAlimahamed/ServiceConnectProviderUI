@@ -22,6 +22,8 @@ import LeadDetailPage from '../Pages/Services/LeadDetailPage';
 import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
+import ComplaintList from '../pages/complaintsPage/Complaint';
+import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -100,6 +102,14 @@ const ProviderRoutes = createBrowserRouter([
       },{
         path: 'advertisement',
         element: <AdsManagementPage/>,
+        loader: protectRoute, 
+      },{
+        path: 'complaints',
+        element: <ComplaintList/>,
+        loader: protectRoute, 
+      },{
+        path: 'franchise-details',
+        element: <FranchiseDetails/>,
         loader: protectRoute, 
       },
 
