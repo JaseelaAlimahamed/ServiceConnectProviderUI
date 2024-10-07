@@ -45,7 +45,7 @@ const BoostService = () => {
 
 
   return (
-    <div className="bg-pagebg min-h-screen">
+    <div className="bg-light-gray min-h-screen">
       <div className="p-5 pt-20 max-w-screen-lg mx-auto">
         <HeadCard title="House Electrical" imgSrc="boostservice-img.png" />
       <form onSubmit={getApiCall}>
@@ -85,11 +85,8 @@ const BoostService = () => {
           <ButtonComponent
             label="Confirm and Pay"
             type="submit"
-            disabled={false}
-            btnWidth="w-full "
             btnHeight="h-[56px]"
-            btnColor="bg-accept-btn"
-            variant="complaint"
+            hasIcon={false}
           />
         </div>
       </form>

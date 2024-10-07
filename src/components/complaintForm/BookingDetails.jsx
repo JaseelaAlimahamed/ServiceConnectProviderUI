@@ -18,12 +18,12 @@ const BookingDetails = ({bookingDetails}) => {
          <h3 className='font-semibold'>Appointment</h3>
          <div className="flex flex-wrap gap-2 ml-[50px] sm:ml-[90px]">
 
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-boxshadow-1'>{appoinment.date}</span>
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-[#7878801F] shadow-boxshadow-1'>{appoinment.time}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-light-gray shadow-boxshadow-1'>{appoinment.date}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-light-gray shadow-boxshadow-1'>{appoinment.time}</span>
 
          </div>
 
-         <div className="overflow-x-auto text-[#303972] pt-2">
+         <div className="overflow-x-auto text-cardfont pt-2">
              <table className='w-full'>
                  <caption className='text-left font-bold'>Invoice</caption>
                  <thead>
@@ -50,13 +50,13 @@ const BookingDetails = ({bookingDetails}) => {
              <span className='mr-10 font-bold'>Grand Total  300</span>
              </div>
          </div>
-         <div className='text-[#303972] lg:flex lg:mt-2'>
+         <div className='text-cardfont lg:flex lg:mt-2'>
             <div>
          <p>Terms and conditions</p>
          <p className='ml-6'>Valid up to 1 month</p>
          
          <div className="flex py-1">
-         <span className='text-sm font-semibold text-[#EC221F] mr-2'>Additional requirements</span>
+         <span className='text-sm font-semibold text-dark-red mr-2'>Additional requirements</span>
          <img src="/complaintformAlert-icon.svg" alt="" />
          </div>
             </div>

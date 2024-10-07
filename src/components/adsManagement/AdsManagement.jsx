@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import AdsCard from './adsCard';
 import ButtonComponent from '../reUsableComponents/ButtonComponent';
-import TabComponent from '../reUsableComponents/TabComponent';
+import TabComponent from './TabComponent';
 
 const AdsManagement = () => {
 
@@ -45,7 +45,7 @@ const AdsManagement = () => {
         console.log(adID,"editAd triggered")
     }
   return (
-    <div className="w-full min-h-screen bg-[#D9D9DB] font-input">
+    <div className="w-full min-h-screen bg-light-gray font-input">
 
       <div className="py-6 px-2 lg:px-10 lg:w-4/5 m-auto pb-16">
 

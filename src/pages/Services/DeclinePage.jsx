@@ -1,5 +1,5 @@
 import React from 'react'
-import DeclineForm from '../../components/serviceProvider/complaintDecline/DeclineForm'
+import DeclineForm from '../../components/declineForm/DeclineForm'
 
 const DeclinePage = () => {
   return (

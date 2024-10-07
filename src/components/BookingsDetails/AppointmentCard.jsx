@@ -18,8 +18,8 @@ function AppointmentCard() {
   ],
 };
   return (
-    <div className="p-4 bg-white rounded-2xl shadow-md max-w-md mx-auto lg:max-w-2xl ml-4 mr-4">
-      <h2 className="text-lg text-base font-bold ml-6 mb-4">Appointment</h2>
+    <div className="p-4 bg-white rounded-2xl shadow-md max-w-md mx-auto lg:max-w-2xl ">
+      <h2 className="text-lg font-base font-bold ml-6 mb-4">Appointment</h2>
 
       <div className="flex flex-col ml-8 mt-2">
         <div className="grid grid-cols-2 gap-4">
