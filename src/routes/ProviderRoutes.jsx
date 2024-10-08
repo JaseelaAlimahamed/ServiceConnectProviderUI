@@ -23,6 +23,8 @@ import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import BoostServicePage from '../pages/BoostServicePage'
+
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -106,6 +108,11 @@ const ProviderRoutes = createBrowserRouter([
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
+      },
+      {
+        path: 'boostservice',
+        element: <BoostServicePage />,
+        loader: protectRoute, 
       },
 
     ],
