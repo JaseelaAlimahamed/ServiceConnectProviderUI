@@ -18,8 +18,8 @@ const BookingDetails = ({bookingDetails}) => {
          <h3 className='font-semibold'>Appointment</h3>
          <div className="flex flex-wrap gap-2 ml-[50px] sm:ml-[90px]">
 
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-medium-gray shadow-boxshadow-1'>{appoinment.date}</span>
-             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-medium-gray shadow-boxshadow-1'>{appoinment.time}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-light-gray shadow-boxshadow-1'>{appoinment.date}</span>
+             <span className='text-lg font-semibold rounded-lg px-4 py-2 bg-light-gray shadow-boxshadow-1'>{appoinment.time}</span>
 
          </div>
 
