@@ -22,6 +22,7 @@ import LeadDetailPage from '../Pages/Services/LeadDetailPage';
 import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
+import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -101,6 +102,10 @@ const ProviderRoutes = createBrowserRouter([
         path: 'advertisement',
         element: <AdsManagementPage/>,
         loader: protectRoute, 
+      },{
+        path: 'notification',
+        element: <NotificationsPage/>,
+        loader: protectRoute,
       },
 
     ],
