@@ -35,13 +35,13 @@ const EditAdsPage = () => {
       <div className="flex justify-between items-center mb-4">
         <ButtonComponent
           label="Add your image +"
-          btnColor="bg-secondary"
+          bgColor="bg-primary"
           fontColor="text-primary"
           onClick={handleButtonClick} // Step 3: Handle button click to trigger file input
         />
         <ButtonComponent
           label="Status"
-          btnColor="bg-completebtn"
+          bgColor="bg-statusopened"
           fontColor="text-primary"
         />
       </div>
