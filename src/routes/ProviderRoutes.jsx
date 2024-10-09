@@ -1,57 +1,161 @@
 import React from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
-import ComplaintPage from '../pages/ServiceProviderPages/ComplaintFormPage';
-import AdsManagementPage from '../pages/managementPages/AdsManagementPage';
-import RegisteredServices from '../pages/RegisteredServices';
-import RequestDetails from '../pages/RequestDetails';
-import BookingDetails from '../pages/BookingsDetails';
-import NewPassword from '../pages/NewPassword';
-import ForgotPassword from '../pages/ForgotPassword';
-import AllowLocationComponent from '../components/reUsableComponents/AllowLocationComponent';
-import ServiceProviderSignIn from '../SignInOTPComponents/Pages/ServiceProviderSignIn';
-import OTPPage from '../SignInOTPComponents/Pages/OTPPage';
-import BookingDetailsPage from '../pages/BookingDetailsPage';
-import ProfilePage from '../pages/ProfilePage';
-import DeclineForm from '../components/serviceProvider/complaintDecline/DeclineForm';
-import ComplaintForm from '../components/serviceProvider/complaintDecline/ComplaintForm';
-import BookingsPage from '../pages/bookings/BookingsPage';
-import AcceptAndInvoice from '../pages/AcceptAndInvoice/AcceptAndInvoice';
-import RightSideBarPage from '../pages/rightSideBar/rightSideBarPage';
-import FinancialPage from '../pages/ServiceProviderPages/FinancialPage';
+import { createBrowserRouter } from 'react-router-dom';
+import { protectRoute } from '../utils/Auth';
+import MainLayout from '../layouts/MainLayout';
+
+import ServiceProviderSignIn from '../Pages/ServiceProviderPages/signInPages/ServiceProviderSignIn';
+import OTPPage from '../Pages/ServiceProviderPages/signInPages/OTPPage';
+import ForgotPassword from '../Pages/ServiceProviderPages/signInPages/Forgotpassword';
+import AddProfilePage from '../Pages/ServiceProviderPages/signInPages/AddProfilePage';
+
+import RegisteredServices from '../Pages/Services/RegisterService/RegisteredServices';
+import EditService from '../Pages/Services/RegisterService/EditService';
+import RegisterServices from '../Pages/Services/RegisterService/RegisterServices';
+
+import ServiceRequestPage from '../pages/Services/requests/ServiceRequestPage';
+import RequestDetails from '../Pages/Services/requests/RequestDetails';
+import BookingsPage from '../Pages/Services/bookings/BookingsPage';
+import BookingDetails from '../Pages/Services/bookings/BookingDetails';
+
+import ComplaintFormPage from '../Pages/Services/complaintForm/ComplaintFormPage';
+import LeadDetailPage from '../Pages/Services/LeadDetailPage';
+import DeclinePage from '../Pages/Services/DeclinePage';
+import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
+import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
+
+import BoostServicePage from '../pages/BoostServicePage'
+import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
-import EditAdsPage from '../components/adsManagement/EditAds';
+import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
+
+import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
+import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 
 
-function ProviderRoutes() {
-  return (
-    <div>
-      <Routes>
-        <Route path="/complaint" element={<ComplaintPage />} />
-        <Route path="/adsmanagement" element={<AdsManagementPage />} />
+
+
+
+const ProviderRoutes = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />,
+    children: [
+      {
+        path: 'sign-in',
+        element: <ServiceProviderSignIn />,
+      },
+      {
+        path: 'otp',
+        element: <OTPPage />,
+      },
+      {
+        path: 'forgot-password',
+        element: <ForgotPassword />,
+      },
+      {
+
+
+        path: 'otp-forgot-password',
+        element: <OtpForgotPasswordPage />,
+      },
+      {
+
+        path: 'fill-your-profile',
+        element: <AddProfilePage />,
+      },
+      {
+        path: 'my-services',
+        element: <RegisteredServices />, 
+        loader: protectRoute,
+      },
+      {
+        path: 'edit-service/:id',
+        element: <EditService />, 
+        loader: protectRoute
+      },
+      {
+        path: 'add-service',
+        element: <RegisterServices />, 
+        loader: protectRoute, 
+      },
+      {
+        path: 'service-request',
+        element: <ServiceRequestPage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'request-details/:id',
+        element: <RequestDetails />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'bookings',
+        element: <BookingsPage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'booking-detail/:id',
+        element: <BookingDetails />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'register-complaint/:id',
+        element: <ComplaintFormPage/>,
+        loader: protectRoute, 
+      },
+      {
+        path: 'lead-details/:id',
+        element: <LeadDetailPage/>,
+        loader: protectRoute, 
+      },{
+        path: 'decline-form/:id',
+        element: <DeclinePage/>,
+        loader: protectRoute, 
+      },{
+        path: 'invoice/:id',
+        element: <AcceptAndInvoice/>,
+        loader: protectRoute, 
+      },{
+        path: 'advertisement',
+        element: <AdsManagementPage/>,
+        loader: protectRoute, 
+
+      },
+      {
+        path: '/boostservice',
+        element: <BoostServicePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: '/financial',
+        element: <FinancialPage />,
+        loader: protectRoute, 
+      },
+      {
+        path:'/reviews',
+        element:<ServiceReviewsPage/>,
+        loader: protectRoute,
+      },
+      {
+        path:'/terms-and-conditions',
+        element:<TermsAndConditions/>,
+        loader: protectRoute,
+      },
      
-        
-        <Route path="/Registered-Services" element={<RegisteredServices />} />
-        <Route path="/location" element={<AllowLocationComponent />} />
-        <Route path="/req-details" element={<RequestDetails />} />
-        <Route path="/bookingdetail/:id" element={<BookingDetails />} />
-        <Route path="/booking-page" element={<BookingsPage />} />
-        <Route path='/accept-invoice' element={<AcceptAndInvoice />} />
-        <Route path='/side-bar' element={<RightSideBarPage />} />
-        <Route path="/newpassword" element={<NewPassword />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/signin" element={<ServiceProviderSignIn />} />
-        <Route path="/otpPage" element={<OTPPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/declineform" element={<DeclineForm />} />
-        <Route path="/complaintform" element={<ComplaintForm />} />
-        <Route path="/service-financial" element={<FinancialPage />} />
-        <Route path="/Service-reviews" element={<ServiceReviewsPage />} />
-        <Route path="/" element={<Navigate to="/signin" />} />
-        <Route path="/editads" element={<EditAdsPage />} />
 
-      </Routes>
-    </div>
-  );
-}
+      {
+        path: 'notification',
+        element: <NotificationsPage/>,
+        loader: protectRoute,
+      },
+      {
+        path: 'boostservice',
+        element: <BoostServicePage />,
+        loader: protectRoute, 
+      },
+
+    ],
+  },
+]);
 
 export default ProviderRoutes;

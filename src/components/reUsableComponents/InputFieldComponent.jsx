@@ -28,15 +28,20 @@ const InputFieldComponent = ({
     <div className="flex flex-col">
       <div className="relative">
         {icon && (
-          <img
-            src={icon}
-            alt={`${name} icon`}
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-dark-gray"
-          />
+
+          <div className="absolute left-3 top-8 transform -translate-y-1/2 w-5 h-5 text-light-gray">
+            {React.isValidElement(icon) ? (
+              icon 
+            ) : (
+              <img src={icon} alt={`${name} icon`} className="w-5 h-5" />
+            )}
+          </div>
+
         )}
+
         <input
 
-          className={`px-4 py-2 mt-1 rounded-md border border-light-gray placeholder-white bg-medium-gray font-input text-dark-gray  focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
+          className={`px-4 py-2 mt-1 rounded-md border border-light-gray placeholder-light-gray bg-medium-gray font-input text-light-gray  focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
 
           style={{
             width: inputWidth,
@@ -54,6 +59,7 @@ const InputFieldComponent = ({
           onChange={onChange}
           onBlur={onBlur}
         />
+
         {/* Show/Hide Password Button */}
         {isPasswordField && (
           <div

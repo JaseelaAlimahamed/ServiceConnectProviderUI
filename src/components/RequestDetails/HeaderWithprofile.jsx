@@ -4,6 +4,8 @@ import { MdLocationPin } from 'react-icons/md';
 function HeaderWithProfile({ bookingId }) {
   const dummyProfile = {
     image: 'https://imgs.search.brave.com/6k6HtqCtTh7p-diGuCA-DNpe3lk1DC1bpoymrVSUcus/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzQ0LzEwLzQ2/LzM2MF9GXzQ0NDEw/NDY3OV84TFBieDQ3/enZaNEhCWnE3eHht/RkZieEU4azdxUTcx/aS5qcGc',
+    name: 'John Doe',
+    location: 'Kasargod, Kerala, India',
   };
 
   return (
@@ -16,10 +18,10 @@ function HeaderWithProfile({ bookingId }) {
             className="w-16 h-16 rounded-full"
           />
           <div className="flex flex-col">
-            <h2 className="text-xl font-bold">Sundari</h2>
+            <h2 className="text-xl font-bold">{dummyProfile.name} </h2>
             <div className="flex items-center text-secondary font-medium">
               <MdLocationPin className="text-xl mr-0" />
-              <p>Kasargod, Kerala</p>
+              <p>{dummyProfile.location}</p>
             </div>
           </div>
         </div>

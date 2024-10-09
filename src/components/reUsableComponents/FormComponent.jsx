@@ -1,36 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom';
 import InputFieldComponent from './InputFieldComponent';
 import ButtonComponent from './ButtonComponent';
 
+const FormComponent = ({
+  fieldConfigs,
+  buttonConfig,
+  inputConfig,
+  apiEndpoint,
+  heading,
+  profile,
+  forgotPassword,
+  title,
+  paragraph,
+  rememberMe
+}) => {
+  const [profileImage, setProfileImage] = useState(null); // State to hold selected profile image
+  const [previewImage, setPreviewImage] = useState(null); // State for image preview
 
-const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, heading, profile, forgotPassword, title, paragraph,
-   rememberMe }) => {
-
-  const [formData, setFormData] = useState({});
-
-  // Set initial form values based on fieldConfigs
-  useEffect(() => {
-    const initialFormData = fieldConfigs.reduce((acc, field) => {
-      acc[field.name] = '';
-      return acc;
-    }, {});
-    setFormData(initialFormData);
-  }, [fieldConfigs]);
-
-  // Function to handle submission
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try {
-      await apiEndpoint(values); // Call API endpoint with form values
-      resetForm(); // Reset the form upon successful submission
-    } catch (error) {
-      console.error('Error submitting the form:', error);
-    } finally {
-      setSubmitting(false); // Stop the form submission state
-    }
-  };
+  // Initialize form values for text fields
+  const initialFormValues = fieldConfigs.reduce((acc, field) => {
+    acc[field.name] = '';
+    return acc;
+  }, {});
 
   // Yup validation schema
   const validationSchema = Yup.object(
@@ -57,10 +51,40 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
     }, {})
   );
 
+  // Handle form submission
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+
+      const finalValues = {
+        ...values, 
+        profileImage: profileImage ? profileImage : '', 
+      };
+
+      await apiEndpoint(finalValues);
+
+      resetForm(); 
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    } finally {
+      setSubmitting(false); // Stop submitting state
+    }
+  };
+
+
+  // Handle profile image change
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+   
+      setProfileImage(file.name); // Update profileImage state with selected file
+      setPreviewImage(URL.createObjectURL(file)); // Generate preview URL for the image
+    }
+  };
+
   return (
     <div className="bg-light-gray p-6 max-w-xl w-full md:max-w-lg lg:max-w-lg lg:p-4 xl:max-w-md xl:p-4">
       {heading && (
-         <div className="bg-dark-gray p-4 rounded-t-lg w-full mx-auto">
+        <div className="bg-dark-gray p-4 rounded-t-lg w-full mx-auto">
           <h2 className="text-white font-heading text-center text-lg font-bold">{heading}</h2>
         </div>
       )}
@@ -68,28 +92,35 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
       {profile && (
         <div className="flex justify-center mt-4">
           <div className="w-24 h-24 rounded-full bg-medium-gray flex items-center justify-center relative">
-            <img src="/profileImage.svg" alt="Profile" className="w-24 h-24 rounded-full" />
-            <input type="file" className="opacity-0 absolute w-24 h-24" />
+            {previewImage ? (
+              <img src={previewImage} alt="Profile Preview" className="w-24 h-24 rounded-full" />
+            ) : (
+              <img src="/profileImage.svg" alt="Profile" className="w-24 h-24" />
+            )}
+            <input
+              type="file"
+              className="opacity-0 absolute w-24 h-24 cursor-pointer"
+              onChange={handleProfileImageChange}
+              accept="image/*" // Restrict file input to image types
+            />
           </div>
         </div>
       )}
+
       {title && (
-        <div className="font-bold  text-lg mt-2">
+        <div className="font-bold text-lg mt-2">
           {title}
         </div>
       )}
       {paragraph && (
-        <p className=" text-gray-700 mt-2">
+        <p className="text-gray-700 mt-2">
           {paragraph}
         </p>
       )}
-      
-
 
       <Formik
-        initialValues={formData} // Set initial values from state
+        initialValues={initialFormValues} // Set initial values
         validationSchema={validationSchema} // Apply Yup validation schema
-        enableReinitialize={true} // Allow reinitialization of values
         onSubmit={handleSubmit} // Handle form submission
       >
         {({ values, errors, touched, isSubmitting, handleChange, handleBlur }) => (
@@ -107,6 +138,7 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
                 onBlur={handleBlur}
                 inputWidth={inputConfig.inputWidth}
                 inputHeight={inputConfig.inputHeight}
+                icon={field.icon}
               />
             ))}
 
@@ -151,4 +183,3 @@ const FormComponent = ({ fieldConfigs, buttonConfig, inputConfig, apiEndpoint, h
 };
 
 export default FormComponent;
-

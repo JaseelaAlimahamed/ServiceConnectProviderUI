@@ -3,7 +3,7 @@ import paymentlogo from "../assets/paymentlogo.png"
 
 const ReusableModal = ({ isLoading, imageSrc, heading, contentLines, redirectMessage }) => {
   return (
-    <div className="h-screen w-100 bg-[#1D1F2A] bg-opacity-90 flex justify-center items-center">
+    <div className="h-screen w-100 bg-dark-gray bg-opacity-90 flex justify-center items-center">
       {isLoading ? (
         // Loading spinner
         <div className="flex justify-center items-center">

@@ -45,7 +45,7 @@ function AppointmentDetailsSheduling() {
               <input
                 type="date"
                 placeholder='12/10/2000'
-                className="font-semibold text-xl sm:text-2xl w-full rounded-lg p-5 sm:text-center text-gray-400"
+                className="font-semibold text-sm sm:text-sm w-full rounded-lg p-5 sm:text-center text-medium-gray"
                 name="date"
                 value={formData.date}
                 onChange={handleInputChange}
@@ -53,12 +53,12 @@ function AppointmentDetailsSheduling() {
               
             </div>
             <div className="flex flex-col relative">
-              <label className="absolute -top-0 left-2 p-1 text-gray-500">Time</label>
+              <label className="absolute -top-0 left-2 p-1 text-medium-gray">Time</label>
               <div className='flex items-center shadow-xl bg-white rounded-xl'>
                 <input
                   type="time"
                   placeholder="12:00 PM"
-                  className="rounded-lg p-5 font-semibold text-gray-400 text-xl sm:text-2xl w-full sm:text-center cursor-pointer"
+                  className="rounded-lg p-5 font-semibold text-medium-gray text-sm sm:text-sm w-full sm:text-center cursor-pointer"
                   name="time"
                   value={formData.time}
                   onChange={handleInputChange}
@@ -80,7 +80,7 @@ function AppointmentDetailsSheduling() {
               <input
                 type="text"
                 placeholder='Plumbing'
-                className="text-xl w-full rounded-lg p-5 text-secondary"
+                className="text-sm w-full rounded-lg p-5 text-secondary"
                 name="description"
                 value={formData.description}
                 onChange={handleInputChange}
@@ -94,7 +94,7 @@ function AppointmentDetailsSheduling() {
                 <input
                   type="text"
                   placeholder='01'
-                  className="text-xl w-full rounded-lg p-5 text-secondary"
+                  className="text-sm w-full  rounded-lg p-5 text-secondary"
                   name="quantity"
                   value={formData.quantity}
                   onChange={handleInputChange}
@@ -107,7 +107,7 @@ function AppointmentDetailsSheduling() {
                 <input
                   type="text"
                   placeholder='300'
-                  className="text-xl w-full rounded-lg p-5 text-secondary"
+                  className="text-sm w-full rounded-lg p-5 text-secondary"
                   name="price"
                   value={formData.price}
                   onChange={handleInputChange}
@@ -119,10 +119,10 @@ function AppointmentDetailsSheduling() {
 
         <div className='flex flex-col p-4 ml-8 mr-8 sm:ml-12 sm:mr-12'>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-            <div className='bg-gray-600 rounded-full p-4 text-white text-xl font-semibold text-center'>
+            <div className='bg-medium-gray rounded-full p-2 text-white text-md font-semibold text-center'>
               <button className="w-full" onClick={handleAddAnother}>+ Add Another</button>
             </div>
-            <div className='bg-complete-btn rounded-full p-4 text-center text-xl font-semibold text-white'>
+            <div className='bg-complete-btn rounded-full p-2 text-center text-md font-semibold text-white'>
               <button className="w-full" onClick={handleDone}>Done</button>
             </div>
           </div>
@@ -130,12 +130,12 @@ function AppointmentDetailsSheduling() {
 
         <div className='grid sm:grid-cols-2'>
           <div className="flex flex-col ml-8 mr-8 sm:mr-2 relative">
-            <label className='absolute p-1 text-gray-500'>Terms & Conditions</label>
-            <div className="flex items-center bg-white rounded-xl justify-between">
+            <label className='absolute p-1 text-medium-gray'>Terms & Conditions</label>
+            <div className="flex items-center bg-white rounded-none  justify-between">
               <textarea
                 type="text"
                 placeholder='Need to provide keys'
-                className="text-xl w-full rounded-lg p-5 text-secondary"
+                className="text-sm w-full rounded-lg p-5 text-secondary focus:outline-none active:outline-none hover:outline-none"
                 name="terms"
                 value={formData.terms}
                 onChange={handleInputChange}
@@ -144,11 +144,11 @@ function AppointmentDetailsSheduling() {
           </div>
           <div className="flex flex-col sm:mt-0 mt-4 sm:ml-2 ml-8 mr-8 relative">
             <label className='absolute p-1 text-gray-500'>Additional Requirements</label>
-            <div className="flex items-center bg-white rounded-xl justify-between">
+            <div className="flex items-center bg-white rounded-none justify-between">
               <textarea
                 type="text"
                 placeholder='Need to help if need any!'
-                className="text-xl w-full rounded-lg p-5 text-secondary"
+                className="text-sm w-full rounded-lg p-5 text-secondary focus:outline-none active:outline-none hover:outline-none"
                 name="additional"
                 value={formData.additional}
                 onChange={handleInputChange}

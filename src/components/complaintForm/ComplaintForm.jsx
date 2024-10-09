@@ -29,7 +29,7 @@ const ComplaintForm = () => {
 
   return (
     <section>
-      <div className="bg-pagebg min-h-screen w-full py-4 md:px-6 px-4">
+      <div className="bg-light-gray min-h-screen w-full py-4 md:px-6 px-4">
           <div className='w-full lg:flex'>
 
           <div className='lg:w-1/5 w-full'>
