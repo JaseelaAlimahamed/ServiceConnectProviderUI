@@ -23,7 +23,7 @@ import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 
-import BoostServicePage from '../pages/BoostServicePage'
+// import BoostServicePage from '../pages/BoostServicePage'
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
@@ -31,6 +31,7 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import BoostServicePage from '../pages/BoostServicePage'
+import PaymentMethod from '../components/PaymentMethod/PaymentMethods'
 
 
 
@@ -143,7 +144,7 @@ const ProviderRoutes = createBrowserRouter([
       }
      
 
-      },{
+      ,{
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
@@ -153,8 +154,14 @@ const ProviderRoutes = createBrowserRouter([
         element: <BoostServicePage />,
         loader: protectRoute, 
       },
+      {
+        path: 'PaymentMethod',
+        element: <PaymentMethod />,
+        loader: protectRoute, 
+      }
 
     ],
+  
   },
 ]);
 
