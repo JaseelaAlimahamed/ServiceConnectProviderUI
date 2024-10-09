@@ -2,8 +2,8 @@ import React from "react";
 
 const TermsAndConditions = () => {
   return (
-    <div className="min-h-screen  flex flex-col items-center">
-      <div className="w-full max-w-md bg-primary mt-6 rounded-lg p-4">
+    <div className="min-h-screen w-full  flex flex-col items-center">
+      <div className="w-full max-w-md lg:max-w-full bg-primary mt-6 rounded-lg p-4">
  
         <div className="mb-6">
           <h2 className="text-lg font-bold mb-2 text-heading_blck">Condition & Attending</h2>
