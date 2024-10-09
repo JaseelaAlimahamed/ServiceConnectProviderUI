@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiCalendar, HiClock } from 'react-icons/hi';
 
+
 export const RequestCard = ({ type, title, status, date, time, customer, daytime, id }) => {
     console.log(type);
     
@@ -45,11 +46,14 @@ export const RequestCard = ({ type, title, status, date, time, customer, daytime
                 <HiClock className='text-yellow-500' />
                 <span>{time}</span>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
   );
 };
 

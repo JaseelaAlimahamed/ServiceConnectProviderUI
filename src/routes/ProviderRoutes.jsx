@@ -22,9 +22,16 @@ import LeadDetailPage from '../Pages/Services/LeadDetailPage';
 import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
+
+import BoostServicePage from '../pages/BoostServicePage'
+import FinancialPage from '../pages/Services/FinancialPage';
+import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
+import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
+
 import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import BoostServicePage from '../pages/BoostServicePage'
+
 
 
 
@@ -46,10 +53,13 @@ const ProviderRoutes = createBrowserRouter([
         element: <ForgotPassword />,
       },
       {
+
+
         path: 'otp-forgot-password',
         element: <OtpForgotPasswordPage />,
       },
       {
+
         path: 'fill-your-profile',
         element: <AddProfilePage />,
       },
@@ -109,6 +119,30 @@ const ProviderRoutes = createBrowserRouter([
         path: 'advertisement',
         element: <AdsManagementPage/>,
         loader: protectRoute, 
+
+      },
+      {
+        path: '/boostservice',
+        element: <BoostServicePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: '/financial',
+        element: <FinancialPage />,
+        loader: protectRoute, 
+      },
+      {
+        path:'/reviews',
+        element:<ServiceReviewsPage/>,
+        loader: protectRoute,
+      },
+      {
+        path:'/terms-and-conditions',
+        element:<TermsAndConditions/>,
+        loader: protectRoute,
+      }
+     
+
       },{
         path: 'notification',
         element: <NotificationsPage/>,

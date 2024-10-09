@@ -6,8 +6,10 @@ export const isAuthenticated = () => {
 
 export const protectRoute = () => {
   if (!isAuthenticated()) {
+
     return redirect('/sign-in'); 
   }
   
   return null; 
 }
+

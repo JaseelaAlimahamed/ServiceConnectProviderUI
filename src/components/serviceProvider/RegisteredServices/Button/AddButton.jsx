@@ -1,12 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+
 import { FiPlus } from 'react-icons/fi'; // Import the plus icon
+
 
 const AddButton = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   const handleAddNewService = () => {
     navigate('/add-service');
+
   };
 
   return (
@@ -17,9 +20,12 @@ const AddButton = () => {
       >
         <FiPlus className="mr-2 " /> {/* Icon with some right margin */}
         ADD NEW SERVICE
+
       </button>
     </div>
   );
 };
 
 export default AddButton;
+
+

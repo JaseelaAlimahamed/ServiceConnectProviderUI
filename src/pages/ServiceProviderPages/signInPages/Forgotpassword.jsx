@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { SlEnvolope } from "react-icons/sl";
 import { FaArrowRight } from "react-icons/fa"; // Importing FaArrowRight icon
@@ -18,10 +19,12 @@ const ForgotPassword = () => {
   };
 
   // Define field configurations for FormComponent
+
   const fieldConfigs = [
     {
       name: "email",
       type: "email",
+
       placeholder: "Enter your Email",
       label: "Email",
       required: option === "email", // Required only if email is selected
@@ -36,11 +39,13 @@ const ForgotPassword = () => {
   ];
 
   // Button configuration for the form
+
   const buttonConfig = {
     label: "Continue",
     type: "submit",
     btnWidth: "w-full",
     btnHeight: "30px",
+
     
   };
 
@@ -97,9 +102,12 @@ const ForgotPassword = () => {
             heading={null} // No heading for this form
           />
         )}
+
       </div>
     </div>
   );
 };
 
+
 export default ForgotPassword;
+
