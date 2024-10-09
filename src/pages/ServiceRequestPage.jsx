@@ -1,5 +1,5 @@
 import React from 'react';
-import { RequestCard } from '../components/reUsableComponents/RegisteredServices/RequestCard';
+import { RequestCard } from '../components/reUsableComponents/RegisteredServices/RequestCard.js';
 import { requestsData } from '../assets/fake-data';
 
 const ServiceRequestPage = () => {

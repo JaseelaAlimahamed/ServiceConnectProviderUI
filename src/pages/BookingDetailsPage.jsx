@@ -1,20 +1,20 @@
 import React from 'react'
-import Button from '../components/reUsableComponents/RegisteredServices/Button'
+import Buttons from '../components/RequestDetails/Buttons'
 import { RiH1 } from 'react-icons/ri'
 const BookingDetailsPage = () => {
   return (
     <>
     
       <div>BookingDetailsPage</div>
-      <Button
+      <Buttons
       label={<h1>Complete</h1>}
       color={'bg-completebtn'}
       />
-      <Button
+      <Buttons
       label={<h1>Register Complaint</h1>}
       color={'bg-declainbtn'}
       />
-      <Button
+      <Buttons
       label={<h1>Declain</h1>}
       color={'bg-declainbtn'}
       />
