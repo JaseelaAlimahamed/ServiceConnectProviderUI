@@ -16,6 +16,7 @@ module.exports = {
         navbarHead: ['Jost', 'sans-serif'],
         daytime: ['Label Large/Font', 'sans-serif'],
 
+        
       },
       colors: {
         primary: "#FFFFFF",
