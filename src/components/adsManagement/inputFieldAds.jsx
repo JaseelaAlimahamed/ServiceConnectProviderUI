@@ -37,12 +37,11 @@ const InputFieldAds = ({
         )}
         {isTextArea ? (
           <textarea
-            className={`px-4 py-2 mt-1 rounded-md border border-light-gray placeholder-white bg-primary font-input text-dark-gray focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
+            className={`px-4 py-2 mt-1 rounded-md border border-light-gray bg-primary font-input text-dark-gray focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
             style={{
               width: inputWidth,
               fontSize: "14px",
               height: inputHeight || "100px", // Height can be adjusted for textarea
-              '::placeholder': { fontSize: '12px' }
             }}
             name={name}
             placeholder={placeholder}
@@ -52,12 +51,11 @@ const InputFieldAds = ({
           />
         ) : (
           <input
-            className={`px-4 py-2 mt-1 rounded-md border border-light-gray placeholder-white bg-primary font-input text-dark-gray focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
+            className={`px-4 py-2 mt-1 rounded-md border border-light-gray bg-primary font-input text-dark-gray focus:outline-none focus:ring-2 focus:ring-secondary ${icon ? 'pl-10' : ''}`}
             style={{
               width: inputWidth,
               height: inputHeight,
               fontSize: "14px",
-              '::placeholder': { fontSize: '12px' }
             }}
             type={isPasswordField && showPassword ? "text" : type} // Toggle between 'text' and 'password'
             name={name}

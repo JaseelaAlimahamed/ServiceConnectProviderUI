@@ -30,6 +30,7 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import EditAdsPage from '../components/adsManagement/EditAds';
 
 
 
@@ -151,6 +152,11 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'boostservice',
         element: <BoostServicePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'editads',
+        element: <EditAdsPage/>,
         loader: protectRoute, 
       },
 

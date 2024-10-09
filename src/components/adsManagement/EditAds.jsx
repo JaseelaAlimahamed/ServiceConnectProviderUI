@@ -1,22 +1,24 @@
 import React, { useState, useRef } from 'react';
-import DatePicker from 'react-datepicker';
-import TimePicker from 'react-time-picker';
+import Schedule from '../boostService/Schedule';
 import 'react-datepicker/dist/react-datepicker.css';
 import ButtonComponent from '../reUsableComponents/ButtonComponent';
+import EstimatedPrice from '../boostService/EstimatedPrice';
+import TargetArea from '../boostService/TargetArea';
 import InputFieldAds from './inputFieldAds';
-import { FaCalendarAlt } from "react-icons/fa";
 
 const EditAdsPage = () => {
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
-  const [startTime, setStartTime] = useState('12:00');
-  const [endDate, setEndDate] = useState(new Date());
-  const [endTime, setEndTime] = useState('12:00');
+  
+  // Schedule states
+  const [fromSchedule, setFromSchedule] = useState({ date: '', time: '' });
+  const [toSchedule, setToSchedule] = useState({ date: '', time: '' });
   const [targetArea, setTargetArea] = useState('upto 5 km radius');
+
   const fileInputRef = useRef(null);
 
+  // Handle image upload
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -24,24 +26,38 @@ const EditAdsPage = () => {
     }
   };
 
+  // Handle file input click
   const handleButtonClick = () => {
-    fileInputRef.current.click(); // Step 2: Trigger the file input click
+    fileInputRef.current.click(); // Trigger file input click
+  };
+
+  // Schedule change handlers
+  const handleFromSchedule = (name, value) => {
+    setFromSchedule((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleToSchedule = (name, value) => {
+    setToSchedule((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleTargetAreaChange = (value) => {
+    setTargetArea(value);
   };
 
   return (
-    <div className="bg-light-gray min-h-screen w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto">
+    <div className="bg-light-gray min-h-screen w-full max-w-2xl mx-auto p-4">
       
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
         <ButtonComponent
           label="Add your image +"
           bgColor="bg-primary"
           fontColor="text-primary"
-          onClick={handleButtonClick} // Step 3: Handle button click to trigger file input
+          onClick={handleButtonClick} // Handle button click to trigger file input
         />
         <ButtonComponent
           label="Status"
-          bgColor="bg-statusopened"
+          btnColor="bg-complete-btn"
           fontColor="text-primary"
         />
       </div>
@@ -56,10 +72,15 @@ const EditAdsPage = () => {
       />
 
       {/* Display uploaded image */}
-      {image && <img src={image} alt="Uploaded" className="w-full h-40 object-cover rounded-lg mb-4" />}
+      {image && (
+        <img
+          src={image}
+          alt="Uploaded"
+          className="w-full h-40 object-cover rounded-lg mb-4"
+        />
+      )}
 
       {/* Title and Description Input */}
-      {/* Title Field */}
       <InputFieldAds
         name="title"
         type="text"
@@ -68,7 +89,6 @@ const EditAdsPage = () => {
         onChange={(e) => setTitle(e.target.value)}
       />
 
-      {/* Description Field */}
       <InputFieldAds
         name="description"
         placeholder="Description"
@@ -77,66 +97,51 @@ const EditAdsPage = () => {
       />
 
       {/* Schedule Section */}
-      <div className="mb-4">
-        <h4 className="text-black-500 font-semibold ">Schedule</h4>
-        <div className="flex space-x-2">
-          <div className="flex-1">
-            <label className="block text-black-500 mb-1 font-semibold">From</label>
-            <div className="relative">
-            <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              className="w-full p-2 border rounded-lg" 
-            />
-            <FaCalendarAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
-            </div>
-            
-            <TimePicker
-              value={startTime}
-              onChange={setStartTime}
-              className="w-full p-2 border rounded-lg mt-2"
+      <h3 className='text-secondary font-medium mt-6 ml-2'>Schedule</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* From Schedule */}
+        <div className="w-full">
+          <h3 className='text-secondary font-medium '>From</h3>
+          <div className='ml-2'>
+            <Schedule
+              schedule={fromSchedule}
+              onScheduleChange={handleFromSchedule}
             />
           </div>
-          <div className="flex-1">
-            <label className="block text-gray-500 mb-1">To</label>
-            <DatePicker
-              selected={endDate}
-              onChange={(date) => setEndDate(date)}
-              className="w-full p-2 border rounded-lg"
-            />
-            <TimePicker
-              value={endTime}
-              onChange={setEndTime}
-              className="w-full p-2 border rounded-lg mt-2"
+        </div>
+
+        {/* To Schedule */}
+        <div className="w-full">
+          <h3 className='text-secondary font-medium '>To</h3>
+          <div className='ml-2'>
+            <Schedule
+              schedule={toSchedule}
+              onScheduleChange={handleToSchedule}
             />
           </div>
         </div>
       </div>
 
-      {/* Target Area Dropdown */}
-      <div className="mb-4">
-        <label className="block text-gray-500 mb-1">Target Area</label>
-        <select
-          value={targetArea}
-          onChange={(e) => setTargetArea(e.target.value)}
-          className="w-full p-2 border rounded-lg"
-        >
-          <option value="upto 5 km radius">upto 5 km radius</option>
-          <option value="upto 10 km radius">upto 10 km radius</option>
-          <option value="upto 20 km radius">upto 20 km radius</option>
-        </select>
+      {/* Target Area and Estimated Price */}
+      <div className="sm:flex w-full items-start mt-6 gap-4">
+        <TargetArea
+          targetArea={targetArea}
+          onTargetAreaChange={handleTargetAreaChange}
+        />
+        <div className="w-full mt-4 sm:mt-0">
+          <EstimatedPrice days={30} price={350} />
+        </div>
       </div>
 
-      {/* Price and Days Info */}
-      <div className="mb-4 text-gray-500">
-        <p>Total number of Days: 30</p>
-        <p>Estimated Price: Rs 350/-</p>
+      {/* Confirm and Pay Button */}
+      <div className="flex justify-center mt-8">
+        <ButtonComponent
+          label="Confirm and Pay"
+          type="submit"
+          btnHeight="h-[56px]"
+          hasIcon={false}
+        />
       </div>
-
-      {/* Confirm Button */}
-      <button className="w-full bg-black text-white py-3 rounded-lg">
-        Confirm and Pay
-      </button>
     </div>
   );
 };
