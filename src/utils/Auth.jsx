@@ -6,8 +6,8 @@ export const isAuthenticated = () => {
 
 export const protectRoute = () => {
   if (!isAuthenticated()) {
-    return redirect('/sign-in'); // Redirect to sign-in if not authenticated
+    return redirect('/sign-in'); 
   }
   
-  return null; // If authenticated, just return null or some placeholder data
-};
+  return null; 
+}

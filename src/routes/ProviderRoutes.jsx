@@ -22,6 +22,7 @@ import LeadDetailPage from '../Pages/Services/LeadDetailPage';
 import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
+import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -40,6 +41,10 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'forgot-password',
         element: <ForgotPassword />,
+      },
+      {
+        path: 'otp-forgot-password',
+        element: <OtpForgotPasswordPage />,
       },
       {
         path: 'fill-your-profile',
