@@ -22,10 +22,10 @@ import LeadDetailPage from '../Pages/Services/LeadDetailPage';
 import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
-
 import ComplaintList from '../pages/complaintsPage/Complaint';
 import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
-
+import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
+import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import BoostServicePage from '../pages/BoostServicePage'
 
 
@@ -46,6 +46,10 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'forgot-password',
         element: <ForgotPassword />,
+      },
+      {
+        path: 'otp-forgot-password',
+        element: <OtpForgotPasswordPage />,
       },
       {
         path: 'fill-your-profile',
@@ -115,9 +119,13 @@ const ProviderRoutes = createBrowserRouter([
         path: 'franchise-details',
         element: <FranchiseDetails/>,
         loader: protectRoute, 
+      },{
+        path: 'notification',
+        element: <NotificationsPage/>,
+        loader: protectRoute,
       },
       {
-        path: '/boostservice',
+        path: 'boostservice',
         element: <BoostServicePage />,
         loader: protectRoute, 
       },
