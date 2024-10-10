@@ -13,7 +13,7 @@ import RegisteredServices from '../Pages/Services/RegisterService/RegisteredServ
 import EditService from '../Pages/Services/RegisterService/EditService';
 import RegisterServices from '../Pages/Services/RegisterService/RegisterServices';
 
-import ServiceRequestPage from '../Pages/Services/requests/ServiceRequestPage';
+import ServiceRequestPage from '../pages/Services/requests/ServiceRequestPage';
 import RequestDetails from '../Pages/Services/requests/RequestDetails';
 import BookingsPage from '../Pages/Services/bookings/BookingsPage';
 import BookingDetails from '../Pages/Services/bookings/BookingDetails';
@@ -35,7 +35,7 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
-
+import EditAdsPage from '../components/adsManagement/EditAds';
 
 
 
@@ -126,11 +126,7 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
 
       },
-      {
-        path: 'boostservice',
-        element: <BoostServicePage />,
-        loader: protectRoute, 
-      },
+     -
       {
         path: '/financial',
         element: <FinancialPage />,
@@ -146,6 +142,7 @@ const ProviderRoutes = createBrowserRouter([
         element:<TermsAndConditions/>,
         loader: protectRoute,
       },
+
   {
         path: 'complaints',
         element: <ComplaintList/>,
@@ -162,8 +159,13 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute,
       },
       {
-        path: 'boostservice',
+        path: 'boost-service',
         element: <BoostServicePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'edit-ads',
+        element: <EditAdsPage/>,
         loader: protectRoute, 
       },
 
