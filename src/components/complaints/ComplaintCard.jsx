@@ -38,7 +38,7 @@ const Card = ({ title, name, bookingId, disputeStatus, sideColor }) => {
         {/* Chat/Call Button */}
         <div className='flex justify-center'>
             <Button onClick={() => console.log('Chat/Call clicked')} 
-                variant='complaint' label={"Call/Chat"}>
+                variant='complaint' label={"Call/Chat"} btnWidth={"w-3/4"}>
             </Button>
         </div>
     </div>
