@@ -28,6 +28,7 @@ const InputFieldComponent = ({
     <div className="flex flex-col">
       <div className="relative">
         {icon && (
+
           <div className="absolute left-3 top-8 transform -translate-y-1/2 w-5 h-5 text-light-gray">
             {React.isValidElement(icon) ? (
               icon 
@@ -35,6 +36,7 @@ const InputFieldComponent = ({
               <img src={icon} alt={`${name} icon`} className="w-5 h-5" />
             )}
           </div>
+
         )}
 
         <input

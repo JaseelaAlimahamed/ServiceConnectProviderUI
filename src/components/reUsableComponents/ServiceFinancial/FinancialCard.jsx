@@ -11,7 +11,7 @@ const FinancialCard = ({Name, Date, Amount}) => {
                 <p className="text-xs text-profilefont font-semibold">{Date}</p>
               </div>
             </div>
-            <p className="text-red-500">{Amount}</p>
+            <p className="text-amount_red">{Amount}</p>
           </div>  
 
     </div>
