@@ -13,7 +13,8 @@ const ButtonComponent = ({
 }) => {
   const variantClasses = {
     default: `${btnColor} rounded-full shadow-boxshadow-1 mt-2 p-4 text-primary font-default hover:bg-secondary transition-all duration-300 disabled:opacity-50 flex items-center justify-between`,
-    complaint: `${btnColor} text-primary shadow-boxshadow-1 hover:bg-opacity-90 font-default py-2 rounded-full transition-colors`,
+    complaint: `${btnColor} ${btnWidth} text-primary hover:bg-opacity-90 font-default py-2 rounded-full transition-colors`,
+    franchise: `${btnColor} text-primary hover:bg-dark-red py-2 lg:px-32 sm:px-20 px-10 rounded-full transition-colors`,
   };
 
   return (

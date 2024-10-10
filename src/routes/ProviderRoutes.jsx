@@ -7,6 +7,7 @@ import ServiceProviderSignIn from '../Pages/ServiceProviderPages/signInPages/Ser
 import OTPPage from '../Pages/ServiceProviderPages/signInPages/OTPPage';
 import ForgotPassword from '../Pages/ServiceProviderPages/signInPages/Forgotpassword';
 import AddProfilePage from '../Pages/ServiceProviderPages/signInPages/AddProfilePage';
+import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
 
 import RegisteredServices from '../Pages/Services/RegisterService/RegisteredServices';
 import EditService from '../Pages/Services/RegisterService/EditService';
@@ -23,14 +24,18 @@ import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 
+import ComplaintList from '../pages/complaintsPage/Complaint';
+import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
+
+
 import BoostServicePage from '../pages/BoostServicePage'
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
 
-import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
+
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
-import BoostServicePage from '../pages/BoostServicePage'
+
 
 
 
@@ -122,7 +127,7 @@ const ProviderRoutes = createBrowserRouter([
 
       },
       {
-        path: '/boostservice',
+        path: 'boostservice',
         element: <BoostServicePage />,
         loader: protectRoute, 
       },
@@ -132,18 +137,26 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
       },
       {
-        path:'/reviews',
+        path:'reviews',
         element:<ServiceReviewsPage/>,
         loader: protectRoute,
       },
       {
-        path:'/terms-and-conditions',
+        path:'terms-and-conditions',
         element:<TermsAndConditions/>,
         loader: protectRoute,
-      }
-     
-
-      },{
+      },
+  {
+        path: 'complaints',
+        element: <ComplaintList/>,
+        loader: protectRoute, 
+      },
+  {
+        path: 'franchise-details',
+        element: <FranchiseDetails/>,
+        loader: protectRoute, 
+      },
+  {
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
