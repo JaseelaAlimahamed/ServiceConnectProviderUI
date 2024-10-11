@@ -36,6 +36,8 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
+import TransactionsPage from '../pages/Transations/TransactionsPage';
+import JobsPage from '../pages/Services/JobsPage';
 
 
 
@@ -168,6 +170,17 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      {
+        path: 'transactions',
+        element: <TransactionsPage/>,
+        loader: protectRoute, 
+      },
+      {
+        path: 'active-services',
+        element: <JobsPage/>,
+        loader: protectRoute, 
+      },
+
 
     ],
   },

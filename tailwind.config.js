@@ -66,6 +66,12 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
+
+        "button-green":"#167F71",
+        "Activeservice-button":"#4B164C",
+        "pending-red":"#E92D2D",
+        "success-green":"#28A745",
+        "warning-yellow":"#FFC107",
      
         tabbgcolor:"#736A68",
          
@@ -90,3 +96,4 @@ module.exports = {
   plugins: [],
 
 }
+
