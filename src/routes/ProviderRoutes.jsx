@@ -24,6 +24,7 @@ import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import AboutPage from '../pages/ServiceProviderPages/aboutPage/aboutPage';
+import ContactPage from '../pages/Services/contactPage/contactPage';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -109,7 +110,12 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute,
       },{
         path: 'about',
-        element: <AboutPage/>
+        element: <AboutPage/>,
+        loader: protectRoute,
+      },{
+        path: 'help-center',
+        element: <ContactPage/>,
+        loader: protectRoute,
       },
 
     ],
