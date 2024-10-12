@@ -33,7 +33,9 @@ const [activeTab,setActiveTab] = useState('contact');
                 ))}
               </div>  
             ) : (
-                <div className='text-center py-20 font-bold text-5xl'>THIS IS FAQ TAB</div>
+                <div 
+                className='text-center py-20 font-bold text-5xl'
+                >THIS IS FAQ TAB</div>
             )}
         </div>
       </div>
