@@ -35,6 +35,7 @@ const OTPPage = () => {
         });
     };
 
+
     const handleCloseModal = () => {
         setIsModalOpen(false);
         localStorage.setItem('token',"dfsgtrfgh");
