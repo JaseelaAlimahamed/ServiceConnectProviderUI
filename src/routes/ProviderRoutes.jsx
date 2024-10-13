@@ -28,15 +28,21 @@ import ComplaintList from '../pages/complaintsPage/Complaint';
 import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
 
 
-import BoostServicePage from '../pages/BoostServicePage'
+// import BoostServicePage from '../pages/BoostServicePage'
+// import BoostServicePage from '../pages/BoostServicePage'
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
 
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
-import EditAdsPage from '../components/adsManagement/EditAds';
+import BoostServicePage from '../pages/BoostServicePage'
+// import PaymentMethod from '../components/PaymentMethod/PaymentMethods'
 
+// import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import EditAdsPage from '../components/adsManagement/EditAds';
+import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
+import SecurityPage from '../pages/ServiceProviderPages/SecurityPage/SecurityPage';
 
 
 
@@ -126,7 +132,6 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
 
       },
-     -
       {
         path: '/financial',
         element: <FinancialPage />,
@@ -142,8 +147,7 @@ const ProviderRoutes = createBrowserRouter([
         element:<TermsAndConditions/>,
         loader: protectRoute,
       },
-
-  {
+      {
         path: 'complaints',
         element: <ComplaintList/>,
         loader: protectRoute, 
@@ -153,7 +157,8 @@ const ProviderRoutes = createBrowserRouter([
         element: <FranchiseDetails/>,
         loader: protectRoute, 
       },
-  {
+  
+      ,{
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
@@ -163,13 +168,24 @@ const ProviderRoutes = createBrowserRouter([
         element: <BoostServicePage />,
         loader: protectRoute, 
       },
-      {
+       {
         path: 'edit-ads',
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      {
+        path: 'notification-settings',
+        element: <NotificationSettings/>,
+        loader: protectRoute,
+      },
+      {
+        path: 'security',
+        element: <SecurityPage/>,
+        loader: protectRoute,
+      }
 
     ],
+  
   },
 ]);
 
