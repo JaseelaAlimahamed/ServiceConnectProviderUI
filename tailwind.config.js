@@ -1,15 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
-
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
 
-
   theme: {
     extend: {
-
       fontFamily: {
 
         heading: ['poppins', 'sans-serif'],
@@ -22,7 +19,6 @@ module.exports = {
         primary: "#FFFFFF",
         secondary: "#000000",
 
-
         "dark-gray": "#1D1F2A",
         "light-gray": "#D9D9DB",
         "medium-gray": "#736A68",
@@ -31,8 +27,21 @@ module.exports = {
         "dark-red": "#D80027",
         "decline-btn": "#670200",
 
+
+        rating_border:'#4D81E5',
+        rating_bg:'#E8F1FF',
+        rating_star:'#FF9C07',
+        vector_blue:'#223F78',
+        amount_red:'#FF6666',
+        heart_red:'#DD2E44',
+        heading_blck:'#202244',
+        para_grey:'#545454',
+
+
+
         "customPurple": '#C1BBEB',
         "daytime": '#797C7B',
+
 
         "statuspending": '#135275',
 
@@ -43,22 +52,24 @@ module.exports = {
 
         "bluedrk": '#04228E',
         "cardfont": '#303972',
-
         "profilefont": '#535353',
         "incomepurple1": '#9B9CF8',
         "incomepurple2": '8082ED',
         "expenditurepink": '#FEB4C5',
-
-
         "blue-drk": "#04228E",
         "id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
         "divider-pri": "#65558F",
 
 
+
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
+     
+        tabbgcolor:"#736A68",
+         
+
 
       },
       boxShadow: {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Card from './ComplaintCard';
-import Navbar from '../reUsableComponents/RegisteredServices/Navbar';
+import Card from '../../components/complaints/ComplaintCard';
 
 const ComplaintList = () => {
 
@@ -21,11 +20,6 @@ const complaints = {
 
 return (
     <>
-    <Navbar
-      title="Complaints"
-      search={true}
-    />
-
         <div className="w-full h-screen pt-8 p-3 bg-slate-100">
             <div className='flex justify-center lg:w-full'>
                 <div className="flex mb-7 bg-medium-gray p-1 w-full justify-evenly rounded-full font-bold overflow-hidden">
