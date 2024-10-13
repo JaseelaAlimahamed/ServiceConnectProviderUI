@@ -7,7 +7,9 @@ const MainLayout = () => {
     <div>
       <NavbarHead/>
       <main>
-        <Outlet />  {/* Renders the nested routes */}
+
+        <Outlet />  
+
       </main>
     </div>
   );
