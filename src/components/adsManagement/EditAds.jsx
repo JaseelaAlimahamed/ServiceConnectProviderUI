@@ -6,6 +6,8 @@ import EstimatedPrice from '../boostService/EstimatedPrice';
 import TargetArea from '../boostService/TargetArea';
 import InputFieldAds from './inputFieldAds';
 
+
+
 const EditAdsPage = () => {
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState('');

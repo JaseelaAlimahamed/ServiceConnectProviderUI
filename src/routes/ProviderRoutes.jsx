@@ -36,7 +36,8 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
-
+import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
+import Security from '../pages/ServiceProviderPages/SecurityPage/SecurityPage';
 
 
 
@@ -168,6 +169,16 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      {
+        path: 'notification-settings',
+        element: <NotificationSettings/>,
+        loader: protectRoute,
+      },
+      {
+        path: 'security',
+        element: <Security/>,
+        loader: protectRoute,
+      }
 
     ],
   },
