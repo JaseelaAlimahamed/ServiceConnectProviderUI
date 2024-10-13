@@ -23,8 +23,8 @@ import DeclinePage from '../Pages/Services/DeclinePage';
 import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import OtpForgotPasswordPage from '../Pages/ServiceProviderPages/signInPages/OtpForgotPasswordPage';
-import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
-import BoostServicePage from '../pages/BoostServicePage'
+import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import BoostServicePage from '../Pages/Services/BoostServicePage'
 
 
 
