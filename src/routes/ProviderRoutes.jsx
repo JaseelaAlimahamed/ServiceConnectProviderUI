@@ -38,6 +38,8 @@ import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/n
 import EditAdsPage from '../components/adsManagement/EditAds';
 import TransactionsPage from '../pages/Transations/TransactionsPage';
 import JobsPage from '../pages/Services/JobsPage';
+import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
+import NavbarSidebar from '../pages/NavBarSideBar/NavbarSidebar';
 
 
 
@@ -179,6 +181,16 @@ const ProviderRoutes = createBrowserRouter([
         path: 'active-services',
         element: <JobsPage/>,
         loader: protectRoute, 
+      },
+      {
+        path: 'help-center',
+        element: <HelpCenterPage/>,
+        loader: protectRoute,
+      },
+      {
+        path: 'home',
+        element: <NavbarSidebar/>,
+        loader: protectRoute,
       },
 
 

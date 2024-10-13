@@ -74,6 +74,8 @@ module.exports = {
         "warning-yellow":"#FFC107",
      
         tabbgcolor:"#736A68",
+
+        "helpcenter-clr":"#FBFBFB",
          
 
 
