@@ -104,7 +104,7 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
       },
       {
-        path: '/boostservice',
+        path: '/boost-service',
         element: <BoostServicePage />,
         loader: protectRoute, 
       },
