@@ -36,6 +36,10 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+
+import AboutPage from '../pages/ServiceProviderPages/aboutPage/aboutPage';
+import ContactPage from '../pages/Services/contactPage/contactPage';
+
 import BoostServicePage from '../pages/BoostServicePage'
 // import PaymentMethod from '../components/PaymentMethod/PaymentMethods'
 
@@ -43,6 +47,7 @@ import BoostServicePage from '../pages/BoostServicePage'
 import EditAdsPage from '../components/adsManagement/EditAds';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
 import SecurityPage from '../pages/ServiceProviderPages/SecurityPage/SecurityPage';
+
 
 
 
@@ -162,11 +167,22 @@ const ProviderRoutes = createBrowserRouter([
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
+
+      },{
+        path: 'about',
+        element: <AboutPage/>,
+        loader: protectRoute,
+      },{
+        path: 'help-center',
+        element: <ContactPage/>,
+        loader: protectRoute,
+
       },
       {
         path: 'boost-service',
         element: <BoostServicePage />,
         loader: protectRoute, 
+
       },
        {
         path: 'edit-ads',
