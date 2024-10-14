@@ -184,11 +184,7 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
-      {
-        path: 'dashboard',
-        element: <DashBoard/>,
-        loader: protectRoute, 
-      },
+      
       {
         path: 'notification-settings',
         element: <NotificationSettings/>,
@@ -199,7 +195,11 @@ const ProviderRoutes = createBrowserRouter([
         element: <SecurityPage/>,
         loader: protectRoute,
       }
-
+      {
+        path: 'dashboard',
+        element: <DashBoard/>,
+        loader: protectRoute, 
+      },
     ],
   
   },
