@@ -13,7 +13,7 @@ const Works = () => {
   return (
     <div className="w-full min-h-screen bg-light-gray font-input">
 
-    <div className="py-6 px-6 lg:px-10 lg:w-4/5 m-auto pb-16">
+    <div className="py-6 px-4 lg:px-10 lg:w-4/5 m-auto pb-16">
 
       <TabComponent col1label="Ongoing" col2label="Completed" activeTab={activeTab} setActiveTab={setActiveTab} />
 
