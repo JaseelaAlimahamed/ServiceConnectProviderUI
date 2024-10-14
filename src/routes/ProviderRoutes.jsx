@@ -38,6 +38,7 @@ import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/n
 import EditAdsPage from '../components/adsManagement/EditAds';
 import Error404Page from '../pages/errorPages/Error404Page';
 import AccessDenied403Page from '../pages/errorPages/AccessDenied403Page';
+import WorksPage from '../pages/WorksPage';
 
 
 
@@ -171,6 +172,11 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      {
+        path: 'works',
+        element: <WorksPage/>,
+        loader: protectRoute, 
+      },
       
       
 
@@ -181,7 +187,7 @@ const ProviderRoutes = createBrowserRouter([
     element: <Error404Page/>,
   },
   {
-    path: '404',
+    path: '403',
     element: <AccessDenied403Page/>,
   },
 ]);
