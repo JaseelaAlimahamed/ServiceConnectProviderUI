@@ -17,27 +17,31 @@ import ServiceRequestPage from '../pages/Services/requests/ServiceRequestPage';
 import RequestDetails from '../Pages/Services/requests/RequestDetails';
 import BookingsPage from '../Pages/Services/bookings/BookingsPage';
 import BookingDetails from '../Pages/Services/bookings/BookingDetails';
+import LeadDetailPage from '../Pages/Services/LeadDetailPage';
 
 import ComplaintFormPage from '../Pages/Services/complaintForm/ComplaintFormPage';
-import LeadDetailPage from '../Pages/Services/LeadDetailPage';
-import DeclinePage from '../Pages/Services/DeclinePage';
-import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
-import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
-
 import ComplaintList from '../pages/complaintsPage/Complaint';
+import AcceptAndInvoice from '../Pages/AcceptAndInvoice/AcceptAndInvoice'
+import DeclinePage from '../Pages/Services/DeclinePage';
+import PaymentMethod from '../components/PaymentMethod/PaymentMethods'
+
 import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
-
-
-import BoostServicePage from '../pages/BoostServicePage'
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
-import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
 
-
-import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
 import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
+import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
 
+import BoostServicePage from '../Pages/Services/BoostServicePage'
+
+
+import AboutPage from '../pages/ServiceProviderPages/aboutPage/aboutPage';
+import ContactPage from '../pages/Services/contactPage/contactPage';
+import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
+import SecurityPage from '../pages/ServiceProviderPages/SecurityPage/SecurityPage';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -126,7 +130,6 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
 
       },
-     -
       {
         path: '/financial',
         element: <FinancialPage />,
@@ -142,8 +145,7 @@ const ProviderRoutes = createBrowserRouter([
         element:<TermsAndConditions/>,
         loader: protectRoute,
       },
-
-  {
+      {
         path: 'complaints',
         element: <ComplaintList/>,
         loader: protectRoute, 
@@ -153,21 +155,43 @@ const ProviderRoutes = createBrowserRouter([
         element: <FranchiseDetails/>,
         loader: protectRoute, 
       },
-  {
+  
+      ,{
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
+
+      },{
+        path: 'about',
+        element: <AboutPage/>,
+        loader: protectRoute,
+      },{
+        path: 'help-center',
+        element: <ContactPage/>,
+        loader: protectRoute,
+
       },
       {
         path: 'boost-service',
         element: <BoostServicePage />,
         loader: protectRoute, 
+
       },
-      {
+       {
         path: 'edit-ads',
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      {
+        path: 'notification-settings',
+        element: <NotificationSettings/>,
+        loader: protectRoute,
+      },
+      {
+        path: 'security',
+        element: <SecurityPage/>,
+        loader: protectRoute,
+      }
       {
         path: 'dashboard',
         element: <DashBoard/>,
@@ -175,6 +199,7 @@ const ProviderRoutes = createBrowserRouter([
       },
 
     ],
+  
   },
 ]);
 
