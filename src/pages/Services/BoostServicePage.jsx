@@ -1,5 +1,5 @@
 import React from 'react'
-import BoostService from '../components/boostService/BoostService'
+import BoostService from '../../components/boostService/BoostService'
 
 const BoostServicePage = () => {
   return (
