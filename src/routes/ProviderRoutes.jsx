@@ -36,7 +36,7 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
-
+import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
 
 
 
@@ -166,6 +166,11 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'edit-ads',
         element: <EditAdsPage/>,
+        loader: protectRoute, 
+      },
+      {
+        path: 'dashboard',
+        element: <DashBoard/>,
         loader: protectRoute, 
       },
 
