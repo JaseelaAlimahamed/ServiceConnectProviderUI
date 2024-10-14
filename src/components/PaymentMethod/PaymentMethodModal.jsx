@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import paymentlogo from "../assets/paymentlogo.png"
+import paymentlogo from "../../assets/paymentlogo.png"
 
 const ReusableModal = ({ isLoading, imageSrc, heading, contentLines, redirectMessage }) => {
   return (
