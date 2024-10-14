@@ -194,7 +194,7 @@ const ProviderRoutes = createBrowserRouter([
         path: 'security',
         element: <SecurityPage/>,
         loader: protectRoute,
-      }
+      },
       {
         path: 'dashboard',
         element: <DashBoard/>,
