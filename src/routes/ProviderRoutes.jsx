@@ -32,6 +32,8 @@ import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
 import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
+
+
 import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
 
@@ -183,6 +185,11 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
       },
       {
+        path: 'dashboard',
+        element: <DashBoard/>,
+        loader: protectRoute, 
+      },
+      {
         path: 'notification-settings',
         element: <NotificationSettings/>,
         loader: protectRoute,
@@ -192,11 +199,6 @@ const ProviderRoutes = createBrowserRouter([
         element: <SecurityPage/>,
         loader: protectRoute,
       }
-      {
-        path: 'dashboard',
-        element: <DashBoard/>,
-        loader: protectRoute, 
-      },
 
     ],
   
