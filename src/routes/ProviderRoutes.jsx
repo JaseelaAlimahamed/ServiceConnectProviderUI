@@ -25,6 +25,7 @@ import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import AboutPage from '../pages/ServiceProviderPages/aboutPage/aboutPage';
 import ContactPage from '../pages/Services/contactPage/contactPage';
+import RightSideBarPage from '../pages/rightSideBar/rightSideBarPage';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -115,6 +116,10 @@ const ProviderRoutes = createBrowserRouter([
       },{
         path: 'help-center',
         element: <ContactPage/>,
+        loader: protectRoute,
+      },{
+        path: 'rightsidebar',
+        element: <RightSideBarPage/>,
         loader: protectRoute,
       },
 

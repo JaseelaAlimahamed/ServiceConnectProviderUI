@@ -1,11 +1,11 @@
 import React from 'react';
-import ProfileSidebar from '../../components/rightSideMenuBar/rightSideMenuBar';
+import SidebarToggle from '../../components/serviceProvider/layout/rightSideMenuBar/sidebarToggle';
 
 
 function RightSideBarPage() {
   return (
     <div>
-      <ProfileSidebar />
+      <SidebarToggle />
     </div>
   );
 }

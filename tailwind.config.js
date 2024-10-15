@@ -60,6 +60,10 @@ module.exports = {
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
 
+        roundborder: "#FA5075",
+        idyellow: "#F4C73E",
+        textonline: "#36C703",
+
       },
       boxShadow: {
         "boxshadow-1": "0px 4px 4px 0px #00000040",
