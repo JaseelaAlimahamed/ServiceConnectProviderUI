@@ -35,7 +35,7 @@ const OTPPage = () => {
         });
     };
 
-    // Close modal and navigate to fill your profile page
+
     const handleCloseModal = () => {
         setIsModalOpen(false);
         localStorage.setItem('token',"dfsgtrfgh");
