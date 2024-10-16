@@ -34,7 +34,7 @@ import EditAdsPage from '../components/adsManagement/EditAds';
 import TransactionsPage from '../pages/Transations/TransactionsPage';
 import JobsPage from '../pages/Services/JobsPage';
 import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
-import NavbarSidebar from '../pages/NavBarSideBar/NavbarSidebar';
+
 
 import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
@@ -211,12 +211,8 @@ const ProviderRoutes = createBrowserRouter([
         element: <HelpCenterPage/>,
         loader: protectRoute,
       },
-      {
-        path: 'home',
-        element: <NavbarSidebar/>,
-        loader: protectRoute,
-      },
-
+      
+      
 
     ],
   
