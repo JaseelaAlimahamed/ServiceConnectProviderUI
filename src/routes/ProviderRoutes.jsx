@@ -32,9 +32,9 @@ import BoostServicePage from '../pages/BoostServicePage'
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
-
-
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import Ereceipt from '../pages/E-ReceiptPage/E-receipt';
+import CheckoutSuccess from '../components/E-Receipt/CheckoutSuccess';
 
 
 
@@ -146,17 +146,17 @@ const ProviderRoutes = createBrowserRouter([
         element:<TermsAndConditions/>,
         loader: protectRoute,
       },
-  {
+      {
         path: 'complaints',
         element: <ComplaintList/>,
         loader: protectRoute, 
       },
-  {
+      {
         path: 'franchise-details',
         element: <FranchiseDetails/>,
         loader: protectRoute, 
       },
-  {
+      {
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
@@ -164,6 +164,16 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'boostservice',
         element: <BoostServicePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'e-receipt',
+        element: <Ereceipt />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'checkout-success',
+        element: <CheckoutSuccess />,
         loader: protectRoute, 
       },
 
