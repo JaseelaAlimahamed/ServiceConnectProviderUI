@@ -36,7 +36,8 @@ import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions
 
 import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
-
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import PostAd from '../pages/postAd/PostAd';
 
 
 
@@ -168,6 +169,17 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      {
+        path: 'profile',
+        element: <ProfilePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'post-ad',
+        element: <PostAd />,
+        loader: protectRoute, 
+      },
+
 
     ],
   },
