@@ -31,6 +31,10 @@ import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage
 
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
+import TransactionsPage from '../pages/Transations/TransactionsPage';
+import JobsPage from '../pages/Services/JobsPage';
+import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
+
 
 import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
 
@@ -203,6 +207,22 @@ const ProviderRoutes = createBrowserRouter([
       },
 
       {
+        path: 'transactions',
+        element: <TransactionsPage/>,
+        loader: protectRoute, 
+      },
+      {
+        path: 'active-services',
+        element: <JobsPage/>,
+        loader: protectRoute, 
+      },
+      {
+        path: 'help-centerFaq',
+        element: <HelpCenterPage/>,
+        loader: protectRoute,
+      },
+
+      {
         path: 'dashboard',
         element: <DashBoard/>,
         loader: protectRoute, 
@@ -213,11 +233,6 @@ const ProviderRoutes = createBrowserRouter([
         element: <WorksPage/>,
         loader: protectRoute, 
       },
-
-
-    ],
-  
-  },
   {
     path: '*',
     element: <Error404Page/>,
