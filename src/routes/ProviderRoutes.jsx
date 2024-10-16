@@ -49,7 +49,6 @@ import NotificationSettings from '../pages/ServiceProviderPages/NotificationSett
 import SecurityPage from '../pages/ServiceProviderPages/SecurityPage/SecurityPage';
 
 
-import RightSideBarPage from '../pages/rightSideBar/rightSideBarPage';
 
 
 const ProviderRoutes = createBrowserRouter([
@@ -177,11 +176,6 @@ const ProviderRoutes = createBrowserRouter([
         path: 'help-center',
         element: <ContactPage/>,
         loader: protectRoute,
-      },{
-        path: 'rightsidebar',
-        element: <RightSideBarPage/>,
-        loader: protectRoute,
-
       },
       {
         path: 'boost-service',
