@@ -8,7 +8,6 @@ import FormComponent from '../../reUsableComponents/FormComponent';
 import ReusableModal from '../../reUsableComponents/ReModal';
 import ModalComponent from '../../reUsableComponents/ModalComponent';
 
-import envelope from '../../../assets/envolope.svg';
 import image from '../../../assets/image.png';
 
 
