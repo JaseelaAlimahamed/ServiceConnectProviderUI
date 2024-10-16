@@ -66,6 +66,7 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
+        "light-yellow": "#F6E89A",
      
         tabbgcolor:"#736A68",
          

@@ -31,7 +31,13 @@ import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage
 
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
+
 import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
+
+import Error404Page from '../pages/errorPages/Error404Page';
+import AccessDenied403Page from '../pages/errorPages/AccessDenied403Page';
+import WorksPage from '../pages/WorksPage';
+
 
 
 import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
@@ -195,13 +201,30 @@ const ProviderRoutes = createBrowserRouter([
         element: <SecurityPage/>,
         loader: protectRoute,
       },
+
       {
         path: 'dashboard',
         element: <DashBoard/>,
         loader: protectRoute, 
       },
+
+      { 
+        path: 'works',
+        element: <WorksPage/>,
+        loader: protectRoute, 
+      },
+
+
     ],
   
+  },
+  {
+    path: '*',
+    element: <Error404Page/>,
+  },
+  {
+    path: '403',
+    element: <AccessDenied403Page/>,
   },
 ]);
 
