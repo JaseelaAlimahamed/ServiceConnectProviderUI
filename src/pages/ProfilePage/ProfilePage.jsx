@@ -1,6 +1,6 @@
 import React from "react";
-import ProfileHeader from './ProfileHeader';
-import MenuOptions from './MenuOptions';
+import ProfileHeader from '../../components/profilePageComponents/ProfileHeader';
+import MenuOptions from '../../components/profilePageComponents/MenuOptions';
 
 const ProfilePage = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Arrow from "../../assets/profile-arrow.svg"
-import menuItems from "../ProfilePage/menuItems"; // Adjusted path
+import menuItems from "../../components/profilePageComponents/menuItems"; // Adjusted path
 
 const MenuOptions = () => {
   return (
