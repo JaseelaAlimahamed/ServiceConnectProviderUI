@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CardComponent from "./CardComponent";
-import TabComponent from "../ServiceProviderJobs/TabComponent";
+import TabComponent from "./TabComponent";
 
 
 const ActiveServiceJob = () => {
