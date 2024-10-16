@@ -41,10 +41,7 @@ module.exports = {
 
         "customPurple": '#C1BBEB',
         "daytime": '#797C7B',
-
-
         "statuspending": '#135275',
-
         "complete-btn": '#137517',
 
 
@@ -66,18 +63,15 @@ module.exports = {
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
-
         "button-green":"#167F71",
         "Activeservice-button":"#4B164C",
         "pending-red":"#E92D2D",
         "success-green":"#28A745",
         "warning-yellow":"#FFC107",
-     
+        "light-yellow": "#F6E89A",
         tabbgcolor:"#736A68",
 
         "helpcenter-clr":"#FBFBFB",
-         
-
 
       },
       boxShadow: {

@@ -36,6 +36,14 @@ import JobsPage from '../pages/Services/JobsPage';
 import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
 
 
+import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
+
+import Error404Page from '../pages/errorPages/Error404Page';
+import AccessDenied403Page from '../pages/errorPages/AccessDenied403Page';
+import WorksPage from '../pages/WorksPage';
+
+
+
 import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
 
@@ -186,6 +194,7 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
+      
       {
         path: 'notification-settings',
         element: <NotificationSettings/>,
@@ -196,6 +205,7 @@ const ProviderRoutes = createBrowserRouter([
         element: <SecurityPage/>,
         loader: protectRoute,
       },
+
       {
         path: 'transactions',
         element: <TransactionsPage/>,
@@ -211,11 +221,25 @@ const ProviderRoutes = createBrowserRouter([
         element: <HelpCenterPage/>,
         loader: protectRoute,
       },
-      
-      
 
-    ],
-  
+      {
+        path: 'dashboard',
+        element: <DashBoard/>,
+        loader: protectRoute, 
+      },
+
+      { 
+        path: 'works',
+        element: <WorksPage/>,
+        loader: protectRoute, 
+      },
+  {
+    path: '*',
+    element: <Error404Page/>,
+  },
+  {
+    path: '403',
+    element: <AccessDenied403Page/>,
   },
 ]);
 
