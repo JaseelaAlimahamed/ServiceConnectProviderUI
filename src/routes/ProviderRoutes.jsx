@@ -36,6 +36,10 @@ import CheckoutSuccess from '../components/E-Receipt/CheckoutSuccess';
 
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
+
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import PostAd from '../pages/postAd/PostAd';
+
 import TransactionsPage from '../pages/Transations/TransactionsPage';
 import JobsPage from '../pages/Services/JobsPage';
 import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
@@ -45,6 +49,7 @@ import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
 import Error404Page from '../pages/errorPages/Error404Page';
 import AccessDenied403Page from '../pages/errorPages/AccessDenied403Page';
 import WorksPage from '../pages/WorksPage';
+
 
 import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
@@ -195,7 +200,16 @@ const ProviderRoutes = createBrowserRouter([
         element: <EditAdsPage/>,
         loader: protectRoute, 
       },
-      
+      {
+        path: 'profile',
+        element: <ProfilePage />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'post-ad',
+        element: <PostAd />,
+        loader: protectRoute, 
+      },
       {
         path: 'notification-settings',
         element: <NotificationSettings/>,
@@ -238,7 +252,6 @@ const ProviderRoutes = createBrowserRouter([
         element: <DashBoard/>,
         loader: protectRoute, 
       },
-
       { 
         path: 'works',
         element: <WorksPage/>,
