@@ -13,17 +13,17 @@ import { FaPowerOff } from "react-icons/fa6";
 const menuItems = [
   {
     title: "Edit Profile",
-    icon: <FaRegUser />,
+    icon: <FaRegUser   />,
     route: "/edit-profile",
   },
   {
     title: "Payment Option",
-    icon: <RiWallet3Line />,
+    icon: <RiWallet3Line  />,
     route: "/payment-option",
   },
   {
     title: "Notifications",
-    icon: <IoNotificationsOutline />,
+    icon: <IoNotificationsOutline  />,
     route: "/notifications",
   },
   {
