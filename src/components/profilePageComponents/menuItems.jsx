@@ -1,66 +1,65 @@
-// src/data/menuItems.js
+import { FaRegUser,  FaShieldAlt, FaLanguage, FaMoon, FaFileAlt, FaQuestionCircle, FaUserFriends, FaSignOutAlt } from "react-icons/fa";
+import { RiWallet3Line } from "react-icons/ri";
+import { IoNotificationsOutline } from "react-icons/io5";
+import { IoShieldCheckmarkOutline, IoLanguage } from "react-icons/io5";
+import { TbEye } from "react-icons/tb";
+import { GoShield } from "react-icons/go";
+import { MdOutlineHelpOutline } from "react-icons/md";
+import { FaPowerOff } from "react-icons/fa6";
 
-import EditIcon from "../../assets/edit-profile.svg";
-import PaymentIcon from "../../assets/payment-option.svg";
-import NotificationIcon from "../../assets/notifications.svg";
-import SecurityIcon from "../../assets/security.svg";
-import LanguageIcon from "../../assets/language.svg";
-import DarkModeIcon from "../../assets/dark-mode.svg";
-import TermsIcon from "../../assets/terms.svg";
-import HelpIcon from "../../assets/help-center.svg";
-import InviteIcon from "../../assets/invite-friends.svg";
-import LogoutIcon from "../../assets/logout.svg";
+
+
 
 const menuItems = [
   {
     title: "Edit Profile",
-    icon: EditIcon,
+    icon: <FaRegUser   />,
     route: "/edit-profile",
   },
   {
     title: "Payment Option",
-    icon: PaymentIcon,
+    icon: <RiWallet3Line  />,
     route: "/payment-option",
   },
   {
     title: "Notifications",
-    icon: NotificationIcon,
+    icon: <IoNotificationsOutline  />,
     route: "/notifications",
   },
   {
     title: "Security",
-    icon: SecurityIcon,
+    icon: <IoShieldCheckmarkOutline />,
     route: "/security",
   },
   {
     title: "Language",
-    icon: LanguageIcon,
+    icon: <IoLanguage />,
     route: "/language",
     additionalContent: "English (US)",
   },
   {
     title: "Dark Mode",
-    icon: DarkModeIcon,
+    icon: <TbEye />,
     route: "/dark-mode",
   },
   {
     title: "Terms & Conditions",
-    icon: TermsIcon,
+    icon: <GoShield />,
     route: "/terms",
   },
   {
     title: "Help Center",
-    icon: HelpIcon,
+    icon: <MdOutlineHelpOutline  />,
     route: "/help",
   },
   {
     title: "Invite Friends",
-    icon: InviteIcon,
+    icon: <FaUserFriends />,
     route: "/invite-friends",
   },
   {
     title: "Logout",
-    icon: LogoutIcon,
+    icon: <FaPowerOff />,
     route: "/logout",
   },
 ];
