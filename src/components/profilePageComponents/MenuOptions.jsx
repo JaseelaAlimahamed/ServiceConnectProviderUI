@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Arrow from "../../assets/profile-arrow.svg"
+import Arrow from "../../assets/profile-arrow.svg";
 import menuItems from "../../components/profilePageComponents/menuItems"; // Adjusted path
 
 const MenuOptions = () => {
@@ -19,12 +19,8 @@ const MenuOptions = () => {
           key={item.title}
           className="w-[301px] h-[50px] md:h-[60px] md:w-[450px] p-1 bg-primary flex justify-between items-center hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition duration-150 rounded-md"
         >
-          <div className="flex">
-            <img
-              src={item.icon}
-              alt={`${item.title} icon`}
-              className="w-[16px] h-[20px] md:w-[18px] md:h-[22px]"
-            />
+          <div className="flex items-center">
+            {item.icon} {/* React icon is now rendered here */}
             <p className="pl-2 text-[15px] font-bold text-heading_blck">
               {item.title}
             </p>
