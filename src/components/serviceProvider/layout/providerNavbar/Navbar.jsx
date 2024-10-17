@@ -5,12 +5,14 @@ import { AiOutlineLeft } from 'react-icons/ai';
 import NotificationButton from './NotificationButton';
 import pageConfig from './pageConfig';
 import Sidebar from './Sidebar';
+import RightSideBarPage from '../../../../pages/rightSideBar/rightSideBarPage'; //rightsidebar
 
 
 
 const Navbar = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);  // Right Sidebar
     const location = useLocation();
     const navigate = useNavigate();
     const profileName = "Stone Stellar";
@@ -19,9 +21,16 @@ const Navbar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    const toggleRightSidebar = () => {
+        if (isAuthenticated) { // Only allow toggling if authenticated
+            setIsRightSidebarOpen(!isRightSidebarOpen);
+        }
+    };
+
     const handleLogout = () => {
         setIsAuthenticated(false);
         setIsSidebarOpen(false);
+        setIsRightSidebarOpen(false);  // Ensure both sidebars close on logout
     };
 
     const currentPage = pageConfig[location.pathname] 
@@ -43,7 +52,7 @@ const Navbar = () => {
                             {currentPage && !isHomePage ? (
                                 <button
                                     type="button"
-                                    className="inline-flex items-center justify-center rounded-3xl p-2 text-white hover:text-gray-300 focus:outline-none"
+                                    className="inline-flex items-center justify-center rounded-3xl p-2 text-primary hover:text-gray-300 focus:outline-none"
                                     onClick={handleBackClick}
                                 >
                                     <AiOutlineLeft className="h-6 w-6" />
@@ -51,19 +60,19 @@ const Navbar = () => {
                             ) : (
                                 <button
                                     type="button"
-                                    className="inline-flex items-center justify-center rounded-3xl p-2 text-white hover:text-gray-300 focus:outline-none"
+                                    className="inline-flex items-center justify-center rounded-3xl p-2 text-primary hover:text-gray-300 focus:outline-none"
                                     onClick={toggleSidebar}
                                 >
                                     {isSidebarOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
                                 </button>
                             )}
-                            <h1 className="ml-4 text-white font-semibold text-xl">{currentPage.title}</h1>
+                            <h1 className="ml-4 text-primary font-semibold text-xl">{currentPage.title}</h1>
                         </div>
 
                         {/* Logo and Company Name for larger screens */}
                         <div className="hidden sm:flex flex-1 items-center justify-start">
                             <img className="h-8" src="/vite.svg" alt="Company Logo" />
-                            <span className="ml-3 text-white font-semibold text-xl">{currentPage.title}</span>
+                            <span className="ml-3 text-primary font-semibold text-xl">{currentPage.title}</span>
                         </div>
 
                         {/* Profile and Authenticated Views */}
@@ -75,34 +84,35 @@ const Navbar = () => {
                             {isAuthenticated && (
                                 <div className={`relative flex items-center `}>
                                     <div className="flex flex-col items-center mr-4 ml-1 hidden sm:block">
-                                        <span className="text-rose-500 text-lg text-center">
+                                        <span className="text-roundborder text-lg text-center">
                                             {profileName}
                                         </span>
-                                        <span className="text-yellow-500 text-xs  sm:block text-center">
+                                        <span className="text-idyellow text-xs  sm:block text-center">
                                             Prime Member <FaCrown className="inline text-xs" />
                                         </span>
                                     </div>
-                                    <NavLink>
-                                        <img
+                                    <NavLink onClick={toggleRightSidebar}>
+                                        <img 
                                             className="h-9 w-9 sm:h-10 sm:w-10 rounded-full hover:ring-1 hover:ring-blue-500"
                                             src="/profileImage.svg"
                                             alt="Profile"
                                         />
                                     </NavLink>
+
                                 </div>
                             )}
 
                             {!isAuthenticated ? (
                                 <NavLink
                                     onClick={() => setIsAuthenticated(true)}
-                                    className="text-white px-4 py-2 flex items-center hover:bg-gray-700 rounded"
+                                    className="text-primary px-4 py-2 flex items-center hover:bg-gray-700 rounded"
                                 >
                                     Sign In <FaSignInAlt className="ml-2" />
                                 </NavLink>
                             ) : (
                                 <NavLink
                                     onClick={handleLogout}
-                                    className="ml-4 text-white px-4 py-2 hidden sm:flex items-center hover:bg-gray-700 rounded"
+                                    className="ml-4 text-primary px-4 py-2 hidden sm:flex items-center hover:bg-gray-700 rounded"
                                 >
                                     Logout <FaSignOutAlt className="ml-2" />
                                 </NavLink>
@@ -119,6 +129,14 @@ const Navbar = () => {
                 isAuthenticated={isAuthenticated}
                 onLogout={handleLogout}
             />
+            {isAuthenticated && (
+                <RightSideBarPage
+                    isRightSidebarOpen={isRightSidebarOpen}
+                    toggleRightSidebar={toggleRightSidebar}
+                    isAuthenticated={isAuthenticated}
+                    onLogout={handleLogout}
+                />
+            )}
 
         </div>
     );
