@@ -1,13 +1,14 @@
 import React from 'react';
-import SidebarToggle from '../../components/serviceProvider/layout/rightSideMenuBar/sidebarToggle';
+import ProfileSidebar from '../../components/serviceProvider/layout/rightSideMenuBar/rightSideMenuBar';
 
-
-function RightSideBarPage() {
+function RightSideBarPage({ isRightSidebarOpen, toggleRightSidebar, onLogout }) {
   return (
     <div>
-      <SidebarToggle />
+      <ProfileSidebar isRightSidebarOpen={isRightSidebarOpen} toggleRightSidebar={toggleRightSidebar} onLogout={onLogout}/>
     </div>
   );
 }
 
 export default RightSideBarPage;
+
+

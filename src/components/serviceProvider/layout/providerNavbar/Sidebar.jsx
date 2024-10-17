@@ -24,7 +24,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, isAuthenticated, onLogout }) =>
         isAuthenticated && (  // Render the sidebar only if authenticated
             <div className='flex'>
                 <div
-                    className={`fixed top-20 h-full left-0 w-60 bg-gray-800 text-white transform transition-transform sm:translate-x-0 sm:w-46 z-40 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                    className={`fixed top-20 h-full left-0 w-60 bg-dark-gray text-primary transform transition-transform sm:translate-x-0 sm:w-46 z-40 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
                 >
                     <ul className="p-6 mt-10 space-y-2">
                         {links.map((link) => (
@@ -45,7 +45,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, isAuthenticated, onLogout }) =>
                     {/* Conditional Rendering of Logout Button */}
                     <div className="sm:hidden px-6 py-3 border-t border-gray-700">
                         <Link
-                            className="w-full text-white hover:bg-gray-700 rounded px-4 py-2 flex items-center"
+                            className="w-full text-primary hover:bg-gray-700 rounded px-4 py-2 flex items-center"
                             onClick={onLogout}
                         >
                             Logout <FaSignOutAlt className="ml-2" />
@@ -56,7 +56,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, isAuthenticated, onLogout }) =>
                 {/* Overlay for mobile when sidebar is open */}
                 {isSidebarOpen && (
                     <div
-                        className="fixed inset-0 bg-black bg-opacity-50 z-30 sm:hidden"
+                        className="fixed inset-0 bg-secondary bg-opacity-50 z-30 sm:hidden"
                         onClick={toggleSidebar}
                     ></div>
                 )}
