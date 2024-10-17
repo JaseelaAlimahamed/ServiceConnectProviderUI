@@ -57,6 +57,7 @@ module.exports = {
         "id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
         "divider-pri": "#65558F",
+        "profile-border":"#167F71",
 
 
 
