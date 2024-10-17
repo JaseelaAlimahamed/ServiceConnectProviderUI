@@ -29,6 +29,11 @@ import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 
+import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
+import NotificationsPage from '../pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import Ereceipt from '../pages/E-ReceiptPage/E-receipt';
+import CheckoutSuccess from '../components/E-Receipt/CheckoutSuccess';
+
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
 
@@ -39,7 +44,6 @@ import TransactionsPage from '../pages/Transations/TransactionsPage';
 import JobsPage from '../pages/Services/JobsPage';
 import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
 
-
 import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
 
 import Error404Page from '../pages/errorPages/Error404Page';
@@ -47,13 +51,10 @@ import AccessDenied403Page from '../pages/errorPages/AccessDenied403Page';
 import WorksPage from '../pages/WorksPage';
 
 
-
-
 import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
 
 import BoostServicePage from '../Pages/Services/BoostServicePage'
-
 
 import AboutPage from '../pages/ServiceProviderPages/aboutPage/aboutPage';
 import ContactPage from '../pages/Services/contactPage/contactPage';
@@ -167,18 +168,18 @@ const ProviderRoutes = createBrowserRouter([
         element: <ComplaintList/>,
         loader: protectRoute, 
       },
-  {
+      {
         path: 'franchise-details',
         element: <FranchiseDetails/>,
         loader: protectRoute, 
-      },
-  
-      ,{
+      },  
+      {
         path: 'notification',
         element: <NotificationsPage/>,
         loader: protectRoute,
 
-      },{
+      },
+      {
         path: 'about',
         element: <AboutPage/>,
         loader: protectRoute,
@@ -218,6 +219,16 @@ const ProviderRoutes = createBrowserRouter([
         path: 'security',
         element: <SecurityPage/>,
         loader: protectRoute,
+      },
+      {
+        path: 'e-receipt',
+        element: <Ereceipt />,
+        loader: protectRoute, 
+      },
+      {
+        path: 'checkout-success',
+        element: <CheckoutSuccess />,
+        loader: protectRoute, 
       },
 
       {
