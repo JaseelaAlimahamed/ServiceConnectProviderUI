@@ -29,14 +29,32 @@ import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
 import FinancialPage from '../pages/Services/FinancialPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 
+import TermsAndConditions from '../pages/ServiceProviderPages/TermsAndConditions';
+import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/NotificationsPage';
+import Ereceipt from '../pages/E-ReceiptPage/E-receipt';
+import CheckoutSuccess from '../components/E-Receipt/CheckoutSuccess';
+
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
 
-import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/notificationsPage';
+import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import PostAd from '../pages/postAd/PostAd';
+
+import TransactionsPage from '../pages/Transations/TransactionsPage';
+import JobsPage from '../pages/Services/JobsPage';
+import HelpCenterPage from '../pages/helpCenter/HelpCenterPage';
+
+import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
+
+import Error404Page from '../pages/errorPages/Error404Page';
+import AccessDenied403Page from '../pages/errorPages/AccessDenied403Page';
+import WorksPage from '../pages/WorksPage';
+
+
+import NotificationsPage from '../Pages/ServiceProviderPages/notificationsPage/NotificationsPage';
 import NotificationSettings from '../pages/ServiceProviderPages/NotificationSettings/NotificationSettings';
 
 import BoostServicePage from '../Pages/Services/BoostServicePage'
-
 
 import AboutPage from '../pages/ServiceProviderPages/aboutPage/aboutPage';
 import ContactPage from '../pages/Services/contactPage/contactPage';
@@ -74,133 +92,186 @@ const ProviderRoutes = createBrowserRouter([
       },
       {
         path: 'my-services',
-        element: <RegisteredServices />, 
+        element: <RegisteredServices />,
         loader: protectRoute,
       },
       {
         path: 'edit-service/:id',
-        element: <EditService />, 
+        element: <EditService />,
         loader: protectRoute
       },
       {
         path: 'add-service',
-        element: <RegisterServices />, 
-        loader: protectRoute, 
+        element: <RegisterServices />,
+        loader: protectRoute,
       },
       {
         path: 'service-request',
         element: <ServiceRequestPage />,
-        loader: protectRoute, 
+        loader: protectRoute,
       },
       {
         path: 'request-details/:id',
         element: <RequestDetails />,
-        loader: protectRoute, 
+        loader: protectRoute,
       },
       {
         path: 'bookings',
         element: <BookingsPage />,
-        loader: protectRoute, 
+        loader: protectRoute,
       },
       {
         path: 'booking-detail/:id',
         element: <BookingDetails />,
-        loader: protectRoute, 
+        loader: protectRoute,
       },
       {
         path: 'payment-methods',
         element: <PaymentMethod />,
-        loader: protectRoute, 
+        loader: protectRoute,
       },
       {
         path: 'register-complaint/:id',
-        element: <ComplaintFormPage/>,
-        loader: protectRoute, 
+        element: <ComplaintFormPage />,
+        loader: protectRoute,
       },
       {
         path: 'lead-details/:id',
-        element: <LeadDetailPage/>,
-        loader: protectRoute, 
-      },{
+        element: <LeadDetailPage />,
+        loader: protectRoute,
+      }, {
         path: 'decline-form/:id',
-        element: <DeclinePage/>,
-        loader: protectRoute, 
-      },{
+        element: <DeclinePage />,
+        loader: protectRoute,
+      }, {
         path: 'invoice/:id',
-        element: <AcceptAndInvoice/>,
-        loader: protectRoute, 
-      },{
+        element: <AcceptAndInvoice />,
+        loader: protectRoute,
+      }, {
         path: 'advertisement',
-        element: <AdsManagementPage/>,
-        loader: protectRoute, 
+        element: <AdsManagementPage />,
+        loader: protectRoute,
 
       },
       {
         path: 'financial',
         element: <FinancialPage />,
-        loader: protectRoute, 
-      },
-      {
-        path:'reviews',
-        element:<ServiceReviewsPage/>,
         loader: protectRoute,
       },
       {
-        path:'terms-and-conditions',
-        element:<TermsAndConditions/>,
+        path: 'reviews',
+        element: <ServiceReviewsPage />,
+        loader: protectRoute,
+      },
+      {
+        path: 'terms-and-conditions',
+        element: <TermsAndConditions />,
         loader: protectRoute,
       },
       {
         path: 'complaints',
-        element: <ComplaintList/>,
-        loader: protectRoute, 
+        element: <ComplaintList />,
+        loader: protectRoute,
       },
-  {
+      {
         path: 'franchise-details',
-        element: <FranchiseDetails/>,
-        loader: protectRoute, 
+        element: <FranchiseDetails />,
+        loader: protectRoute,
       },
-  
-      ,{
+      {
         path: 'notification',
-        element: <NotificationsPage/>,
+        element: <NotificationsPage />,
         loader: protectRoute,
 
-      },{
+      },
+      {
         path: 'about',
-        element: <AboutPage/>,
+        element: <AboutPage />,
         loader: protectRoute,
-      },{
+      }, {
         path: 'help-center',
-        element: <ContactPage/>,
+        element: <ContactPage />,
         loader: protectRoute,
-
       },
       {
         path: 'boost-service',
         element: <BoostServicePage />,
-        loader: protectRoute, 
+        loader: protectRoute,
 
       },
-       {
+      {
         path: 'edit-ads',
-        element: <EditAdsPage/>,
-        loader: protectRoute, 
+        element: <EditAdsPage />,
+        loader: protectRoute,
+      },
+      {
+        path: 'profile',
+        element: <ProfilePage />,
+        loader: protectRoute,
+      },
+      {
+        path: 'post-ad',
+        element: <PostAd />,
+        loader: protectRoute,
       },
       {
         path: 'notification-settings',
-        element: <NotificationSettings/>,
+        element: <NotificationSettings />,
         loader: protectRoute,
       },
       {
         path: 'security',
-        element: <SecurityPage/>,
+        element: <SecurityPage />,
         loader: protectRoute,
-      }
+      },
+      {
+        path: 'e-receipt',
+        element: <Ereceipt />,
+        loader: protectRoute,
+      },
+      {
+        path: 'checkout-success',
+        element: <CheckoutSuccess />,
+        loader: protectRoute,
+      },
 
-    ],
-  
-  },
+      {
+        path: 'transactions',
+        element: <TransactionsPage />,
+        loader: protectRoute,
+      },
+      {
+        path: 'active-services',
+        element: <JobsPage />,
+        loader: protectRoute,
+      },
+      {
+        path: 'help-centerFaq',
+        element: <HelpCenterPage />,
+        loader: protectRoute,
+      },
+
+      {
+        path: 'dashboard',
+        element: <DashBoard />,
+        loader: protectRoute,
+      },
+      {
+        path: 'works',
+        element: <WorksPage />,
+        loader: protectRoute,
+      },
+      {
+        path: '*',
+        element: <Error404Page />,
+      },
+      {
+        path: '403',
+        element: <AccessDenied403Page />,
+      },
+
+    ]
+  }
 ]);
 
 export default ProviderRoutes;

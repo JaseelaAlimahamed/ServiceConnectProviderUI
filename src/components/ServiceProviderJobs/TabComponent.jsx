@@ -11,7 +11,7 @@ const TabComponent = ({ activeTab, setActiveTab }) => {
       <button
         onClick={() => handleTabClick('ongoing')}
         className={`${
-          activeTab === 'ongoing' ? 'bg-white  text-[#4B164C]' : 'bg-transparent text-white'
+          activeTab === 'ongoing' ? 'bg-primary  text-[#4B164C]' : 'bg-transparent text-primary'
         } w-[150px] px-6 rounded-full focus:outline-none font-medium transition-colors duration-300`}
       >
         Ongoing
@@ -21,7 +21,7 @@ const TabComponent = ({ activeTab, setActiveTab }) => {
       <button
         onClick={() => handleTabClick('completed')}
         className={`${
-          activeTab === 'completed' ? 'bg-white text-[#4B164C]' : 'bg-transparent text-white'
+          activeTab === 'completed' ? 'bg-primary text-Activeservice-button' : 'bg-transparent text-primary'
         } w-[150px] px-6  rounded-full focus:outline-none font-medium transition-colors duration-300`}
       >
         Completed

@@ -53,16 +53,26 @@ module.exports = {
         "id-gray": "#797C7B;",
         "divider-clr": "#E6E0E9",
         "divider-pri": "#65558F",
+        "profile-border":"#167F71",
 
 
 
         "nonactive-btn": "#49454F",
         "neutral-clr": "#FA1919",
         "warning-clr": "#FF6B00",
+        "button-green":"#167F71",
+        "Activeservice-button":"#4B164C",
+        "pending-red":"#E92D2D",
+        "success-green":"#28A745",
+        "warning-yellow":"#FFC107",
+        "light-yellow": "#F6E89A",
+        tabbgcolor:"#736A68",
 
-        tabbgcolor: "#736A68",
+        "helpcenter-clr":"#FBFBFB",
 
-
+        roundborder: "#FA5075",
+        idyellow: "#F4C73E",
+        textonline: "#36C703",
 
       },
       boxShadow: {
@@ -83,3 +93,4 @@ module.exports = {
   plugins: [],
 
 }
+

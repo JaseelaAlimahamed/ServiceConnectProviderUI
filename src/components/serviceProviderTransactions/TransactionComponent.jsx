@@ -1,5 +1,5 @@
 import React from "react";
-import CardComponent from "../serviceProviderTransactions/CardComponent";
+import CardComponent from "./CardComponent";
 import TransactionCardComponent from "./TransactionCardComponent"
 
 const TransactionComponent = () => {

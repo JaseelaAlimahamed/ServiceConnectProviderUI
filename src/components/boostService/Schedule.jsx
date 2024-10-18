@@ -10,7 +10,7 @@ const Schedule = ({schedule,onScheduleChange}) => {
   return (
     <div>
         <div className="w-full">
-          <div className="flex gap-x-2 ">
+          <div className="grid grid-cols-2 gap-x-2 ">
             <div className="relative w-full">
               <input
                 type="date"
@@ -20,7 +20,7 @@ const Schedule = ({schedule,onScheduleChange}) => {
                 value={schedule.date}
                 onChange={handleInputChange}
               />
-              <span className='absolute top-1 left-5 text-sm text-[#ABAFB1]'>Date</span>
+              <span className='absolute top-1 left-4 text-sm text-[#ABAFB1]'>Date</span>
             </div>
             <div className="relative w-full">
               <input
@@ -31,7 +31,7 @@ const Schedule = ({schedule,onScheduleChange}) => {
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 pt-5 rounded-lg shadow-boxshadow-1 outline-none"
               />
-              <span className='absolute top-1 left-5 text-sm text-[#ABAFB1]'>Time</span>
+              <span className='absolute top-1 left-4 text-sm text-[#ABAFB1]'>Time</span>
             </div>
           </div>
         </div>
