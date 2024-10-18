@@ -43,7 +43,7 @@ module.exports = {
         "statuspending": '#135275',
         "complete-btn": '#137517',
         "activetab": '#65558F',
-        "bluedrk": '#04228E',
+       
         "cardfont": '#303972',
         "profilefont": '#535353',
         "incomepurple1": '#9B9CF8',

@@ -13,12 +13,12 @@ const AddButton = () => {
   };
 
   return (
-    <div className="my-4 flex justify-center">
+    <div className="my-6 flex justify-center">
       <button 
         onClick={handleAddNewService} 
-        className="bg-dark-gray text-white py-6 px-8 shadow-lg rounded-xl border border-blue-drk w-2/3 flex items-center justify-center"
+        className="bg-dark-gray w-full text-white text-xl py-6 px-8 shadow-lg rounded-xl border border-blue-drk  flex items-center justify-center"
       >
-        <FiPlus className="mr-2 " /> {/* Icon with some right margin */}
+        <FiPlus className="mr-2 text-4xl " /> {/* Icon with some right margin */}
         ADD NEW SERVICE
 
       </button>

@@ -10,7 +10,7 @@ const RegisterService = () => {
 
   const handleSubmit = (values) => {
     console.log('Form Data:', values);
-    navigate('/my-services');
+    navigate('/payment-methods');
   };
 
   return (

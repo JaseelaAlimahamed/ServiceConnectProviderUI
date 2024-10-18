@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import BannerImage from '../../assets/banner-ads.png';
 import CardImage from '../../assets/card-ads.png';
+import { useNavigate } from 'react-router-dom';
 
 function PostAd() {
   const [selectedAd, setSelectedAd] = useState('');
+  const [selectedPrice, setSelectedPrice] = useState(0);
+  const navigate = useNavigate();
 
   // Function to handle ad selection
   const handleAdClick = (adName, price) => {
-    setSelectedAd(adName); // Set the selected ad
+    setSelectedAd(adName);
+    setSelectedPrice(price);
     console.log(`Ad selected: ${adName}, Price: Rs ${price}`);
   };
 
@@ -59,23 +63,24 @@ function PostAd() {
         </div>
 
         {/* Popup Ad */}
-        <div
-          className={`w-[346px] h-[70px] rounded-xl bg-dark-gray relative mt-[30px] shadow-md md:w-[400px] md:h-[90px] lg:w-[500px] lg:h-[100px] cursor-pointer ${
-            selectedAd === 'Popup Ads' ? 'ring-4 ring-primary' : ''
-          }`}
-          onClick={() => handleAdClick('Popup Ads', 350)}
-        >
-          <p className='text-[15px] top-[25px] left-[40px] absolute text-primary md:top-[30px] md:left-[50px] lg:text-[18px]'>
-            Popup Ads
-          </p>
-          <p className='text-[15px] top-[45px] left-[220px] absolute text-primary md:top-[60px] md:left-[270px] lg:text-[18px]'>
-            Rs: <span>350</span> / month
-          </p>
+       
+          <div className='mt-8'>
+          {selectedAd && (
+            <button
+              className='bg-dark-gray text-white text-xl py-4 px-6 rounded'
+              onClick={() => navigate('/boost-service')}
+            >
+              {selectedAd}, Price: Rs {selectedPrice}
+            </button>
+          )}
         </div>
+        
+
+        {/* Selected Ad Button */}
+       
       </div>
     </div>
   );
 }
 
 export default PostAd;
-

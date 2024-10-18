@@ -1,27 +1,19 @@
 import React from 'react';
-import { Outlet,useLocation } from 'react-router-dom';
-import NavbarHead from '../components/serviceProvider/layout/NavbarHead';
+import { Outlet } from 'react-router-dom';
 import Navbar from '../components/serviceProvider/layout/providerNavbar/Navbar';
 
-const MainLayout = () => {
-
-  const location = useLocation();
-
-  const dashboardRoutes = ['/dashboard']; 
-
-  const isDashboardPage = dashboardRoutes.includes(location.pathname);
-
+const MainLayout = ({ isSidebarOpen }) => {
   return (
-    <div>
-      <NavbarHead/>
-      
-      {isDashboardPage && <Navbar />}
+    <div className="flex">
+      {/* Sidebar occupies space in desktop view */}
 
-      <main>
-
-        <Outlet />  
-
-      </main>
+      {/* Main content section */}
+      <div className={`flex-1 transition-all ${isSidebarOpen ? 'ml-60' : 'ml-0'} sm:ml-60`}>
+        <Navbar />
+        <main className="p-4 bg-light-gray">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };

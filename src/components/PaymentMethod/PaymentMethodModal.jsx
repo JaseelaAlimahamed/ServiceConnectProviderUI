@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
-import paymentlogo from "../../assets/paymentlogo.png"
+import { useNavigate } from "react-router-dom";
+import paymentlogo from "../../assets/paymentlogo.png";
 
-const ReusableModal = ({ isLoading, imageSrc, heading, contentLines, redirectMessage }) => {
+const ReusableModal = ({ isLoading, imageSrc, heading, contentLines, redirectMessage, onClose }) => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    // Close the modal and navigate to the E-Receipt page
+    onClose(); // Close modal
+    navigate("/e-receipt"); // Navigate to the E-Receipt page
+  };
+
   return (
     <div className="h-screen w-100 bg-dark-gray bg-opacity-90 flex justify-center items-center">
       {isLoading ? (
@@ -13,36 +22,36 @@ const ReusableModal = ({ isLoading, imageSrc, heading, contentLines, redirectMes
         // Modal content
         <div className="w-[360px] h-[460px] bg-white rounded-3xl flex flex-col items-center">
           <div>
-          <img src={paymentlogo} alt="paymentlogo" />
+            <img src={paymentlogo} alt="paymentlogo" />
           </div>
 
-          {/* heading */}
-          <p className="mt-[20px] font-default font-semibold text-[24px] text-[#202244] ">
-            Congratulations
+          {/* Heading */}
+          <p className="mt-[20px] font-default font-semibold text-[24px] text-[#202244]">
+            {heading || "Congratulations"}
           </p>
 
           {/* Dynamic content lines */}
-          <p className="text-[13px] font-input font-bold text-[#545454]">
-            Your Payment is Successfully Purchase a
-          </p>
-          <p className="text-[13px] font-input font-bold text-[#545454]" >
-            New Course
-          </p>
+          {contentLines?.map((line, index) => (
+            <p key={index} className="text-[13px] font-input font-bold text-[#545454]">
+              {line}
+            </p>
+          ))}
 
           {/* Link TEXT */}
+          <a className="font-default font-semibold text-[16px] underline text-[#167F71]" href="www.google.com">
+            {redirectMessage || "Watch the Course"}
+          </a>
 
-          <a className="font-default font-semibold text-[16px] underline text-[#167F71]" href="www.google.com">Watch the Course</a>
-
-          <button className="h-[60px] w-[206px] bg-[#1D1F2A] rounded-full shadow-md mt-2 flex items-center justify-between" >
-            <p className="font-default text-[18px] font-semibold text-white ms-8 ">
-                E-Receipt
-            </p>
-       
-            <svg className="m-1 h-[49px] w-[49px]" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m.47-13.53a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06l1.72-1.72H8a.75.75 0 0 1 0-1.5h6.19l-1.72-1.72a.75.75 0 0 1 0-1.06" clip-rule="evenodd"/></svg>
+          {/* Button to navigate and close modal */}
+          <button
+            className="h-[60px] w-[206px] bg-[#1D1F2A] rounded-full shadow-md mt-2 flex items-center justify-between"
+            onClick={handleButtonClick} // Call the handler
+          >
+            <p className="font-default text-[18px] font-semibold text-white ms-8">E-Receipt</p>
+            <svg className="m-1 h-[49px] w-[49px]" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill="white" fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m.47-13.53a.75.75 0 0 1 1.06 0l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06l1.72-1.72H8a.75.75 0 0 1 0-1.5h6.19l-1.72-1.72a.75.75 0 0 1 0-1.06" clip-rule="evenodd"/>
+            </svg>
           </button>
-
-
-          
         </div>
       )}
     </div>

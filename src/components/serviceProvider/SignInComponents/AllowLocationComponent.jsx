@@ -41,7 +41,7 @@ const AllowLocationComponent = () => {
 
     return (
         <div className="flex flex-col justify-center items-center h-full">
-            <h2 className="font-heading text-[32px] font-normal leading-[40px] text-center mb-3 mt-6">
+            <h2 className="font-heading text-[20px] font-normal leading-[30px] text-center mb-3 mt-6">
                 Allow Location
             </h2>
 
@@ -50,7 +50,7 @@ const AllowLocationComponent = () => {
                 label="Allow"
                 onClick={handleAllowLocation}
                 btnWidth="w-[208px]"
-                btnHeight="h-[59.22px]"
+                btnHeight="h-[53px]"
             />
 
             <div className="flex justify-start p-4">
@@ -59,7 +59,7 @@ const AllowLocationComponent = () => {
 
             <div className="w-full flex flex-col items-center">
                 <input
-                    className="w-[271px] h-[53px] px-4 py-2 mb-6 rounded-md border border-light-gray bg-medium-gray font-input text-dark-gray focus:outline-none focus:ring-2 focus:ring-secondary"
+                    className="w-[208px] h-[53px] px-4 py-2 mb-6 rounded-md border border-light-gray bg-medium-gray font-input text-dark-gray focus:outline-none focus:ring-2 focus:ring-secondary"
                     type="text"
                     value={manualLocation}
                     onChange={handleManualLocation}

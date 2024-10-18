@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PaymentModal from "./PaymentMethodModal";
 
-const PaymentMethods = () => {
+const 
+PaymentMethods = () => {
   const [selectedMethod, setSelectedMethod] = useState(""); // State to track the selected payment method
   const [isModalOpen, setIsModalOpen] = useState(false); // State to track modal visibility
   const [isLoading, setIsLoading] = useState(true); // State for modal loading
@@ -41,6 +42,10 @@ const PaymentMethods = () => {
       }, 2000);
     }
   };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   return (
     <div className="min-h-screen bg-light-gray flex items-center justify-center flex-col relative">
@@ -56,6 +61,7 @@ const PaymentMethods = () => {
               `Amount: ${paymentData.currency} ${paymentData.amount}`,
             ]}
             redirectMessage="You will be redirected shortly."
+            onClose={handleCloseModal}
           />
         </div>
       )}

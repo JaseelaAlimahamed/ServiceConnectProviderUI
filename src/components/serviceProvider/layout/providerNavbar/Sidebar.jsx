@@ -3,19 +3,21 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 
 const links = [
-    { path: '/myprofile', label: 'My Profile' },
-    { path: '/home', label: 'Home' },
+ 
+    { path: '/dashboard', label: 'Dashboard' },
+    { path: '/my-services', label: 'Services' },
+    { path: '/service-request', label: 'Requests' },
     { path: '/bookings', label: 'Bookings' },
     { path: '/active-services', label: 'Active Services' },
-    { path: '/services', label: 'Services' },
     { path: '/complaints', label: 'Complaints' },
-    { path: '/message', label: 'Message' },
-    { path: '/settings', label: 'Settings' },
+    { path: '/reviews', label: 'Reviews' },
+    { path: '/advertisement', label: 'Advertisements' },
+   
     { path: '/transactions', label: 'Transactions' },
     { path: '/history', label: 'History' },
     { path: '/help-center', label: 'Help Center' },
-    { path: '/terms-conditions', label: 'Terms & Conditions' },
-    { path: '/about-us', label: 'About Us' },
+    { path: '/terms-and-conditions', label: 'Terms & Conditions' },
+    { path: '/about', label: 'About Us' },
     { path: '/invite-friend', label: 'Invite a Friend' },
 ];
 
@@ -24,9 +26,9 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, isAuthenticated, onLogout }) =>
         isAuthenticated && (  // Render the sidebar only if authenticated
             <div className='flex'>
                 <div
-                    className={`fixed top-20 h-full left-0 w-60 bg-dark-gray text-primary transform transition-transform sm:translate-x-0 sm:w-46 z-40 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                    className={`fixed top-12 h-full left-0 w-60 bg-dark-gray text-primary transform transition-transform sm:translate-x-0 sm:w-46 z-40 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
                 >
-                    <ul className="p-6 mt-10 space-y-2">
+                    <ul className="p-4 mt-10 space-y-2">
                         {links.map((link) => (
                             <li key={link.path}>
                                 <NavLink

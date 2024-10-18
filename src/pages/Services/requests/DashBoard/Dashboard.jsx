@@ -8,7 +8,7 @@ import { SearchIcon, IconComponent, recentActivity, services, doughnutData, line
 
 const DashBoard = () => {
   return (
-    <div className="bg-gray-200 min-h-screen p-4">
+    <div className="bg-light-gray min-h-screen max-w-screen-xl p-4">
       {/* Search Bar */}
       <div className="mt-4 flex justify-between items-center bg-medium-gray p-2 rounded-2xl shadow min-h-16">
         <div className="flex items-center space-x-2">
@@ -39,13 +39,23 @@ const DashBoard = () => {
       <div className="mt-6">
         <div className="bg-white p-4 rounded-lg shadow">
           <div className="font-bold text-center text-xl mb-7">Revenue by service</div>
-          <Doughnut data={doughnutData} />
+          <div className="relative h-72 w-72 mx-auto">
+            <Doughnut data={doughnutData} options={{ maintainAspectRatio: false }} />
+          </div>
+
         </div>
 
+
         <div className="bg-white p-4 rounded-lg shadow mt-4">
-          <Line data={lineData} />
+          <div className="relative h-40 w-full">
+            <Line
+              data={lineData}
+              options={{ maintainAspectRatio: false }}
+            />
+          </div>
         </div>
       </div>
+
 
       {/* Recent Activity */}
       <div className="mt-6">
@@ -152,7 +162,7 @@ const DashBoard = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

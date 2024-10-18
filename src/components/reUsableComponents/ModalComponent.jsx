@@ -7,7 +7,7 @@ const ModalComponent = ({ isOpen, onClose,width,height, children }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
   
-      <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative"
+      <div className="bg-white p-6 rounded-lg shadow-lg w-72 relative"
            style={{
              width: width , 
              height: height ,
