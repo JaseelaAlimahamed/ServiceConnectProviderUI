@@ -187,7 +187,6 @@ const ProviderRoutes = createBrowserRouter([
         path: 'help-center',
         element: <ContactPage/>,
         loader: protectRoute,
-
       },
       {
         path: 'boost-service',

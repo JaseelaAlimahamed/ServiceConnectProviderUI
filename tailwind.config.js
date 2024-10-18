@@ -74,6 +74,10 @@ module.exports = {
 
         "helpcenter-clr":"#FBFBFB",
 
+        roundborder: "#FA5075",
+        idyellow: "#F4C73E",
+        textonline: "#36C703",
+
       },
       boxShadow: {
         "boxshadow-1": "0px 4px 4px 0px #00000040",
