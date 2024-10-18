@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Schedule from '../boostService/Schedule';
 import 'react-datepicker/dist/react-datepicker.css';
 import ButtonComponent from '../reUsableComponents/ButtonComponent';
@@ -9,6 +10,7 @@ import InputFieldAds from './inputFieldAds';
 
 
 const EditAdsPage = () => {
+  
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -19,6 +21,7 @@ const EditAdsPage = () => {
   const [targetArea, setTargetArea] = useState('upto 5 km radius');
 
   const fileInputRef = useRef(null);
+  const navigate = useNavigate();
 
   // Handle image upload
   const handleImageUpload = (event) => {
@@ -46,8 +49,13 @@ const EditAdsPage = () => {
     setTargetArea(value);
   };
 
+  const handlePayButtonClick = () => {
+    console.log("pay button clicked")
+    navigate("/payment-methods")
+  }
+
   return (
-    <div className="bg-light-gray min-h-screen w-full max-w-2xl mx-auto p-4">
+    <div className="bg-light-gray min-h-screen  min-w-2xl mx-auto p-6">
       
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
@@ -139,9 +147,11 @@ const EditAdsPage = () => {
       <div className="flex justify-center mt-8">
         <ButtonComponent
           label="Confirm and Pay"
-          type="submit"
+          type="button"
           btnHeight="h-[56px]"
           hasIcon={false}
+        
+          onClick={handlePayButtonClick} 
         />
       </div>
     </div>

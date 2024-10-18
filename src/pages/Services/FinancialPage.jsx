@@ -3,7 +3,7 @@ import { FaArrowDown, FaArrowUp, FaWifi, FaShoppingBag,} from 'react-icons/fa';
 import { FiMoreVertical } from 'react-icons/fi'; 
 import FinancialCard from '../../components/reUsableComponents/ServiceFinancial/FinancialCard'
 import { RiH1 } from 'react-icons/ri';
-
+import imagepath from '../../assets/images/Ellipse309.png'
 
 const FinancialPage = () => {
   const handleCardClick = (name, date, amount) => {
@@ -17,7 +17,7 @@ const FinancialPage = () => {
     <div className="flex items-center mt-7 ">
         <img
           className="w-12 h-12 rounded-lg object-cover"
-          src="https://s3-alpha-sig.figma.com/img/b6b8/d60b/2cfb30ab38de8f65b571191d99881982?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=imPORI-A1zBa30bnnso~HdrleuKZzSufRNGFn4FlHqNsR2OT~RKSwDZODdU5eIg8S9NQ678gVmD2OLp6N6uuZfk9Vr6686vxf-wwhcn5biBpS9pMHNAMkyhYcxHe0RZL3fKiJQRL0lx8g65t31De5PX9sSzcRraVX2Xtz2Nhv8aysEnBziBxTRlR6Eym~Dx6Md2pNblQSXlyxIvzZeYGzqIZ8-O95rvfYXKFFTUCb38~MHJs8CQr~GypbaFHolgVwNE0nsuY7cK4Fiuv7lXdStyP8pZ0yw-kJeshxygaHY~KDv5aUYCF79DDuG4Ztozb3fUuWSESl1PWzCL7BUlG0Q__"
+          src={imagepath}
           alt="Profile"
         />
         <div className="ml-4">

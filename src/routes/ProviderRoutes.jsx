@@ -108,6 +108,11 @@ const ProviderRoutes = createBrowserRouter([
         loader: protectRoute, 
       },
       {
+        path: 'payment-methods',
+        element: <PaymentMethod />,
+        loader: protectRoute, 
+      },
+      {
         path: 'register-complaint/:id',
         element: <ComplaintFormPage/>,
         loader: protectRoute, 
@@ -131,7 +136,7 @@ const ProviderRoutes = createBrowserRouter([
 
       },
       {
-        path: '/financial',
+        path: 'financial',
         element: <FinancialPage />,
         loader: protectRoute, 
       },
