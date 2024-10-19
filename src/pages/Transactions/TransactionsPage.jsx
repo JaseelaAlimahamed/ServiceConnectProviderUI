@@ -3,7 +3,7 @@ import TransactionComponent from '../../components/serviceProviderTransactions/T
 
 function TransactionsPage() {
   return (
-    <div>
+    <div className='bg-light-gray h-screen'>
       <TransactionComponent/>
     </div>
   )

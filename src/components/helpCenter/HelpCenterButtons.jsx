@@ -12,38 +12,34 @@ function HelpCenterButtons() {
     
   return (
     <div>
-    <div className='flex mb-6 gap-3'>
+    <div className='flex md:ml-6 mb-6 sm:gap-3 md:gap-8 lg:gap-12 xl:gap-12'>
          <ButtonComponent
         label="General"
-        btnHeight={44}
-        btnWidth={83}
         isActive={activeButton === "General"}
         onClick={()=>handleClick("General")}/>
 
          <ButtonComponent
         label="Account"
-        btnHeight={44}
-        btnWidth={83}
         isActive={activeButton === "Account"}
         onClick={()=>handleClick("Account")}/>
 
          <ButtonComponent
         label="Payment"
-        btnHeight={44}
-        btnWidth={83}
         isActive={activeButton === "Payment"}
         onClick={()=>handleClick("Payment")}/>
 
          <ButtonComponent
         label="Service"
-        btnHeight={44}
-        btnWidth={83}
         isActive={activeButton === "Service"}
         onClick={()=>handleClick("Service")}/>
         
     </div>
+
+      
     <div>
         {activeButton==="General" && <GeneralButton/>}
+        
+         {/* Add button here */}
 
     </div>
     </div>

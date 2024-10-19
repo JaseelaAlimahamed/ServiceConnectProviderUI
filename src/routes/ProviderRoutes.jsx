@@ -32,7 +32,7 @@ import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import DashBoard from '../pages/Services/requests/DashBoard/Dashboard';
 import FranchiseDetails from '../pages/franchiseeDetails/FranchiseDetails';
 import FinancialPage from '../pages/Services/FinancialPage';
-import TransactionsPage from '../pages/Transations/TransactionsPage';
+import TransactionsPage from '../pages/Transactions/TransactionsPage';
 import ServiceReviewsPage from '../pages/ServiceProviderPages/ServiceReviewsPage';
 import AdsManagementPage from '../Pages/managementPages/AdsManagementPage';
 import EditAdsPage from '../components/adsManagement/EditAds';
