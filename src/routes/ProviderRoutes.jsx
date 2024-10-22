@@ -54,6 +54,10 @@ const ProviderRoutes = createBrowserRouter([
     element: <AuthLayout />,
     children: [
       {
+        path: '/',
+        element: <Navigate to="/sign-in" />,
+      },
+      {
         path: 'sign-in',
         element: <ServiceProviderSignIn />,
       },
@@ -79,10 +83,7 @@ const ProviderRoutes = createBrowserRouter([
     path: '/',
     element: <MainLayout />,
     children: [
-      {
-        path: '/',
-        element: <Navigate to="/sign-in" />,
-      },
+      
    
      
 

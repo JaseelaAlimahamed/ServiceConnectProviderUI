@@ -52,7 +52,7 @@ const LeadDetails = () => {
   };
 
   return (
-    <div className='bg-light-gray font-daytime min-h-screen flex flex-col py-10'>
+    <div className='bg-light-gray font-daytime min-h-screen flex flex-col py-8'>
       <ProfileHeader />
       <p className='text-daytime text-sm mb-10 pl-4 pt-4'>Booking id: {booking.bookingId}</p>
       <div className="container mx-auto flex flex-col justify-center items-center flex-grow shadow-2xl w-8/12 bg-primary rounded-2xl p-4">
