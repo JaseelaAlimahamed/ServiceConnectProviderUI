@@ -25,7 +25,7 @@ function GeneralButton() {
       {sections.map((section, index) => (
         <div
           key={index}
-          className="sm:w-m h-auto backdrop-blur-md text-lg bg-helpcenter-clr text-secondary font-medium rounded-3xl mt-5 p-3  shadow-md"
+          className="backdrop-blur-md text-lg bg-helpcenter-clr text-secondary font-medium mt-5 p-3  shadow-md"
         >
           <div className="flex justify-between items-center">
             <span>{section.title}</span>
