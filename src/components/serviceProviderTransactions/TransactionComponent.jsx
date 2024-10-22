@@ -1,9 +1,7 @@
 import React from "react";
-import CardComponent from "./CardComponent";
 import TransactionCardComponent from "./TransactionCardComponent"
 
 const TransactionComponent = () => {
-  const head = "TRANSACTIONS";
   const details =[
     {
     title :"Build personal Branding",
@@ -28,9 +26,10 @@ const TransactionComponent = () => {
   return (
     <div>
     
-        <CardComponent Head={head} >
-        <TransactionCardComponent details={details}/> 
-        </CardComponent>
+        
+    <TransactionCardComponent details={details} />
+
+   
       </div>
     
   );
