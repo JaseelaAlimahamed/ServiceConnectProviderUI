@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom';
 import CardWithButton from '../../../components/RequestDetails/CardWithButton';
 import HeaderWithProfile from '../../../components/RequestDetails/HeaderWithProfile';
 import Buttons from '../../../components/RequestDetails/Buttons';
-
+import { useEffect } from 'react';
+import { fetchDetails } from '../../../service_providers_apis/Api';
 function RequestDetails() {
   const { id } = useParams();
-
+ 
   return (
     <div className="bg-light-gray min-h-screen flex items-center justify-center p-4">
       <div className="md:max-w-screen-sm w-full bg-light-gray rounded-lg shadow-md">
