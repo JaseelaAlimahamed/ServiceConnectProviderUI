@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
   baseURL: "http://localhost:8000/",
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMjcyMTExLCJpYXQiOjE3MzAyNzAzMTEsImp0aSI6IjU2NmY2MGZlODExZDRkY2ZiZWZjNWY1MjMyNGI2NDZlIiwidXNlcl9pZCI6NH0.ePBMEV5HAPhGE30vqt40URLJ0Nm0C2uIXoExGb9ebd4`,
+    'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMzU4MDI2LCJpYXQiOjE3MzAzNTYyMjYsImp0aSI6ImNiNDY1N2YyMGZmOTQwZmY5YjUwZDYxMzJmOWNiM2JkIiwidXNlcl9pZCI6NH0.csDdWnpRhRY-AYU-xSKpEshIrejrp1cfxER21o1E4ok`,
   },
 });
 

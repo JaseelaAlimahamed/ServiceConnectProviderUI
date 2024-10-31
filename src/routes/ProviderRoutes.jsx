@@ -118,7 +118,7 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'bookings',
         element: <BookingsPage />,
-        loader: protectRoute,
+        // loader: protectRoute,
       },
       {
         path: 'booking-detail/:id',
