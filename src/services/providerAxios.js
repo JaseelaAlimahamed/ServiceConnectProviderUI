@@ -30,3 +30,22 @@ export const getServiceRequestsDetails = async (accessToken,id) => {
     throw error;
   }
 };
+
+
+export const paymentTransactions = async (accessToken) => {
+  
+  try {
+    console.log(accessToken)
+    const response = await axiosInstance.get('/service-provider/transactions/', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    console.log(response)
+    return response.data;
+
+  } catch (error) {
+    console.error('Error fetching transaction details:', error);
+    throw error;
+  }
+};
