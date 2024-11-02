@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { HiCalendar, HiClock } from 'react-icons/hi';
 
 
-export const RequestCard = ({ type, title, status, date, time, customer, daytime, id }) => {
+export const RequestCard = ({ type, title, status, date, time, customer, daytime, id, image }) => {
     console.log(type);
     
   // Determine the link based on the type
-  const linkTo = type === 'Lead' ? `/lead-details/${id}` : `/request-details/${id}`;
+  const linkTo = type === 'One Time Lead' ? `/lead-details/${id}` : `/request-details/${id}`;
 
   return (
     <div className="grid-cols-1 md:grid-cols-2">
       <div className='flex border rounded-3xl overflow-hidden shadow-sm'>
-        <div className={`${status === 'Pending' ? 'bg-statuspending' : status === 'Opened' ? 'bg-complete-btn' : 'bg-dark-red'} w-3`} />
+        <div className={`${status === 'pending' ? 'bg-statuspending' : status === 'accept' ? 'bg-complete-btn' : 'bg-dark-red'} w-3`} />
 
         <div className="bg-white shadow w-full rounded-lg p-4 flex items-center justify-between">
           <div className="flex flex-col w-full">
@@ -26,7 +26,7 @@ export const RequestCard = ({ type, title, status, date, time, customer, daytime
             </div>
 
             <div className='flex items-center mt-2'>
-              <img className='bg-customPurple h-6 w-6 ml-1 mr-1 rounded-full shadow' alt="" />
+              <img className='bg-customPurple h-6 w-6 ml-1 mr-1 rounded-full shadow' src={ image } alt="" />
               <p className="text-gray-500">{customer}</p>
             </div>
 
