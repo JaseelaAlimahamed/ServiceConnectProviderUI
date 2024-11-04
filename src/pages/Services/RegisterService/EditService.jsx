@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import PaymentModal from '../../../components/serviceProvider/editServiceComponents/editServiceModal';
 import EditServiceForm from '../../../components/serviceProvider/editServiceComponents/EditServiceForm';
 import NavbarHead from '../../../components/serviceProvider/layout/NavbarHead';
-import { fetchServiceDetails } from '../../../service_providers_apis/Api';
+
 const EditService = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
