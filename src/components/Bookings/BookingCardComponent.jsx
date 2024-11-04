@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BookingAppointment from "./BookingAppointment";
-import { fetchBookings } from "../../service_providers_apis/Api";
+import { fetchBookings } from "../../booking/bookingsapi";
 
 const BookingCardComponent = () => {
   const navigate = useNavigate();

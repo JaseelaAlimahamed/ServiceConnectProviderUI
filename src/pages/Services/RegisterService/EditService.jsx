@@ -9,6 +9,7 @@ const EditService = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [leadBalance, setLeadBalance] = useState(0);
   const [formValues, setFormValues] = useState(null);
+ 
 
   const navigate = useNavigate();
   const { id } = useParams(); // Get the service ID from the route params
@@ -27,11 +28,9 @@ const EditService = () => {
     }, 2000);
   };
 
-  useEffect(() => {
-    // You can fetch the service details by ID here if necessary
-    console.log('Service ID:', id);
-    // Fetch the data and update formValues if needed
-  }, [id]);
+ 
+
+  
 
   return (
     
