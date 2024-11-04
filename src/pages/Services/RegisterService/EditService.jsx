@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import PaymentModal from '../../../components/serviceProvider/editServiceComponents/editServiceModal';
 import EditServiceForm from '../../../components/serviceProvider/editServiceComponents/EditServiceForm';
 import NavbarHead from '../../../components/serviceProvider/layout/NavbarHead';
-
+import { fetchServiceDetails } from '../../../service_providers_apis/Api';
 const EditService = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,9 +28,12 @@ const EditService = () => {
     }, 2000);
   };
 
- 
+  useEffect(() => {
+    // You can fetch the service details by ID here if necessary
+    console.log('Service ID:', id);
+    // Fetch the data and update formValues if needed
+  }, [id]);
 
-  
 
   return (
     
