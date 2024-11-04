@@ -49,3 +49,45 @@ export const paymentTransactions = async (accessToken) => {
     throw error;
   }
 };
+
+export const financialDetails = async (accessToken) => {
+  try {
+      const response = await axiosInstance.get('/service-provider/financial/', {
+          headers: {
+              'Authorization': `Bearer ${accessToken}`
+          }
+      });
+      return response.data;
+  } catch (error) {
+      console.error("Error fetching financial details", error);
+      return null;
+  }
+};
+
+export const profileDetails = async (accessToken) => {
+  try {
+      const response = await axiosInstance.get('/service-provider/profile/', {
+          headers: {
+              'Authorization': `Bearer ${accessToken}`
+          }
+      });
+      return response.data;
+  } catch (error) {
+      console.error("Error fetching profile details", error);
+      return null;
+  }
+};
+
+export const reviews = async (accessToken) => {
+  try {
+      const response = await axiosInstance.get('/service-provider/reviews/', {
+          headers: {
+              'Authorization': `Bearer ${accessToken}`
+          }
+      });
+      return response.data;
+  } catch (error) {
+      console.error("Error fetching reviews", error);
+      return null;
+  }
+};
