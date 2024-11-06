@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../../redux/features/authSlice";
 import {
   FaSignOutAlt,
   FaSignInAlt,
@@ -10,33 +12,23 @@ import {
 import { AiOutlineLeft } from "react-icons/ai";
 import NotificationButton from "./NotificationButton";
 import Sidebar from "./Sidebar";
-import ProfileSidebar from "../rightSideMenuBar/rightSideMenuBar"; // Right sidebar component
-import { useDispatch, useSelector } from "react-redux";
-import { setLoginStatus } from "../../../../redux/actions/authActions";
+import ProfileSidebar from "../rightSideMenuBar/rightSideMenuBar";
 
 const Navbar = () => {
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const dispatch = useDispatch();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false); // Right Sidebar
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // Directly use isLoggedIn from Redux state
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const profileName = "Stone Stellar";
 
-  // Check for authentication on component mount and whenever the token changes
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      dispatch(setLoginStatus(true));
-    } else {
-      dispatch(setLoginStatus(false)); // Set authentication to false when there's no token
-    }
-  }, [dispatch, location]); // Run this effect whenever the location changes (optional)
-
-  // Always close the right sidebar when rendering
+  // Close the right sidebar when location changes
   useEffect(() => {
     setIsRightSidebarOpen(false);
-  }, [location]); // Close right sidebar when the route changes
+  }, [location]);
 
   const toggleSidebar = () => {
     if (isLoggedIn) {
@@ -46,22 +38,22 @@ const Navbar = () => {
 
   const toggleRightSidebar = () => {
     if (isLoggedIn) {
-      setIsRightSidebarOpen(!isRightSidebarOpen); // Toggle only when profile image is clicked
+      setIsRightSidebarOpen(!isRightSidebarOpen);
     }
   };
 
   const handleLogout = () => {
-    dispatch(setLoginStatus(false));
+    dispatch(logout()); // Clear Redux auth state
     setIsSidebarOpen(false);
-    setIsRightSidebarOpen(false); // Ensure both sidebars close on logout
-    localStorage.removeItem("token"); // Remove token from local storage
+    setIsRightSidebarOpen(false);
+    sessionStorage.removeItem("accessToken"); // Clear session storage token
+    navigate("/signin");
   };
 
   const handleLogin = () => {
     navigate("/sign-in");
   };
 
-  // Extract the current page name from the path
   const pathParts = location.pathname.split("/");
   const pathName = pathParts[1] || "Home";
   const currentPage =
@@ -71,6 +63,7 @@ const Navbar = () => {
   const handleBackClick = () => {
     navigate("/home");
   };
+
   const handleOnClickNotification = () => {
     navigate("/notification");
   };
@@ -142,7 +135,7 @@ const Navbar = () => {
 
               {!isLoggedIn ? (
                 <NavLink
-                  onClick={handleLogin} // Use handleLogin for login simulation
+                  onClick={handleLogin}
                   className="text-primary px-4 py-2 flex items-center hover:bg-gray-700 rounded"
                 >
                   Sign In <FaSignInAlt className="ml-2" />
@@ -159,7 +152,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      j{/* Sidebar Component */}
+      {/* Sidebar Component */}
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
