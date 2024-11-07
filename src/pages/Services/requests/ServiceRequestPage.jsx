@@ -4,22 +4,21 @@ import RequestCard from '../../../components/reUsableComponents/ServiceRequestLi
 
 const ServiceRequestPage = () => {
   const [requestsData, setRequestsData] = useState([]);
-  const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNTQyMjc0LCJpYXQiOjE3MzA0ODQ2NzQsImp0aSI6IjNkMjc2N2I0ZjQyNTRlYTE5Zjc1MGMzNzg1ZTEyMjA5IiwidXNlcl9pZCI6NH0.8kUhv8iLpcb9n_4FACqhjlf5Qs4r0ibMLYqkB-gLgs4"; // Store your access token securely
+
   useEffect(() => {
     const fetchServiceRequests = async () => {
       try {
-        const data = await getServiceRequests(accessToken);
+        const data = await getServiceRequests(); 
         console.log('API response data:', data);
-        setRequestsData(Array.isArray(data) ? data : []);
+        setRequestsData(Array.isArray(data) ? data : []); 
       } catch (error) {
-        console.error('Error fetching service requests:', error);
+        console.error('Error fetching service requests:', error); 
       }
     };
 
-    fetchServiceRequests();
-  }, [accessToken]);
+    fetchServiceRequests(); 
+  }, []); 
 
-  // Function to extract date and time separately
   const formatDateTime = (dateTimeString) => {
     const date = new Date(dateTimeString);
     return {
@@ -57,4 +56,5 @@ const ServiceRequestPage = () => {
     </div>
   );
 };
+
 export default ServiceRequestPage;

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function CardWithButton({title,description,address,fromdate,fromtime,todate,totime,images}) {
   const [activeTab, setActiveTab] = useState('request');
-  const requestDummyData = {
-    images: [
-      'https://imgs.search.brave.com/fvThpd-ponhh6lltr58quXobUqfEZZnDLFUnxpMglug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nbGFtb3VyLmNv/bS9waG90b3MvNjAw/MDY4Y2QyMTAxNjg2/ZjY3YTM1MDVhL21h/c3Rlci93XzMyMCxj/X2xpbWl0LzEzNTc4/ODY3M18xNjExOTMy/MzIwNzkyMDNfMjc1/MDAzMjgzMDEzMzE0/MzI0Ml9uLmpwZw',
-      'https://imgs.search.brave.com/y5F6ULWeyHnJ4iV-psjZrtodCAhARhROb7ATGxmz9GQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vdGhlcmln/aHRoYWlyc3R5bGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wNi8xOS1z/aG9ydC1oYWlyY3V0/LXdpdGgtYW5nbGVk/LWxheWVycy5qcGc_/dz01MDAmc3NsPTE',
-    ],
-  };
-
+  const location = useLocation();
+  const { appointment } = location.state || {};
+ 
   return (
     <div className="my-4 max-w-md mx-auto lg:max-w-2xl">
       <div className="bg-white shadow-md rounded-2xl ml-4 mr-4 min-h-[400px]">
@@ -50,14 +47,13 @@ function CardWithButton({title,description,address,fromdate,fromtime,todate,toti
               <div className="ml-8 mt-2">
                 <h3 className="text-lg font-semibold">Images & Videos</h3>
                 <div className="flex space-x-2">
-                  {requestDummyData.images.map((img, index) => (
+                
                     <img
-                      key={index}
-                      src={img}
-                      alt={`Image ${index}`}
+                      src={images || 'https://static.thenounproject.com/png/4595376-512.png'}
+                      alt=""
                       className="w-16 h-16 rounded-full object-cover"
-                    />
-                  ))}
+                    />
+                 
                 </div>
               </div>
 
