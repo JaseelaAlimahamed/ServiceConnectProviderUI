@@ -8,12 +8,12 @@ import { getServiceRequestsDetails } from '../../services/providerAxios';
 
 function AcceptAndInvoice() {
   const navigate = useNavigate();
-  const { id } = useParams(); 
+  const { id } = useParams();
 
   const [requestDetailsData, setRequestDetailsData] = useState(null);
+  const [appointmentData, setAppointmentData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const formatDateTime = (dateTimeString) => {
     const date = new Date(dateTimeString);
     return {
@@ -24,25 +24,25 @@ function AcceptAndInvoice() {
 
   useEffect(() => {
     const fetchRequestDetails = async () => {
-      setLoading(true); 
+      setLoading(true);
       try {
         const accessToken = localStorage.getItem('accessToken');
         if (!accessToken) {
           throw new Error('No access token found');
         }
 
-        const response = await getServiceRequestsDetails(accessToken, id);  
+        const response = await getServiceRequestsDetails(accessToken, id);
         setRequestDetailsData(response);
       } catch (err) {
         console.error('Error fetching request details:', err);
         setError(err.message || 'An unknown error occurred');
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
     if (id) {
-      fetchRequestDetails(); 
+      fetchRequestDetails();
     }
   }, [id]);
 
@@ -54,7 +54,11 @@ function AcceptAndInvoice() {
 
   const handleConfirmClick = () => {
     console.log('Booking ID:', bookingId);
-    navigate('/bookings'); 
+    navigate('/bookings');
+  };
+
+  const handleDone = (formData) => {
+    setAppointmentData(formData);
   };
 
   if (loading) {
@@ -66,19 +70,19 @@ function AcceptAndInvoice() {
   }
 
   return (
-    <div className="bg-white flex justify-center min-h-screen">
-      <div className="container max-w-full bg-light-gray p-4 sm:p-6 lg:p-8">
-        <div className="max-w-full md:max-w-screen-full lg:max-w-screen-full mx-auto">
-          <HeaderWithProfile 
+    <div className="flex justify-center min-h-screen bg-white">
+      <div className="container max-w-full p-4 bg-light-gray sm:p-6 lg:p-8">
+        <div className="max-w-full mx-auto md:max-w-screen-full lg:max-w-screen-full">
+          <HeaderWithProfile
             id={requestDetailsData.booking_id}
             image={requestDetailsData.image}
             name={requestDetailsData.name}
             location={requestDetailsData.location}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 mb-4">
+          <div className={`grid gap-6 mt-6 mb-4 ${appointmentData ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
             <div className="mt-4">
-              <CardWithButton 
+              <CardWithButton
                 title={requestDetailsData.subcategory}
                 fromdate={fromDateTime.date}
                 fromtime={fromDateTime.time}
@@ -90,17 +94,19 @@ function AcceptAndInvoice() {
               />
             </div>
 
-            <div className="mt-8">
-              <AppointmentCard />
-            </div>
+            {appointmentData && (
+              <div className="mt-8">
+                <AppointmentCard appointmentData={appointmentData} />
+              </div>
+            )}
           </div>
 
           <div className="mt-6">
-            <AppointmentDetailsSheduling />
+            <AppointmentDetailsSheduling onDone={handleDone} />
           </div>
 
           <div className='mt-6 sm:mt-8'>
-            <div className='bg-complete-btn w-full rounded-full p-2 text-center text-lg sm:text-xl font-semibold text-white'>
+            <div className='w-full p-2 text-lg font-semibold text-center text-white rounded-full bg-complete-btn sm:text-xl'>
               <button className="w-full" onClick={handleConfirmClick}>
                 Confirm
               </button>
