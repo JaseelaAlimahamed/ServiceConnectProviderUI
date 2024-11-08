@@ -96,7 +96,7 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'edit-service/:id',
         element: <EditService />,
-        loader: protectRoute,
+        // loader: protectRoute,
       },
       {
         path: 'add-service',
@@ -118,7 +118,7 @@ const ProviderRoutes = createBrowserRouter([
       {
         path: 'bookings',
         element: <BookingsPage />,
-        loader: protectRoute,
+        // loader: protectRoute,
       },
       {
         path: 'booking-detail/:id',

@@ -9,14 +9,17 @@ import MediaUpload from './MediaUpload';
 import TermsCheckbox from './TermsCheckbox';
 import SubmitButton from './SubmitButton';
 
-import { initialValues } from './initialValues';
+// import { initialValues } from './initialValues';
 import { validationSchema } from './validationSchema';
 import { categories } from './categories';
 
-const EditServiceForm = ({ setFormValues, setLeadBalance, setShowPaymentModal, serviceId }) => {
+const EditServiceForm = ({ setFormValues,data,setLeadBalance, setShowPaymentModal, serviceId }) => {
   const [mediaFiles, setMediaFiles] = useState([]);
   const [certificatePreview, setCertificatePreview] = useState(null);
   const [licensePreview, setLicensePreview] = useState(null);
+
+
+ 
 
   useEffect(() => {
     if (serviceId) {
@@ -50,16 +53,21 @@ const EditServiceForm = ({ setFormValues, setLeadBalance, setShowPaymentModal, s
 
   return (
     <Formik
-      initialValues={initialValues}
+    enableReinitialize={true}
+      initialValues={data}
       validationSchema={validationSchema}
       validateOnBlur={true}
+      
       onSubmit={(values) => {
         setFormValues({ ...values, mediaFiles });
         setLeadBalance(values.leadBalance);
         setShowPaymentModal(true);
       }}
+   
     >
       {({ setFieldValue, values, handleSubmit }) => (
+        
+      
         <Form
           className="flex flex-col items-center bg-light-gray md:p-10 md:rounded-md md:shadow-xl"
           onSubmit={handleSubmit}
@@ -76,7 +84,7 @@ const EditServiceForm = ({ setFormValues, setLeadBalance, setShowPaymentModal, s
           />
 
           {/* Conditionally render the available lead balance and add balance button if the service type is "Lead" */}
-          {values.servicetype === 'Lead' && values.leadBalance > 0 && (
+          {values.servicetype === 'Lead' && values.leadBalance >= 0 && (
             <div className="text-center mb-4">
               <h2 className="text-lg font-semibold">
                 Available lead balance: {values.leadBalance}

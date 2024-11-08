@@ -4,10 +4,10 @@ import axios from "axios";
 const token = localStorage.getItem("authToken");
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/",
+  baseURL: "https://learnbudsgvr.pythonanywhere.com/",
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwNzAzMjQyLCJpYXQiOjE3MzA3MDE0NDIsImp0aSI6ImU0NTYwMjRiZmY0ODQ1YTJhOGUyMDZkZmNjYjUxZTA4IiwidXNlcl9pZCI6NH0.1Tm3Y_7pOVgZYuKJ6OQKWiE8jiLqADKC9ln8tksKitI`,
+    'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxMDUxMzU0LCJpYXQiOjE3MzEwNDk1NTQsImp0aSI6IjMyMTA4NmU0YTk4NDQ1MTU4OWJlMWU0MjRkZjI3NDU0IiwidXNlcl9pZCI6NH0.An_hWEwWQMnIk52SSD4QjsA6j28Gc5TD93gMgbEd0Qg`,
   },
 });
 
