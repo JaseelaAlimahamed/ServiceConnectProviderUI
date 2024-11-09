@@ -73,12 +73,12 @@ function AcceptAndInvoice() {
     <div className="flex justify-center min-h-screen bg-white">
       <div className="container max-w-full p-4 bg-light-gray sm:p-6 lg:p-8">
         <div className="max-w-full mx-auto md:max-w-screen-full lg:max-w-screen-full">
-          <HeaderWithProfile
-            id={requestDetailsData.booking_id}
-            image={requestDetailsData.image}
-            name={requestDetailsData.name}
-            location={requestDetailsData.location}
-          />
+        <HeaderWithProfile   
+          id={requestDetailsData.booking_id}
+          image={requestDetailsData.profile_image}
+          name={requestDetailsData.customer_name}
+          location={requestDetailsData.customer_place}
+         />
 
           <div className={`grid gap-6 mt-6 mb-4 ${appointmentData ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
             <div className="mt-4">
@@ -91,6 +91,9 @@ function AcceptAndInvoice() {
                 description={requestDetailsData.description}
                 images={requestDetailsData.images}
                 address={requestDetailsData.customer_address}
+                landmark={requestDetailsData.customer_landmark}
+                place={requestDetailsData.customer_place}
+                pincode={requestDetailsData.customer_pincode}
               />
             </div>
 

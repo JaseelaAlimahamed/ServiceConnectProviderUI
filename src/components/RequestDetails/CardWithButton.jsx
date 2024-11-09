@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function CardWithButton({title,description,address,fromdate,fromtime,todate,totime,images}) {
+function CardWithButton({title,description,address,fromdate,fromtime,todate,totime,images,place,landmark,pincode}) {
   const [activeTab, setActiveTab] = useState('request');
   const location = useLocation();
   const { appointment } = location.state || {};
@@ -100,8 +100,11 @@ function CardWithButton({title,description,address,fromdate,fromtime,todate,toti
           ) : (
             <div className="ml-8 mt-8 p-4">
               <h3 className="text-lg font-semibold">Address</h3>
+              <p className="text-black">{place}</p>
               <p className="text-black">{address}</p>
-            </div>
+              <p className="text-black">{landmark}</p>
+              <p className="text-black">{pincode}</p>
+            </div>
           )}
         </div>
       </div>

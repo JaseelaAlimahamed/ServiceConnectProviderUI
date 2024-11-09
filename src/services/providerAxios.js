@@ -1,6 +1,6 @@
 import axiosInstance from '../../src/api/axios'; 
 
-localStorage.setItem('accessToken','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwOTU1NTIyLCJpYXQiOjE3MzA5NTM3MjIsImp0aSI6IjMyZWNkNzQwNTMyYTQxMWZiZTBmOTRjMzBkYzc0MTQ0IiwidXNlcl9pZCI6NH0.EnnWmB-zDsw87S69TIePRyO-jCg-_dhNFj-ts1Tzhtc');
+localStorage.setItem('accessToken','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxMDg3MjYwLCJpYXQiOjE3MzEwODU0NjAsImp0aSI6ImYzZDJjMTExZmI0ODQ5NTQ4MTAyMzQxMWRmMzIxZTIyIiwidXNlcl9pZCI6NH0.-fRRW6VhNI6091pZpVMmuP8wp6FKv7YTc5gazbeFMac');
 
 export const getServiceRequests = async () => {
   try {
@@ -23,6 +23,8 @@ export const getServiceRequests = async () => {
   }
 };
 
+
+
 export const getServiceRequestsDetails = async (accessToken, id) => {
   try {
     if (!accessToken) {
@@ -30,7 +32,8 @@ export const getServiceRequestsDetails = async (accessToken, id) => {
     }
     console.log('Access token found:', accessToken);
     console.log('Fetching invoice details for ID:', id);
-    const response = await axiosInstance.get(`/service-provider/service-requests/details/${id}/`, {
+    const response = await axiosInstance.patch(`/service-provider/service-requests/details/`, {
+      booking_id:id },{
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -47,6 +50,8 @@ export const getServiceRequestsDetails = async (accessToken, id) => {
 
 
 
+
+
 export const getInvoiceDetails = async (id) => {  
   try {
     const accessToken = localStorage.getItem('accessToken');  
@@ -55,7 +60,7 @@ export const getInvoiceDetails = async (id) => {
       throw new Error('No access token found');
     }
 
-    const response = await axiosInstance.get(`/service-provider/invoice/${id}/`, {
+    const response = await axiosInstance.patch(`/service-provider/invoice/`,{booking_id:id}, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

@@ -44,14 +44,14 @@ function RequestDetails() {
   return (
     <div className="bg-light-gray min-h-screen flex items-center justify-center p-4">
       <div className="md:max-w-screen-sm w-full bg-light-gray rounded-lg ">
-        {/* Pass the id as a prop */}
-        <HeaderWithProfile
+      
+        <HeaderWithProfile   
           id={requestDetailsData.booking_id}
-          image={requestDetailsData.image}
-          name={requestDetailsData.name}
-          location={requestDetailsData.location}
-        />
-        <CardWithButton
+          image={requestDetailsData.profile_image}
+          name={requestDetailsData.customer_name}
+          location={requestDetailsData.customer_place}
+         />
+        <CardWithButton   
           title={requestDetailsData.subcategory}
           fromdate={fromDateTime.date}
           fromtime={fromDateTime.time}
@@ -60,7 +60,10 @@ function RequestDetails() {
           description={requestDetailsData.description}
           images={requestDetailsData.images}
           address={requestDetailsData.customer_address}
-        />
+          landmark={requestDetailsData.customer_landmark}
+          place={requestDetailsData.customer_place}
+          pincode={requestDetailsData.customer_pincode}
+         />
         <Buttons id={id} />
       </div>
     </div>
