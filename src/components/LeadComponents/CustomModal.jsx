@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import ActionButton from './ActionButton';
+import { deductLead } from '../../deductlead/deductlead';
+import LeadDetails from '../LeadComponents/LeadDetails'
 
-const CustomModal = ({ open, onRequestClose, onOk, onCancel }) => {
+
+
+const CustomModal = ({ open, onRequestClose, onOk, onCancel,bookingId  }) => {
+  const handleClick = () => {
+    onOk();
+    deductLead(bookingId).then((result) => {
+      console.log("Deduct Lead Result:", result);
+      console.log(`Booking ID: ${bookingId}`);
+    })
+    
+  };
+  
+
+  
   return (
     <ReactModal
       isOpen={open}
@@ -29,7 +44,7 @@ const CustomModal = ({ open, onRequestClose, onOk, onCancel }) => {
         By attending your lead, your balance will be reduced by one.
       </h2>
       <div className="flex gap-2 justify-center">
-        <ActionButton label="Okay" color="dark-gray" width="126px" onClick={onOk} />
+        <ActionButton label="Okay" color="dark-gray" width="126px" onClick={handleClick} />
         <ActionButton label="Cancel" color="dark-gray" width="126px" onClick={onCancel} />
       </div>
     </ReactModal>
