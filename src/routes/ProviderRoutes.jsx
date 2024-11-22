@@ -79,7 +79,7 @@ const ProviderRoutes = createBrowserRouter([
       },
     ],
   },
-  {
+  { 
     path: '/',
     element: <MainLayout />,
     children: [

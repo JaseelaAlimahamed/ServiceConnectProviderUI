@@ -2,28 +2,28 @@ import React from "react";
 import CardComponent from "./CardComponent";
 import TransactionCardComponent from "./TransactionCardComponent"
 
-const TransactionComponent = () => {
+const TransactionComponent = ({ details }) => {
   const head = "TRANSACTIONS";
-  const details = [
+  const details =[
     {
-      title: "Build personal Branding",
-      job: "Web Designer",
-      status: "Paid",
-      img: ""
-    },
-    {
-      title: "Build personal Branding",
-      job: "Web Designer",
-      status: "Paid",
-      img: ""
-    },
-    {
-      title: "Build personal Branding",
-      job: "Web Designer",
-      status: "Paid",
-      img: ""
-    }
-  ]
+    title :"Build personal Branding",
+    job :"Web Designer",
+    status:"Paid",
+    img :""
+  }, 
+  {
+    title :"Build personal Branding",
+    job :"Web Designer",
+    status:"Paid",
+    img :""
+  },
+  {
+    title :"Build personal Branding",
+    job :"Web Designer",
+    status:"Paid",
+    img :""
+  }
+]
 
   return (
     <div className="w-full  min-h-screen  mx-auto bg-light-gray shadow-xl overflow-hidden">

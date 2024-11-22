@@ -1,47 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardComponent from "./CardComponent";
 import TabComponent from "./TabComponent";
+import { fetchOnGoingService, fetchCompletedService } from "../../services/jobService";
 
 const ActiveServiceJob = () => {
   const [activeTab, setActiveTab] = useState("ongoing");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [service,setService] = useState()
 
-  const appointments = [
-    {
-      title: "Haircut Appointment",
-      time: "Today, 9:30 AM",
-      viewLink: "#",
-      date: "September 22, 2024",
-      userName: "John Doe",
-      status: "Active",
-      bookingTime: "1:30 PM - 2:30 PM",
-    },
-    {
-      title: "Plumbing Service",
-      time: "Today, 9:30 AM",
-      viewLink: "#",
-      date: "September 23, 2024",
-      userName: "Jane Smith",
-      status: "Payment Pending",
-      bookingTime: "9:30 AM - 10:30 AM",
-    },
-    {
-      title: "Plumbing Service",
-      time: "Today, 9:30 AM",
-      viewLink: "#",
-      date: "September 23, 2024",
-      userName: "Jane Smith",
-      status: "Completed",
-      bookingTime: "9:30 AM - 10:30 AM",
-    },
-  ];
+  useEffect(() => {
+    const fetchAllServices = async () => {
+      setLoading(true);
 
-  const filteredAppointments = appointments.filter(
+      try {
+        const token = localStorage.getItem("accessToken");
+        console.log(token);
+        if (!token) {
+          throw new Error("Access token not found. Please log in.");
+        }
+
+        // Fetch both completed and ongoing services
+        const completedServices = await fetchCompletedService(token);
+        const ongoingServices = await fetchOnGoingService(token);
+        
+      
+        // Combine the fetched data
+        const combinedData = [...completedServices, ...ongoingServices];
+
+        console.log("Fetched Data:", combinedData);
+        setService(combinedData); 
+      } catch (err) {
+        setError(err.message); 
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchAllServices(); 
+  }, []);
+
+
+
+
+  const filteredAppointments = Array.isArray(service) ? service.filter(
     (appointment) =>
       (activeTab === "ongoing" &&
-        (appointment.status === "Active" ||
-          appointment.status === "Payment Pending")) ||
-      (activeTab === "completed" && appointment.status === "Completed")
-  );
+        (appointment.work_status === "Active" ||
+          appointment.work_status === "Payment Pending")) ||
+      (activeTab === "completed" && appointment.work_status === "completed")
+  ) : [];
 
   return (
     <div className="min-w-full mx-auto bg-light-gray min-h-screen p-4">
