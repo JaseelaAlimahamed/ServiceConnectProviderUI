@@ -2,17 +2,17 @@ import React from 'react';
 
 const AboutText = () => {
   return (
-    <div className="w-full h-screen p-4 bg-primary ">
+    <div className="w-full h-screen p-4 bg-light-gray ">
       <div className="max-w-4xl mx-auto">
         
         <section className="mt-8">
           <h2 className="md:text-base lg:text-lg  mb-4 text-heading_blck font-bold">Mission</h2>
-          <p className="md:text-base lg:text-lg text-para_grey font-medium">
+          <p className="md:text-base lg:text-md text-para_grey font-medium">
             At enim hic etiam dolore. Dulce amarum, leve asperum, prope longe, stare movere, 
             quadratum rotundum. At certe gravius. Nullus est igitur cuiusquam dies natalis. 
             Paulum, cum regem Persen captum adduceret, eodem flumine invectio?
           </p>
-          <p className="md:text-base lg:text-lg mt-4 text-profilefont font-medium">
+          <p className="md:text-base lg:text-md mt-4 text-profilefont font-medium">
             Quare hoc videndum est, possitne nobis hoc ratio philosophorum dare. Sed finge 
             non solum callidum eum, qui aliquid improbe faciat, verum etiam praeoptentem, ut M. 
             Est autem officium, quod ita factum est, ut eius facti probabilis ratio reddi possit.

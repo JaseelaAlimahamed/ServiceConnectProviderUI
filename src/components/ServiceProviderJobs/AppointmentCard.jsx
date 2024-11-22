@@ -31,7 +31,7 @@ const AppointmentCard = ({ appointments }) => {
               <div className="font-medium text-daytime">{appointment.time}</div>
             </div>
 
-            <div className="mt-1 flex items-center">
+            <div className="mt-1 flex items-center relative">
               <div className="bg-customPurple rounded-full h-6 w-6 mr-3"></div>
               <div>
                 <p className="text-sm text-gray-600">{appointment.userName}</p>
@@ -53,7 +53,7 @@ const AppointmentCard = ({ appointments }) => {
             </div>
 
             {appointment.status === 'Active' && (
-              <div className="flex justify-between items-center text-sm text-gray-500 mt-2">
+              <div className="flex justify-between items-center text-sm text-gray-500 mx-4">
                 <div className="flex items-center">
                   <CiCalendar className="w-5 h-5 text-red-500 mr-2" />
                   <p>{appointment.date}</p>

@@ -15,16 +15,16 @@ const RegisterService = () => {
 
   return (
     
-    <div className="flex bg-light-gray overflow-auto">
-      
-      <div className="flex flex-col items-center p-6 bg-light-gray rounded-md md:shadow-lg w-screen min-h-screen justify-center overflow-auto">
-        <AddServiceForm
-          mediaFiles={mediaFiles}
-          setMediaFiles={setMediaFiles}
-          onSubmit={handleSubmit}
-        />
-      </div>
+    <div className="flex ml-0 bg-light-gray max-w-screen overflow-x-hidden">
+    <div className="flex flex-col items-center px-4 md:px-24 bg-light-gray rounded-md md:shadow-lg w-full min-h-screen justify-center overflow-auto">
+      <AddServiceForm
+        mediaFiles={mediaFiles}
+        setMediaFiles={setMediaFiles}
+        onSubmit={handleSubmit}
+      />
     </div>
+  </div>
+  
     
   );
 };

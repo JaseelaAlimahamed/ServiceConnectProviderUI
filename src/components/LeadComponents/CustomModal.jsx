@@ -14,7 +14,7 @@ const CustomModal = ({ open, onRequestClose, onOk, onCancel }) => {
         },
         content: {
           top: "50%",
-          left: "50%",
+          left: "55%",
           transform: "translate(-50%, -50%)",
           width: "90%",
           maxWidth: "500px",

@@ -24,7 +24,7 @@ const menuItems = [
   {
     title: "Notifications",
     icon: <IoNotificationsOutline  />,
-    route: "/notifications",
+    route: "/notification",
   },
   {
     title: "Security",

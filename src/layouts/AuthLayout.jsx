@@ -5,7 +5,7 @@ import NavbarHead from '../components/serviceProvider/layout/NavbarHead';
 
 const AuthLayout = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-light-gray">
+    <div className="  min-h-screen bg-light-gray">
       <NavbarHead />
       <Outlet />
     </div>
