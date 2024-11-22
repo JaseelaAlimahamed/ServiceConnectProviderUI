@@ -5,7 +5,7 @@ import HeaderWithProfile from '../../../components/RequestDetails/HeaderWithProf
 import Buttons from '../../../components/RequestDetails/Buttons';
 import { getServiceRequestsDetails } from '../../../services/providerAxios';
 
-function RequestDetails() {
+
   const { id } = useParams(); 
   const [requestDetailsData, setRequestDetailsData] = React.useState({});
 

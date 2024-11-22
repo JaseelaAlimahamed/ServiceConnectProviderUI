@@ -74,7 +74,7 @@ const LeadDetails = () => {
         width="300px" 
         onClick={tab ? handleDecline : handleCall} 
       />
-      <CustomModal open={open} onRequestClose={() => setOpen(false)} onOk={handleOk} onCancel={handleCancel} />
+      <CustomModal open={open} onRequestClose={() => setOpen(false)} onOk={handleOk} onCancel={handleCancel} bookingId={booking.bookingId} />
     </div>
   );
 };

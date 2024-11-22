@@ -3,12 +3,28 @@ import { useNavigate, useParams } from 'react-router-dom';
 import PaymentModal from '../../../components/serviceProvider/editServiceComponents/editServiceModal';
 import EditServiceForm from '../../../components/serviceProvider/editServiceComponents/EditServiceForm';
 import NavbarHead from '../../../components/serviceProvider/layout/NavbarHead';
-
+import { fetchservicedetails } from '../../../editservice/editserviceapi';
 const EditService = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [leadBalance, setLeadBalance] = useState(0);
   const [formValues, setFormValues] = useState(null);
+  const [data,setvalues] = useState({status: 'Active',
+    serviceTitle: 'Web Development Service',
+    description: 'We offer professional web development services',
+    gstCode: 'GST123456',
+    serviceCategory: 'Web Development',
+    serviceSubCategory: 'Fullstack',
+    servicetype: 'Lead',
+    collar:'blue',
+    certificateFileName: 'certificate.pdf',
+    licenseFileName: 'license.pdf',
+    leadBalance: 50,
+    terms: true,
+    mediaFiles: [],});
+  
+  
+ 
 
   const navigate = useNavigate();
   const { id } = useParams(); // Get the service ID from the route params
@@ -28,10 +44,29 @@ const EditService = () => {
   };
 
   useEffect(() => {
-    // You can fetch the service details by ID here if necessary
-    console.log('Service ID:', id);
-    // Fetch the data and update formValues if needed
+    
+    fetchservicedetails(id)
+      .then((data) => {
+       
+       setvalues(pre=>({
+        ...pre,
+        leadBalance:data.leadBalance,
+        gstCode:data.gstcode,
+        terms:data.accepted_terms,
+        description:data.description,
+       }))
+        
+        
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    
   }, [id]);
+
+
+
+
 
   return (
     
@@ -40,6 +75,7 @@ const EditService = () => {
       <div className="flex flex-col items-center p-4 bg-light-gray rounded-md md:shadow-lg w-full min-h-screen justify-center overflow-auto">
         <EditServiceForm
           serviceId={id}  // Pass the service ID to the form
+          data = {data}
           setFormValues={setFormValues}
           setLeadBalance={setLeadBalance}
           setShowPaymentModal={setShowPaymentModal}
