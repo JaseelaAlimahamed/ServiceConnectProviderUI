@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CardWithButton from '../../../components/RequestDetails/CardWithButton';
 import HeaderWithProfile from '../../../components/RequestDetails/HeaderWithProfile';
 import Buttons from '../../../components/RequestDetails/Buttons';
 import { getServiceRequestsDetails } from '../../../services/providerAxios';
 
-
-  const { id } = useParams(); 
-  const [requestDetailsData, setRequestDetailsData] = React.useState({});
+const RequestDetails = () => {
+  const { id } = useParams();
+  const [requestDetailsData, setRequestDetailsData] = useState({});
 
   useEffect(() => {
-   
     const fetchRequestDetails = async () => {
       try {
-        
         const accessToken = localStorage.getItem('accessToken');
         if (!accessToken) {
           throw new Error('No access token found');
@@ -21,7 +19,7 @@ import { getServiceRequestsDetails } from '../../../services/providerAxios';
 
         const response = await getServiceRequestsDetails(accessToken, id);
         setRequestDetailsData(response);
-        console.log(response, "res");
+        console.log(response, 'Fetched Request Details');
       } catch (err) {
         console.error('Error fetching request details:', err);
       }
@@ -31,6 +29,7 @@ import { getServiceRequestsDetails } from '../../../services/providerAxios';
   }, [id]);
 
   const formatDateTime = (dateTimeString) => {
+    if (!dateTimeString) return { date: '', time: '' }; // Ensure safe handling of undefined values
     const date = new Date(dateTimeString);
     return {
       date: date.toLocaleDateString(),
@@ -43,15 +42,14 @@ import { getServiceRequestsDetails } from '../../../services/providerAxios';
 
   return (
     <div className="bg-light-gray min-h-screen flex items-center justify-center p-4">
-      <div className="md:max-w-screen-sm w-full bg-light-gray rounded-lg ">
-      
-        <HeaderWithProfile   
+      <div className="md:max-w-screen-sm w-full bg-white rounded-lg shadow-md">
+        <HeaderWithProfile
           id={requestDetailsData.booking_id}
           image={requestDetailsData.profile_image}
           name={requestDetailsData.customer_name}
           location={requestDetailsData.customer_place}
-         />
-        <CardWithButton   
+        />
+        <CardWithButton
           title={requestDetailsData.subcategory}
           fromdate={fromDateTime.date}
           fromtime={fromDateTime.time}
@@ -63,11 +61,11 @@ import { getServiceRequestsDetails } from '../../../services/providerAxios';
           landmark={requestDetailsData.customer_landmark}
           place={requestDetailsData.customer_place}
           pincode={requestDetailsData.customer_pincode}
-         />
+        />
         <Buttons id={id} />
       </div>
     </div>
   );
-}
+};
 
 export default RequestDetails;

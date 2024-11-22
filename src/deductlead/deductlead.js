@@ -1,5 +1,6 @@
 // api.js
-import axiosInstance from "../baseUrl/axiosInstance";
+
+import { axiosInstance } from "../api/axios";
 
 export const deductLead = async (bookingId) => {
     const DEDUCTLEAD_URL = "/service-provider/deductlead/";

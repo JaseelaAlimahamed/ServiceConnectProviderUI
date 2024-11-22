@@ -1,6 +1,7 @@
-import axiosInstance from "../baseUrl/axiosInstance";
 
 //  Fetch Booking details
+
+import {axiosInstance} from "../api/axios";
 
 export const fetchBookings = async () => {
     try {
@@ -10,7 +11,7 @@ export const fetchBookings = async () => {
     } catch (error) {
       console.error("Error fetching data:", error.response ? error.response.data : error.message);
       return [];
-    }
-  };
+    }
+ };
 
 

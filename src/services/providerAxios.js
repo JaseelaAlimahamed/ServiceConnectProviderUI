@@ -1,7 +1,6 @@
-import axiosInstance from '../../src/api/axios'; 
+import {axiosInstance} from '../../src/api/axios'; 
 
-localStorage.setItem('accessToken','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxMDg3MjYwLCJpYXQiOjE3MzEwODU0NjAsImp0aSI6ImYzZDJjMTExZmI0ODQ5NTQ4MTAyMzQxMWRmMzIxZTIyIiwidXNlcl9pZCI6NH0.-fRRW6VhNI6091pZpVMmuP8wp6FKv7YTc5gazbeFMac');
-
+localStorage.setItem('accessToken','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjcwNjkxLCJpYXQiOjE3MzIyNjg4OTEsImp0aSI6IjViOGM2ZmI3MzE5ZjRmOWZiZjMxOTc2YjU1N2ExNzkwIiwidXNlcl9pZCI6NH0.tXN8NCxwvXXwzm1hnii7uXOpH6EIlTXrVlvhhUG5hz8')
 export const getServiceRequests = async () => {
   try {
     

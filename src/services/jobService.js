@@ -1,8 +1,8 @@
-import { baseApi } from "../api/axios";
+import {axiosInstance} from "../api/axios";
 
 export const fetchCompletedService = async (token) => {
   try {
-    const response = await baseApi.get("/completed/", {
+    const response = await axiosInstance.get("/completed/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -16,7 +16,7 @@ export const fetchCompletedService = async (token) => {
 
 export const fetchOnGoingService = async (token) => {
   try {
-    const response = await baseApi.get("/ongoing/", {
+    const response = await axiosInstance.get("/ongoing/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

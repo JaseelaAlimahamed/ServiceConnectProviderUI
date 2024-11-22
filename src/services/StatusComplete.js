@@ -1,4 +1,4 @@
-import { baseApi } from "../api/axios";
+import {axiosInstance} from "../api/axios";
 
 export async function completeBooking(id) {
   try {
@@ -8,7 +8,7 @@ export async function completeBooking(id) {
       throw new Error("Access token not found. Please log in again.");
     }
 
-    const response = await baseApi.post(
+    const response = await axiosInstance.post(
       "/change-work-status/",
       { id }, // Body with booking ID
       {

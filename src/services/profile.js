@@ -1,11 +1,11 @@
-import { baseApi } from "../api/axios";
+import { axiosInstance } from "../api/axios";
 
 const accessToken = "your_access_token_here";
 
 // Function to fetch user ID
 export const fetchUserId = async () => {
   try {
-    const response = await baseApi.get("/profile/", {
+    const response = await axiosInstance.get("/profile/", {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -23,7 +23,7 @@ export const fetchUserId = async () => {
 // Update profile data for a specific customer based on their ID
 export const postProfileData = async (id, profileData) => {
   try {
-    const response = await baseApi.put(`/profile/${id}/`, profileData, {
+    const response = await axiosInstance.put(`/profile/${id}/`, profileData, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
@@ -42,7 +42,7 @@ export const postProfileData = async (id, profileData) => {
 // Get location data for a specific customer based on their ID
 export const getLocationData = async (id) => {
   try {
-    const response = await baseApi.get(`/profile/${id}/`, {
+    const response = await axiosInstance.get(`/profile/${id}/`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -62,7 +62,7 @@ export const getLocationData = async (id) => {
 // Get additional data for a specific customer based on their ID
 export const getAdditionalData = async (id) => {
   try {
-    const response = await baseApi.get(`/profile/${id}/`, {
+    const response = await axiosInstance.get(`/profile/${id}/`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

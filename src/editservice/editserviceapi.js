@@ -1,6 +1,7 @@
-import axiosInstance from "../baseUrl/axiosInstance";
 
 //  Fetch Booking details
+
+import {axiosInstance} from "../api/axios";
 
 export const fetchservicedetails = async (id) => {
     try {
