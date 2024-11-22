@@ -1,5 +1,11 @@
-import axios from "axios";
 
-export const baseApi = axios.create({
-  baseURL: "http://127.0.0.1:8000/service-provider",
+import axios from 'axios';
+
+const axiosInstance = axios.create({
+  baseURL: 'https://learnbudsgvr.pythonanywhere.com',
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
+
+export default axiosInstance;

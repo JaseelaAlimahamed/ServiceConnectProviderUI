@@ -1,25 +1,11 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function CardWithButton() {
+function CardWithButton({title,description,address,fromdate,fromtime,todate,totime,images,place,landmark,pincode}) {
   const [activeTab, setActiveTab] = useState('request');
   const location = useLocation();
   const { appointment } = location.state || {};
-
-  const requestDummyData = {
-    title: 'Plumbing',
-    description: 'Washroom plumbing pipe needs to change',
-    images: [
-      'https://imgs.search.brave.com/fvThpd-ponhh6lltr58quXobUqfEZZnDLFUnxpMglug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nbGFtb3VyLmNv/bS9waG90b3MvNjAw/MDY4Y2QyMTAxNjg2/ZjY3YTM1MDVhL21h/c3Rlci93XzMyMCxj/X2xpbWl0LzEzNTc4/ODY3M18xNjExOTMy/MzIwNzkyMDNfMjc1/MDAzMjgzMDEzMzE0/MzI0Ml9uLmpwZw',
-      'https://imgs.search.brave.com/y5F6ULWeyHnJ4iV-psjZrtodCAhARhROb7ATGxmz9GQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vdGhlcmln/aHRoYWlyc3R5bGVz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wNi8xOS1z/aG9ydC1oYWlyY3V0/LXdpdGgtYW5nbGVk/LWxheWVycy5qcGc_/dz01MDAmc3NsPTE',
-    ],
-    bookingTimeFrom: '09:30 AM',
-    bookingTimeTo: '10:30 PM',
-    dateFrom: 'Aug 12 2024',
-    dateTo: 'Aug 13 2024',
-    address: 'This is my address page',
-  };
-
+ 
   return (
     <div className="my-4 max-w-md mx-auto lg:max-w-2xl">
       <div className="bg-white shadow-md rounded-2xl ml-4 mr-4 min-h-[400px]">
@@ -50,25 +36,24 @@ function CardWithButton() {
             <div>
               <div className="ml-8">
                 <h3 className="text-lg font-semibold">Title</h3>
-                <p className="text-gray-700">{requestDummyData.title || 'No title'}</p>
+                <p className="text-gray-700">{title}</p>
               </div>
 
               <div className="ml-8 mt-2">
                 <h3 className="text-lg font-semibold">Description</h3>
-                <p className="text-gray-700">{requestDummyData.description || 'No description'}</p>
+                <p className="text-gray-700">{description}</p>
               </div>
 
               <div className="ml-8 mt-2">
                 <h3 className="text-lg font-semibold">Images & Videos</h3>
                 <div className="flex space-x-2">
-                  {requestDummyData.images.map((img, index) => (
+                
                     <img
-                      key={index}
-                      src={img}
-                      alt={`Image ${index}`}
+                      src={images || 'https://static.thenounproject.com/png/4595376-512.png'}
+                      alt=""
                       className="w-16 h-16 rounded-full object-cover"
-                    />
-                  ))}
+                    />
+                 
                 </div>
               </div>
 
@@ -79,7 +64,7 @@ function CardWithButton() {
                     <label className="text-sm ml-4 font-normal">From</label>
                     <input
                       type="text"
-                      value={requestDummyData.dateFrom}
+                      value={fromdate}
                       readOnly
                       className="border shadow-xl ml-16 rounded-lg p-2 bg-gray-200 w-2/3 text-center"
                     />
@@ -87,7 +72,7 @@ function CardWithButton() {
                   <div className="flex flex-col mt-5">
                     <input
                       type="text"
-                      value={requestDummyData.bookingTimeFrom}
+                      value={fromtime}
                       readOnly
                       className="border shadow-xl rounded-lg p-2 bg-gray-200 w-24 text-center"
                     />
@@ -96,7 +81,7 @@ function CardWithButton() {
                     <label className="text-sm ml-4 font-normal">To</label>
                     <input
                       type="text"
-                      value={requestDummyData.dateTo}
+                      value={todate}
                       readOnly
                       className="border shadow-xl ml-16 rounded-lg p-2 mb-4 bg-gray-200 w-2/3 text-center"
                     />
@@ -104,7 +89,7 @@ function CardWithButton() {
                   <div className="flex flex-col mt-5">
                     <input
                       type="text"
-                      value={requestDummyData.bookingTimeTo}
+                      value={totime}
                       readOnly
                       className="border shadow-xl rounded-lg p-2 mb-4 bg-gray-200 w-24 text-center"
                     />
@@ -115,8 +100,11 @@ function CardWithButton() {
           ) : (
             <div className="ml-8 mt-8 p-4">
               <h3 className="text-lg font-semibold">Address</h3>
-              <p className="text-black">{requestDummyData.address}</p>
-            </div>
+              <p className="text-black">{place}</p>
+              <p className="text-black">{address}</p>
+              <p className="text-black">{landmark}</p>
+              <p className="text-black">{pincode}</p>
+            </div>
           )}
         </div>
       </div>
