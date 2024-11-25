@@ -1,19 +1,30 @@
 import { axiosInstance } from "../api/axios";
 
-const accessToken = "your_access_token_here";
 
 // Function to fetch user ID
 export const fetchUserId = async () => {
   try {
     const response = await axiosInstance.get("/profile/", {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+      
     });
 
     const userId = response.id_number;
     console.log("Fetched User ID:", userId);
     return userId;
+  } catch (error) {
+    console.error("Error fetching User ID:", error.message);
+    throw error;
+  }
+};
+
+
+export const fetchUser = async () => {
+  try {
+    const response = await axiosInstance.get("/profile/", {
+      
+    });
+
+    return response.data;
   } catch (error) {
     console.error("Error fetching User ID:", error.message);
     throw error;
@@ -26,7 +37,6 @@ export const postProfileData = async (id, profileData) => {
     const response = await axiosInstance.put(`/profile/${id}/`, profileData, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
       },
     });
 
@@ -43,9 +53,7 @@ export const postProfileData = async (id, profileData) => {
 export const getLocationData = async (id) => {
   try {
     const response = await axiosInstance.get(`/profile/${id}/`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+      
     });
 
     console.log("Location data:", response.data);
@@ -63,9 +71,7 @@ export const getLocationData = async (id) => {
 export const getAdditionalData = async (id) => {
   try {
     const response = await axiosInstance.get(`/profile/${id}/`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+      
     });
 
     console.log("Additional Data:", response.data);

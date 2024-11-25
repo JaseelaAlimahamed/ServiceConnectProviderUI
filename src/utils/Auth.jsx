@@ -1,31 +1,19 @@
-import { redirect } from "react-router-dom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Navigate } from 'react-router-dom';
+// import { useAuth } from '../hooks/useAuth'; // Your authentication hook
 
-// Helper function to get a session storage item with expiration check
-const getSessionStorageWithExpiry = (key) => {
-  const itemStr = sessionStorage.getItem(key);
-  if (!itemStr) {
-    return null;
-  }
-  const item = JSON.parse(itemStr);
-  const now = new Date();
-  if (now.getTime() > item.expiry) {
-    sessionStorage.removeItem(key);
-    return null;
-  }
-  return item.value;
+const ProtectedRoute = ({ children }) => {
+  // const { isAuthenticated } = useAuth(); // Check if the user is authenticated
+  const { isLoggedIn} = useSelector((state) => state.auth);
+
+  // if (!isLoggedIn) {
+  //   // Redirect the user to the login page if they are not authenticated
+  //   return <Navigate to="/sign-in" replace />;
+  // }
+
+  // If the user is authenticated, allow them to access the route
+  return children;
 };
 
-// Check if user is authenticated by validating the session token with expiry
-export const isAuthenticated = () => {
-  const token = getSessionStorageWithExpiry("accessToken");
-  return !!token; // Returns true if token is valid, false otherwise
-};
-
-// Protect the route by redirecting to the sign-in page if not authenticated
-export const protectRoute = () => {
-  if (!isAuthenticated()) {
-    return redirect("/sign-in");
-  }
-
-  return null;
-};
+export default ProtectedRoute;

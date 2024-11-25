@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import Arrow from "../../assets/profile-arrow.svg"; // Adjusted path for the Arrow
 import menuItems from "../../components/profilePageComponents/menuItems"; // Adjusted path
 
-const MenuOptions = () => {
+const MenuOptions = ({user}) => {
+  
   return (
-    <div className="w-full max-w-md h-auto bg-primary flex flex-col items-center mt-[80px] rounded-xl md:mt-[95px] md:w-[500px] px-4 py-6">
+    <div className="w-full max-w-md h-auto bg-primary flex flex-col items-center mt-[10px] rounded-xl md:mt-[15px] md:w-[500px] px-4 py-6">
       <p className="text-[20px] font-navbarHead font-semibold md:text-[28px] text-center">
-        James S. Hernandez
+        {user.full_name}
       </p>
       <p className="text-medium-gray text-[12px] mb-[10px] mt-[3px] font-bold text-center">
-        hernandex.redial@gmail.com
+       {user.email}
       </p>
 
       {menuItems.map((item) => (

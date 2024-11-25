@@ -1,11 +1,9 @@
 import {axiosInstance} from "../api/axios";
 
-export const fetchCompletedService = async (token) => {
+export const fetchCompletedService = async () => {
   try {
     const response = await axiosInstance.get("/completed/", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      
     });
     return response.data;
   } catch (error) {
@@ -14,12 +12,10 @@ export const fetchCompletedService = async (token) => {
   }
 };
 
-export const fetchOnGoingService = async (token) => {
+export const fetchOnGoingService = async () => {
   try {
     const response = await axiosInstance.get("/ongoing/", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+     
     });
     return response.data;
   } catch (error) {

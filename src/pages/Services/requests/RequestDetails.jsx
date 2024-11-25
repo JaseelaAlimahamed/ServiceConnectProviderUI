@@ -12,12 +12,9 @@ const RequestDetails = () => {
   useEffect(() => {
     const fetchRequestDetails = async () => {
       try {
-        const accessToken = localStorage.getItem('accessToken');
-        if (!accessToken) {
-          throw new Error('No access token found');
-        }
-
-        const response = await getServiceRequestsDetails(accessToken, id);
+         
+        
+        const response = await getServiceRequestsDetails( id);
         setRequestDetailsData(response);
         console.log(response, 'Fetched Request Details');
       } catch (err) {

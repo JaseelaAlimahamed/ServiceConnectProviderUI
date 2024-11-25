@@ -14,21 +14,17 @@ const ActiveServiceJob = () => {
       setLoading(true);
 
       try {
-        const token = localStorage.getItem("accessToken");
-        console.log(token);
-        if (!token) {
-          throw new Error("Access token not found. Please log in.");
-        }
+        
 
         // Fetch both completed and ongoing services
-        const completedServices = await fetchCompletedService(token);
-        const ongoingServices = await fetchOnGoingService(token);
+        const completedServices = await fetchCompletedService();
+        const ongoingServices = await fetchOnGoingService();
         
+        console.log("Fetched Data:", completedServices);
       
         // Combine the fetched data
         const combinedData = [...completedServices, ...ongoingServices];
 
-        console.log("Fetched Data:", combinedData);
         setService(combinedData); 
       } catch (err) {
         setError(err.message); 
@@ -41,12 +37,13 @@ const ActiveServiceJob = () => {
   }, []);
 
 
+console.log(service,'service');
 
 
   const filteredAppointments = Array.isArray(service) ? service.filter(
     (appointment) =>
       (activeTab === "ongoing" &&
-        (appointment.work_status === "Active" ||
+        (appointment.work_status === "in_progress" ||
           appointment.work_status === "Payment Pending")) ||
       (activeTab === "completed" && appointment.work_status === "completed")
   ) : [];

@@ -13,11 +13,12 @@
 
 import axios from "axios";
 import { store } from '../redux/store';
-import { clearAccessToken } from "../redux/features/authSlice";
+import { clearAccessToken, setAccessToken } from "../redux/features/authSlice";
+import { refreshAccessToken } from "../services/auth/auth";
 
 export const axiosInstance = axios.create({
   withCredentials: true,
-  baseURL: 'https://learnbudsgvr.pythonanywhere.com/',
+  baseURL: 'https://learnbudsgvr.pythonanywhere.com/service-provider/',
   headers: {
     "Content-Type": "application/json",
   },
@@ -31,8 +32,11 @@ axiosInstance.interceptors.request.use(
   (config) => {
     const state = store.getState();
     const { accessToken } = state.auth;
+    const { refreshToken } = state.auth;
 
 
+    console.log(refreshToken, 'accessToken');
+    
 
     // Set Authorization header if accessToken is available
     if (accessToken) {
@@ -63,14 +67,15 @@ function attachResponseInterceptor() {
       console.log(responseError?.status, responseError?.headers);
       
       if (
-        responseError?.status === 401 &&
-      responseError?.data?.code === "token_not_valid" &&
-      responseError?.data?.messages?.some(
-        (msg) => msg.token_class === "AccessToken"
-      )
+        responseError?.status === 401 
     ) {
+      const isAccessTokenError = responseError?.data?.messages?.some(
+        (msg) => msg.token_class === "AccessToken"
+      );
+
+      if (isAccessTokenError) {
         axiosInstance.interceptors.response.eject(responseInterceptor);
-        console.log('hai');
+        console.log('401');
         store?.dispatch(clearAccessToken());
 
         
@@ -83,12 +88,11 @@ function attachResponseInterceptor() {
             throw new Error(`Max retries (${config._retries}) reached!`);
           }
 
-          // const data = await refreshAccessToken();
-          // console.log(data);
+          const data = await refreshAccessToken();
           
-          // const accessToken = data.accessToken
-          // config.headers.Authorization = `Bearer ${data.accessToken}`;
-          // store.dispatch(  (accessToken));
+          const accessToken = data.access
+          config.headers.Authorization = `Bearer ${data.access}`;
+          store.dispatch(setAccessToken(accessToken));
 
           config._retries++;
           attachResponseInterceptor();
@@ -99,7 +103,8 @@ function attachResponseInterceptor() {
           attachResponseInterceptor(); 
         }
       }
-      // store?.dispatch(clearAccessToken());
+      store?.dispatch(clearAccessToken());
+      }
       console.log(error);
       
       //  logError(error, store); 
