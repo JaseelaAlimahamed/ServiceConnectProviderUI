@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
-function CardWithButton({title,description,address,fromdate,fromtime,todate,totime,images,place,landmark,pincode}) {
+function CardWithButton({ data }) {
   const [activeTab, setActiveTab] = useState('request');
-  const location = useLocation();
-  const { appointment } = location.state || {};
- 
+  const {
+    service_description,
+    customer_address,
+    availability_from,
+    availability_to,
+    location,
+    booking_id,
+    image,
+  } = data || {};
+
   return (
     <div className="my-4 max-w-md mx-auto lg:max-w-2xl">
       <div className="bg-white shadow-md rounded-2xl ml-4 mr-4 min-h-[400px]">
@@ -14,8 +20,8 @@ function CardWithButton({title,description,address,fromdate,fromtime,todate,toti
             onClick={() => setActiveTab('request')}
             className={`w-1/2 text-center py-3 border-b-4 font-semibold rounded-t-lg ${
               activeTab === 'request'
-                ? 'border-divider-pri text-secondary'
-                : 'border-divider-clr text-nonactive-btn'
+                ? 'border-blue-500 text-blue-600'
+                : 'border-gray-300 text-gray-400'
             }`}
           >
             Request
@@ -24,8 +30,8 @@ function CardWithButton({title,description,address,fromdate,fromtime,todate,toti
             onClick={() => setActiveTab('address')}
             className={`w-1/2 text-center py-3 border-b-4 font-semibold rounded-t-lg ${
               activeTab === 'address'
-                ? 'border-divider-pri text-secondary'
-                : 'border-divider-clr text-nonactive-btn'
+                ? 'border-blue-500 text-blue-600'
+                : 'border-gray-300 text-gray-400'
             }`}
           >
             Address
@@ -34,77 +40,35 @@ function CardWithButton({title,description,address,fromdate,fromtime,todate,toti
         <div className="p-6 min-h-[300px]">
           {activeTab === 'request' ? (
             <div>
-              <div className="ml-8">
-                <h3 className="text-lg font-semibold">Title</h3>
-                <p className="text-gray-700">{title}</p>
-              </div>
+              <h3 className="text-lg font-semibold">Booking ID</h3>
+              <p className="text-gray-700">{booking_id}</p>
 
-              <div className="ml-8 mt-2">
-                <h3 className="text-lg font-semibold">Description</h3>
-                <p className="text-gray-700">{description}</p>
-              </div>
+              <h3 className="mt-4 text-lg font-semibold">Service Description</h3>
+              <p className="text-gray-700">{service_description || 'N/A'}</p>
 
-              <div className="ml-8 mt-2">
-                <h3 className="text-lg font-semibold">Images & Videos</h3>
-                <div className="flex space-x-2">
-                
-                    <img
-                      src={images || 'https://static.thenounproject.com/png/4595376-512.png'}
-                      alt=""
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                 
-                </div>
-              </div>
+              <h3 className="mt-4 text-lg font-semibold">Availability</h3>
+              <p>From: {availability_from}</p>
+              <p>To: {availability_to}</p>
 
-              <div className="flex flex-col ml-8 mt-2">
-                <h3 className="font-semibold mb-2">Availability</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex flex-col">
-                    <label className="text-sm ml-4 font-normal">From</label>
-                    <input
-                      type="text"
-                      value={fromdate}
-                      readOnly
-                      className="border shadow-xl ml-16 rounded-lg p-2 bg-gray-200 w-2/3 text-center"
-                    />
-                  </div>
-                  <div className="flex flex-col mt-5">
-                    <input
-                      type="text"
-                      value={fromtime}
-                      readOnly
-                      className="border shadow-xl rounded-lg p-2 bg-gray-200 w-24 text-center"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="text-sm ml-4 font-normal">To</label>
-                    <input
-                      type="text"
-                      value={todate}
-                      readOnly
-                      className="border shadow-xl ml-16 rounded-lg p-2 mb-4 bg-gray-200 w-2/3 text-center"
-                    />
-                  </div>
-                  <div className="flex flex-col mt-5">
-                    <input
-                      type="text"
-                      value={totime}
-                      readOnly
-                      className="border shadow-xl rounded-lg p-2 mb-4 bg-gray-200 w-24 text-center"
-                    />
-                  </div>
-                </div>
-              </div>
+              <h3 className="mt-4 text-lg font-semibold">Images</h3>
+              {image ? (
+                <img
+                  src={image}
+                  alt="Service"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+              ) : (
+                <p>No images available.</p>
+              )}
             </div>
           ) : (
-            <div className="ml-8 mt-8 p-4">
-              <h3 className="text-lg font-semibold">Address</h3>
-              <p className="text-black">{place}</p>
-              <p className="text-black">{address}</p>
-              <p className="text-black">{landmark}</p>
-              <p className="text-black">{pincode}</p>
-            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Location</h3>
+              <p className="text-black">{location || 'N/A'}</p>
+
+              <h3 className="mt-4 text-lg font-semibold">Customer Address</h3>
+              <p>{customer_address || 'No address provided.'}</p>
+            </div>
           )}
         </div>
       </div>

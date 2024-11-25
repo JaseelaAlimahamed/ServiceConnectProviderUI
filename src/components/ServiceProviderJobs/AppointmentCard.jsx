@@ -103,7 +103,7 @@ const AppointmentCard = ({ appointments }) => {
 
             <ButtonComponentWithoutArrow
               label={
-                appointment.work_status === "Active"
+                appointment.work_status === "in_progress"
                   ? "Mark Complete"
                   : appointment.status === "Payment Pending"
                   ? "View"

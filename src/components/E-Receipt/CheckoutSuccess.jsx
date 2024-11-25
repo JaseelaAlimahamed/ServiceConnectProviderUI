@@ -23,7 +23,7 @@ const CheckoutSuccess = () => {
             Back to Services
           </button>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };

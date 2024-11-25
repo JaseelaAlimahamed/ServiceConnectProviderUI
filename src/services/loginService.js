@@ -1,8 +1,8 @@
-import { baseApi } from "../api/axios";
+import { axiosInstance } from "../api/axios";
 
 export const signInProvider = async (email, password) => {
   try {
-    const response = await baseApi.post("/login/", {
+    const response = await axiosInstance.post("/login/", {
       email_or_phone: email,
       password: password,
     });

@@ -1,10 +1,19 @@
-import React from 'react';
-import { RouterProvider } from 'react-router-dom';
+
+
+import {  RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import router from './routes/ProviderRoutes'; // Import your router configuration
 
-function App() {
-  // Only one RouterProvider should be rendered
-  return <RouterProvider router={router} />;
-}
+import { store } from './redux/store';
+
+
+export const App = () => {
+  return (
+    <Provider store={store}> 
+
+      <RouterProvider router={router} />
+      </Provider>
+  );
+};
 
 export default App;

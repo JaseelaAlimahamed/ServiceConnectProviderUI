@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaSignOutAlt } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const ProfileSidebar = ({ isRightSidebarOpen, toggleRightSidebar, onLogout }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const { user } = useSelector((state) => state.auth);
 
     // Update state based on window size
     const updateView = () => {
@@ -58,14 +60,14 @@ const ProfileSidebar = ({ isRightSidebarOpen, toggleRightSidebar, onLogout }) =>
                 <div className="mt-0 flex-grow overflow-y-auto pr-1">
                     <div className="flex items-center mb-4 mt-6">
                         <img
-                            src="https://via.placeholder.com/60"
+                            src={user.profile_image?user.profile_image : 'https://via.placeholder.com/50'}
                             alt="User Profile"
                             className="rounded-full border-2 border-roundborder w-16 h-16"
                         />
                         <div className="ml-4">
-                            <h2 className="text-lg font-semibold text-roundborder">Stone Stellar</h2>
-                            <p className="text-idyellow text-sm">UID: CUFRADEL10032</p>
-                            <p className="text-textonline text-sm">Online</p>
+                            <h2 className="text-lg font-semibold text-roundborder">{user.user?.full_name}</h2>
+                            <p className="text-idyellow text-sm">UID: {user.user?.id_number || 'Id Not Provide'}</p>
+                            {/* <p className="text-textonline text-sm">Online</p> */}
                         </div>
                     </div>
                     <div className="mt-10">

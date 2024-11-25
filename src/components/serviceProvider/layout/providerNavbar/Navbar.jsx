@@ -1,71 +1,62 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../../../redux/features/authSlice";
-import {
-  FaSignOutAlt,
-  FaSignInAlt,
-  FaBars,
-  FaTimes,
-  FaCrown,
-} from "react-icons/fa";
+import { logout, setUserData } from "../../../../redux/features/authSlice";
+import { FaSignOutAlt, FaSignInAlt, FaBars, FaTimes, FaCrown } from "react-icons/fa";
 import { AiOutlineLeft } from "react-icons/ai";
 import NotificationButton from "./NotificationButton";
 import Sidebar from "./Sidebar";
 import ProfileSidebar from "../rightSideMenuBar/rightSideMenuBar";
+import { fetchUser } from "../../../../services/profile";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  // Directly use isLoggedIn from Redux state
   const { isLoggedIn } = useSelector((state) => state.auth);
-  const profileName = "Stone Stellar";
 
-  // Close the right sidebar when location changes
   useEffect(() => {
+    // Close the right sidebar when location changes
     setIsRightSidebarOpen(false);
   }, [location]);
 
-  const toggleSidebar = () => {
-    if (isLoggedIn) {
-      setIsSidebarOpen(!isSidebarOpen);
-    }
-  };
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userData = await fetchUser();
+        setUser(userData);
+        dispatch(setUserData(userData));
+      } catch (error) {
+        console.error("Failed to fetch user data:", error);
+      }
+    };
 
-  const toggleRightSidebar = () => {
-    if (isLoggedIn) {
-      setIsRightSidebarOpen(!isRightSidebarOpen);
-    }
-  };
+    fetchUserData();
+  }, [dispatch]);
+
+  const toggleSidebar = () => isLoggedIn && setIsSidebarOpen(!isSidebarOpen);
+  const toggleRightSidebar = () => isLoggedIn && setIsRightSidebarOpen(!isRightSidebarOpen);
 
   const handleLogout = () => {
-    dispatch(logout()); // Clear Redux auth state
+    dispatch(logout());
     setIsSidebarOpen(false);
     setIsRightSidebarOpen(false);
-    sessionStorage.removeItem("accessToken"); // Clear session storage token
+    sessionStorage.removeItem("accessToken");
     navigate("/signin");
   };
 
-  const handleLogin = () => {
-    navigate("/sign-in");
-  };
+  const handleLogin = () => navigate("/sign-in");
+  const handleNotificationClick = () => navigate("/notification");
+  const handleBackClick = () => navigate("/home");
 
-  const pathParts = location.pathname.split("/");
-  const pathName = pathParts[1] || "Home";
-  const currentPage =
-    pathName.charAt(0).toUpperCase() +
-    pathName.slice(1).toLowerCase().replace(/-/g, " ");
-
-  const handleBackClick = () => {
-    navigate("/home");
-  };
-
-  const handleOnClickNotification = () => {
-    navigate("/notification");
+  const getCurrentPageName = () => {
+    const pathParts = location.pathname.split("/");
+    const pathName = pathParts[1] || "Home";
+    return pathName.charAt(0).toUpperCase() + pathName.slice(1).toLowerCase().replace(/-/g, " ");
   };
 
   return (
@@ -76,7 +67,7 @@ const Navbar = () => {
             {/* Mobile menu button / Back button */}
             <div className="flex items-center sm:hidden">
               <button
-                onClick={() => navigate(-1)}
+                onClick={handleBackClick}
                 className="text-primary text-xl"
               >
                 <AiOutlineLeft className="h-[20px] w-[20px]" />
@@ -87,71 +78,60 @@ const Navbar = () => {
                   className="inline-flex items-center justify-center rounded-3xl p-1 text-primary hover:text-gray-300 focus:outline-none"
                   onClick={toggleSidebar}
                 >
-                  {isSidebarOpen ? (
-                    <FaTimes className="h-3 w-3" />
-                  ) : (
-                    <FaBars className="h-4 w-4" />
-                  )}
+                  {isSidebarOpen ? <FaTimes className="h-3 w-3" /> : <FaBars className="h-4 w-4" />}
                 </button>
               )}
               <h1 className="ml-1 text-primary font-semibold text-md">
-                {currentPage}
+                {getCurrentPageName()}
               </h1>
             </div>
 
-            {/* Logo and Company Name for larger screens */}
+            {/* Logo and Current Page */}
             <div className="hidden sm:flex flex-1 items-center justify-start">
               <img className="h-8" src="/vite.svg" alt="Company Logo" />
               <span className="ml-3 text-primary font-semibold text-xl">
-                {currentPage}
+                {getCurrentPageName()}
               </span>
             </div>
 
             {/* Profile and Authenticated Views */}
             <div className="flex items-center pr-2 sm:ml-6">
               {isLoggedIn && (
-                <NotificationButton onClick={handleOnClickNotification} />
-              )}
-
-              {isLoggedIn && (
-                <div className="relative flex items-center">
-                  <div className="flex flex-col items-center mr-4 ml-1 hidden sm:block">
-                    <span className="text-roundborder text-lg text-center">
-                      {profileName}
-                    </span>
-                    <span className="text-idyellow text-xs sm:block text-center">
-                      Prime Member <FaCrown className="inline text-xs" />
-                    </span>
+                <>
+                  <NotificationButton onClick={handleNotificationClick} />
+                  <div className="relative flex items-center">
+                    <div className="flex flex-col items-center mr-4 ml-1 hidden sm:block">
+                      <span className="text-roundborder text-lg text-center">
+                        {user?.user?.full_name || "User"}
+                      </span>
+                      <span className="text-idyellow text-xs sm:block text-center">
+                        Prime Member <FaCrown className="inline text-xs" />
+                      </span>
+                    </div>
+                    <button onClick={toggleRightSidebar}>
+                      <img
+                        className="h-9 w-9 sm:h-10 sm:w-10 rounded-full hover:ring-1 hover:ring-blue-500"
+                        src={user?.profile_image || "/default-avatar.png"}
+                        alt="Profile"
+                      />
+                    </button>
                   </div>
-                  <button onClick={toggleRightSidebar}>
-                    <img
-                      className="h-9 w-9 sm:h-10 sm:w-10 rounded-full hover:ring-1 hover:ring-blue-500"
-                      src="/profileImage.svg"
-                      alt="Profile"
-                    />
-                  </button>
-                </div>
+                </>
               )}
 
-              {!isLoggedIn ? (
+              {!isLoggedIn && (
                 <NavLink
                   onClick={handleLogin}
                   className="text-primary px-4 py-2 flex items-center hover:bg-gray-700 rounded"
                 >
                   Sign In <FaSignInAlt className="ml-2" />
                 </NavLink>
-              ) : (
-                <NavLink
-                  onClick={handleLogout}
-                  className="ml-4 text-primary px-4 py-2 hidden sm:flex items-center hover:bg-gray-700 rounded"
-                >
-                  Logout <FaSignOutAlt className="ml-2" />
-                </NavLink>
-              )}
+              ) }
             </div>
           </div>
         </div>
       </nav>
+
       {/* Sidebar Component */}
       <Sidebar
         isSidebarOpen={isSidebarOpen}
@@ -159,6 +139,7 @@ const Navbar = () => {
         isAuthenticated={isLoggedIn}
         onLogout={handleLogout}
       />
+
       {/* Right Sidebar Component */}
       {isLoggedIn && (
         <ProfileSidebar

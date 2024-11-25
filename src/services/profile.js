@@ -1,14 +1,11 @@
-import { baseApi } from "../api/axios";
+import { axiosInstance } from "../api/axios";
 
-const accessToken = "your_access_token_here";
 
 // Function to fetch user ID
 export const fetchUserId = async () => {
   try {
-    const response = await baseApi.get("/profile/", {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+    const response = await axiosInstance.get("/profile/", {
+      
     });
 
     const userId = response.id_number;
@@ -20,13 +17,26 @@ export const fetchUserId = async () => {
   }
 };
 
+
+export const fetchUser = async () => {
+  try {
+    const response = await axiosInstance.get("/profile/", {
+      
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching User ID:", error.message);
+    throw error;
+  }
+};
+
 // Update profile data for a specific customer based on their ID
 export const postProfileData = async (id, profileData) => {
   try {
-    const response = await baseApi.put(`/profile/${id}/`, profileData, {
+    const response = await axiosInstance.put(`/profile/${id}/`, profileData, {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
       },
     });
 
@@ -42,10 +52,8 @@ export const postProfileData = async (id, profileData) => {
 // Get location data for a specific customer based on their ID
 export const getLocationData = async (id) => {
   try {
-    const response = await baseApi.get(`/profile/${id}/`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+    const response = await axiosInstance.get(`/profile/${id}/`, {
+      
     });
 
     console.log("Location data:", response.data);
@@ -62,10 +70,8 @@ export const getLocationData = async (id) => {
 // Get additional data for a specific customer based on their ID
 export const getAdditionalData = async (id) => {
   try {
-    const response = await baseApi.get(`/profile/${id}/`, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
+    const response = await axiosInstance.get(`/profile/${id}/`, {
+      
     });
 
     console.log("Additional Data:", response.data);

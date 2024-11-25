@@ -7,7 +7,7 @@ import Icon from "../../../assets/ICON.png";
 import envolope from "../../../assets/envolope.svg";
 import passlock from "../../../assets/password.svg";
 import { signInProvider } from "../../../services/loginService";
-import { setLoginStatus } from "../../../redux/features/authSlice"; // Import the setLoginStatus action
+import { setAccessToken, setLoginStatus } from "../../../redux/features/authSlice"; // Import the setLoginStatus action
 
 function SignInProvider() {
   const navigate = useNavigate();
@@ -45,38 +45,27 @@ function SignInProvider() {
     btnHeight: "h-12",
   };
 
-  // Function to set token with expiration in sessionStorage
-  const setSessionStorageWithExpiry = (key, value, ttl) => {
-    const now = new Date();
-    const item = {
-      value: value,
-      expiry: now.getTime() + ttl,
-    };
-    sessionStorage.setItem(key, JSON.stringify(item));
-  };
 
   // Function to handle form submission
   const apiEndpoint = async (values) => {
     try {
-      const { access, refresh } = await signInProvider(
-        values.email,
-        values.password
-      );
-
-      // Set tokens with a 1-hour expiration (1 hour = 3600000 ms)
-      setSessionStorageWithExpiry("accessToken", access, 3600000);
-      setSessionStorageWithExpiry("refreshToken", refresh, 3600000);
-
-      // Dispatch setLoginStatus to update Redux state
-      dispatch(setLoginStatus({ isLoggedIn: true }));
-
-      // Redirect to OTP page
-      navigate("/otp");
+      const { access, refresh } = await signInProvider(values.email, values.password);
+      console.log('access', access);  // Check the access token value here
+      if (!access) {
+        throw new Error('Access token not received');
+      }
+  
+      // Dispatch the access token to Redux
+      dispatch(setAccessToken(access));
+      dispatch(setLoginStatus({ isLoggedIn: true, refresh  }));
+      // Navigate to the dashboard
+      navigate("/bookings");
     } catch (error) {
       console.error("Error occurred during form submission:", error);
       alert(error.message || "Failed to sign in");
     }
   };
+  
 
   const iconsConfig = [
     {
