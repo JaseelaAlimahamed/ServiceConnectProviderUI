@@ -46,7 +46,7 @@ const Navbar = () => {
     setIsSidebarOpen(false);
     setIsRightSidebarOpen(false);
     sessionStorage.removeItem("accessToken");
-    navigate("/signin");
+    navigate("/sign-in");
   };
 
   const handleLogin = () => navigate("/sign-in");
