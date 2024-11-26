@@ -16,7 +16,7 @@ const RequestDetails = () => {
         
         const response = await getServiceRequestsDetails( id);
         setRequestDetailsData(response);
-        console.log(response, 'Fetched Request Details');
+        console.log(requestDetailsData, 'Fetched Request Details');
       } catch (err) {
         console.error('Error fetching request details:', err);
       }
@@ -41,23 +41,10 @@ const RequestDetails = () => {
     <div className="bg-light-gray min-h-screen flex items-center justify-center p-4">
       <div className="md:max-w-screen-sm w-full bg-white rounded-lg shadow-md">
         <HeaderWithProfile
-          id={requestDetailsData.booking_id}
-          image={requestDetailsData.profile_image}
-          name={requestDetailsData.customer_name}
-          location={requestDetailsData.customer_place}
+          data={requestDetailsData}
         />
         <CardWithButton
-          title={requestDetailsData.subcategory}
-          fromdate={fromDateTime.date}
-          fromtime={fromDateTime.time}
-          todate={toDateTime.date}
-          totime={toDateTime.time}
-          description={requestDetailsData.description}
-          images={requestDetailsData.images}
-          address={requestDetailsData.customer_address}
-          landmark={requestDetailsData.customer_landmark}
-          place={requestDetailsData.customer_place}
-          pincode={requestDetailsData.customer_pincode}
+         data={requestDetailsData}
         />
         <Buttons id={id} />
       </div>

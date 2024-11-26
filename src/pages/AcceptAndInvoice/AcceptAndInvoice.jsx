@@ -26,7 +26,7 @@ function AcceptAndInvoice() {
     const fetchRequestDetails = async () => {
       setLoading(true);
       try {
-        const response = await getServiceRequestsDetails(id);
+        const response = await getServiceRequestsDetails(id, status);
         setRequestDetailsData(response);
       } catch (err) {
         console.error("Error fetching request details:", err);
@@ -72,10 +72,7 @@ function AcceptAndInvoice() {
       <div className="container max-w-full p-4 bg-light-gray sm:p-6 lg:p-8">
         <div className="max-w-full mx-auto md:max-w-screen-full lg:max-w-screen-full">
           <HeaderWithProfile
-            id={requestDetailsData.booking_id}
-            image={requestDetailsData.profile_image}
-            name={requestDetailsData.customer_name}
-            location={requestDetailsData.customer_place}
+           data={requestDetailsData}
           />
 
           <div
@@ -85,23 +82,13 @@ function AcceptAndInvoice() {
           >
             <div className="mt-4">
               <CardWithButton
-                title={requestDetailsData.subcategory}
-                fromdate={fromDateTime.date}
-                fromtime={fromDateTime.time}
-                todate={toDateTime.date}
-                totime={toDateTime.time}
-                description={requestDetailsData.description}
-                images={requestDetailsData.images}
-                address={requestDetailsData.customer_address}
-                landmark={requestDetailsData.customer_landmark}
-                place={requestDetailsData.customer_place}
-                pincode={requestDetailsData.customer_pincode}
+                data={requestDetailsData}
               />
             </div>
 
             {appointmentData && (
               <div className="mt-8">
-                <AppointmentCard appointmentData={appointmentData} />
+                <AppointmentCard data={appointmentData} />
               </div>
             )}
           </div>
