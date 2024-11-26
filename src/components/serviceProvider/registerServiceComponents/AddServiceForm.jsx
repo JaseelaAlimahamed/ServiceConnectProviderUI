@@ -106,7 +106,7 @@ const AddServiceForm = ({ mediaFiles, setMediaFiles, onSubmit }) => {
               Terms & Conditions
             </label>
             <div>
-              <Field type="checkbox" name="terms" className="h-4 w-4" />
+              <Field type="checkbox" name="accepted_terms" className="h-4 w-4" />
               <span className="ml-2 text-[14px] font-default text-[#222222]">
                 Accept
               </span>

@@ -14,13 +14,14 @@ export const getServiceRequests = async () => {
   }
 };
 
-export const getServiceRequestsDetails = async (id) => {
+export const getServiceRequestsDetails = async (id, status) => {
   try {
     console.log("Fetching invoice details for ID:", id);
     const response = await axiosInstance.patch(
       `service-requests/details/`,
       {
         booking_id: id,
+        // acceptance_status: "accept"
       }
     );
 

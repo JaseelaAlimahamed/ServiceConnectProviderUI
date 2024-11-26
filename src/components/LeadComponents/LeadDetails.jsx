@@ -4,13 +4,13 @@ import BookingsDetalsPart from './BookingsDetalsPart';
 import AddressDetails from './AddressDetails';
 import ActionButton from './ActionButton';
 import CustomModal from './CustomModal';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import shape from '../../assets/images/shape.png';
-
+import { getServiceRequestsDetails } from '../../services/providerAxios';
 const LeadDetails = () => {
   const [tab, setTab] = useState(false);
   const [open, setOpen] = useState(false);
-
+  const {id} = useParams()
   const booking = {
     bookingId: '12aa21w',
     title: 'Bulb Change',
@@ -21,7 +21,19 @@ const LeadDetails = () => {
     availabiliyTodate: 'June 10,2024',
     availabilityToTime: '10PM',
   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getServiceRequestsDetails(id); // Assuming it returns a promise
+        console.log('Service Requests Details:', response);
+      } catch (error) {
+        console.error('Error fetching service requests details:', error);
+      }
+    };
 
+    fetchData(); // Call the async function
+    setTab(true); 
+  }, []);
   const user = {
     name: 'Sharavanan',
     address: 'Karthika Vilasam Kokkunnu',
