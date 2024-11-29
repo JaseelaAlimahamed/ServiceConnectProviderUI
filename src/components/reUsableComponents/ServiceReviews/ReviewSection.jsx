@@ -3,8 +3,11 @@ import ReviewCard from '../../reUsableComponents/ServiceReviews/ReviewCard';
 import RatingComponent from './RatingComponent';
 import CustomButton from '../../reUsableComponents/ServiceReviews/CustomButton';
 import { reviews } from '../../../services/providerAxios';
+import { formatDistanceToNow } from 'date-fns';
+
 
 const ReviewSection = () => {
+
   const [reviewsData, setReviewsData] = useState({
     reviews: [],
     average_rating: 0,
@@ -46,7 +49,7 @@ const ReviewSection = () => {
           bgColor="bg-primary"
           textColor="text-secondary"
           hoverBgColor="bg-secondary"
-          hoverTextColor="text-primary"
+          hoverTextColor="text-white"
         />
         <CustomButton
           textSize="text-sm"
@@ -77,15 +80,15 @@ const ReviewSection = () => {
       <div className="mt-4 grid xs:grid-cols-1 md:grid-cols-2 gap-8 px-4 mx-auto">
         {/* Render reviews dynamically */}
         {reviewsData.reviews.map((review, index) => (
-          <ReviewCard
-            key={index}
-            name={review.name}
-            rating={review.rating}
-            review={review.review}
-            likes={review.likes}
-            timeAgo={review.timeAgo}
-          />
-        ))}
+  <ReviewCard
+    key={review.id || index}
+    name={review.customer_name || "Anonymous"}
+    rating={review.rating}
+    review={review.comment}
+    likes={review.likes || 0}
+    timeAgo={formatDistanceToNow(new Date(review.created_at), { addSuffix: true })}
+  />
+))}
       </div>
 
       <div className="w-full sticky bottom-16 md:text-center">

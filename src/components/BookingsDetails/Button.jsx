@@ -24,7 +24,8 @@ function BookingsDetailsButtons({ id }) {
   const handleConfirm = async () => {
     if (action === "complete") {
       try {
-        await completeBooking(id); // Call the completeBooking function
+        const work_status = 'completed'
+        await completeBooking(id, work_status); // Call the completeBooking function
         navigate("/bookings");
       } catch (error) {
         console.error("Failed to complete booking");

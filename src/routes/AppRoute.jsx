@@ -5,10 +5,12 @@ import AccessDenied403Page from "../pages/errorPages/AccessDenied403Page";
 import ProtectedRoute from "../utils/Auth";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 import MainLayout from "../layouts/MainLayout";
+import AuthLayout from "../layouts/AuthLayout";
 
 export const AppRoute = [
   {
     path: "/",
+    element: < AuthLayout/>,
     children: [
       ...AuthRoute,
       {
