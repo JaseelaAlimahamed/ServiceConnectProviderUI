@@ -1,12 +1,12 @@
 import {axiosInstance} from "../api/axios";
 
-export async function completeBooking(id) {
+export async function completeBooking(id, work_status) {
   try {
     
 
     const response = await axiosInstance.post(
       "/change-work-status/",
-      { id }, // Body with booking ID
+      { id, work_status }, // Body with booking ID
       
     );
 

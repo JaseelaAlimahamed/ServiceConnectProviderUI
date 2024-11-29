@@ -1,18 +1,24 @@
-import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import SignInProvider from "../../../components/serviceProvider/SignInComponents/SignInProvider";
 
-const ProtectedRoute = ({ children, redirectTo = "/" }) => {
+const ServiceProviderSignIn = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
-  const location = useLocation();
+  const navigate = useNavigate();
 
-  if (isLoggedIn) {
-    // Redirect logged-in users to the desired page
-    return <Navigate to={redirectTo} state={{ from: location }} replace />;
-  }
+  useEffect(() => {
+    if (isLoggedIn) {
+      // Navigate to the previous page if logged in
+      navigate(-1);
+    }
+  }, [isLoggedIn, navigate]);
 
-  // Render the children if not logged in
-  return children;
+  return (
+    <div>
+      <SignInProvider />
+    </div>
+  );
 };
 
-export default ProtectedRoute;
+export default ServiceProviderSignIn;
